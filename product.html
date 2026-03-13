@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | Diverg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="geo geo-left" aria-hidden="true">
+    <div class="geo-block"></div>
+    <div class="geo-block geo-accent"></div>
+    <div class="geo-block"></div>
+  </div>
+  <div class="geo geo-right" aria-hidden="true">
+    <div class="geo-block geo-accent"></div>
+    <div class="geo-block"></div>
+    <div class="geo-block geo-accent"></div>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Diverg" class="logo-img">
+      </a>
+      <nav class="nav-links">
+        <a href="product.html" class="active">Product</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="company.html">Company</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="resources.html#playground" class="nav-link">Playground</a>
+        <a href="mailto:hello@diverg.sec?subject=Demo" class="btn btn-primary">Request a Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="page-hero">
+      <h1 class="page-title">Product</h1>
+      <p class="page-sub">Autonomous security and blockchain investigation platform</p>
+    </section>
+
+    <section class="features">
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Web Security Scanning</h3>
+          <p>Comprehensive reconnaissance including port scanning, subdomain enumeration, and technology fingerprinting. Detect XSS, SQL injection, CSRF vulnerabilities, and misconfigurations automatically.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Blockchain Investigation</h3>
+          <p>Wallet and token analysis with Solscan, Arkham, and Etherscan integration. Generate flow diagrams, map counterparties, and identify suspicious transaction patterns in real-time.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>OSINT Intelligence</h3>
+          <p>WHOIS analysis, DNS enumeration, email pattern discovery, and Wayback Machine integration. Surface hidden connections between targets and infrastructure.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Flow Visualization</h3>
+          <p>Interactive transaction flow diagrams showing fund movement across wallets. Identify mixers, CEX deposits, and suspicious clustering with Bubblemaps integration.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Adaptive Scanning</h3>
+          <p>Dynamic scan planning that adjusts based on target type. Focus on crypto launchpads, DeFi protocols, or traditional web infrastructure with tailored investigation paths.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Fact-Only Reporting</h3>
+          <p>Structured findings with severity classifications. No placeholder data—when APIs are configured, you get live data; otherwise, reports clearly indicate skipped checks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="api-section">
+      <h2 class="section-title">Core Capabilities</h2>
+      <div class="api-grid">
+        <div class="api-item">
+          <h4>Recon</h4>
+          <p>Port scanning with nmap fallback, subdomain enumeration, Wappalyzer tech detection</p>
+        </div>
+        <div class="api-item">
+          <h4>Web Vulns</h4>
+          <p>XSS, SQLi, CSRF, directory traversal detection with proof-of-concept validation</p>
+        </div>
+        <div class="api-item">
+          <h4>Headers/SSL</h4>
+          <p>Security header audit, TLS configuration analysis, certificate validation</p>
+        </div>
+        <div class="api-item">
+          <h4>Auth Testing</h4>
+          <p>Login form analysis, session management, cookie flags, user enumeration checks</p>
+        </div>
+        <div class="api-item">
+          <h4>API Testing</h4>
+          <p>Endpoint discovery, CORS checks, auth bypass, IDOR detection</p>
+        </div>
+        <div class="api-item">
+          <h4>Chain Analysis</h4>
+          <p>Solana + Ethereum support, transfer normalization, entity labeling via Arkham</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Diverg. All rights reserved.</p>
+      <a href="https://x.com/DivergSec" target="_blank" rel="noopener noreferrer" class="footer-x" aria-label="Diverg on X (Twitter)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

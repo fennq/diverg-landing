@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources | Diverg</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="geo geo-left" aria-hidden="true">
+    <div class="geo-block"></div>
+    <div class="geo-block geo-accent"></div>
+  </div>
+  <div class="geo geo-right" aria-hidden="true">
+    <div class="geo-block geo-accent"></div>
+    <div class="geo-block"></div>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Diverg" class="logo-img">
+      </a>
+      <nav class="nav-links">
+        <a href="product.html">Product</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="company.html">Company</a>
+        <a href="resources.html" class="active">Resources</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="resources.html#playground" class="nav-link">Playground</a>
+        <a href="mailto:hello@diverg.sec?subject=Demo" class="btn btn-primary">Request a Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="page-hero">
+      <h1 class="page-title">Resources</h1>
+      <p class="page-sub">Everything you need to get started with Diverg</p>
+    </section>
+
+    <section class="resources-grid">
+      <article class="resource-card" id="playground">
+        <h3>Playground</h3>
+        <p>Try Diverg instantly via our Telegram bot. Send a URL or wallet address and receive a comprehensive security report in seconds.</p>
+        <div class="resource-meta">
+          <span class="tag">No signup required</span>
+        </div>
+        <a href="https://t.me/divergsec_bot" target="_blank" rel="noopener" class="btn btn-primary">Open in Telegram</a>
+      </article>
+
+      <article class="resource-card">
+        <h3>GitHub</h3>
+        <p>Explore our open source components, contribute to development, and self-host Diverg for your organization.</p>
+        <div class="resource-meta">
+          <span class="tag">Open Source</span>
+        </div>
+        <a href="https://github.com/fennq/diverg" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub</a>
+      </article>
+
+      <article class="resource-card">
+        <h3>Documentation</h3>
+        <p>Comprehensive guides for installation, configuration, API usage, and best practices for security investigations.</p>
+        <div class="resource-meta">
+          <span class="tag">Coming Soon</span>
+        </div>
+        <a href="#" class="btn btn-outline disabled" aria-disabled="true">Read Docs</a>
+      </article>
+
+      <article class="resource-card">
+        <h3>API Reference</h3>
+        <p>Programmatic access to all Diverg capabilities. Integrate security scanning and blockchain investigation into your workflows.</p>
+        <div class="resource-meta">
+          <span class="tag">Beta</span>
+        </div>
+        <a href="mailto:hello@diverg.sec?subject=API Access" class="btn btn-outline">Request Access</a>
+      </article>
+
+      <article class="resource-card">
+        <h3>Sample Reports</h3>
+        <p>See example investigation outputs from real (sanitized) engagements. Understand the depth and format of Diverg reports.</p>
+        <div class="resource-meta">
+          <span class="tag">Examples</span>
+        </div>
+        <a href="#" class="btn btn-outline disabled" aria-disabled="true">View Samples</a>
+      </article>
+
+      <article class="resource-card">
+        <h3>Chrome Extension</h3>
+        <p>Browser extension for quick site assessments. One-click scanning directly from your browser toolbar.</p>
+        <div class="resource-meta">
+          <span class="tag">In Development</span>
+        </div>
+        <a href="#" class="btn btn-outline disabled" aria-disabled="true">Coming Soon</a>
+      </article>
+    </section>
+
+    <section class="pricing-section">
+      <h2 class="section-title">Pricing</h2>
+      <p class="section-sub">Start free, scale as you grow</p>
+      
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <h3>Free</h3>
+          <p class="pricing-desc">For testing and building</p>
+          <ul class="pricing-features">
+            <li>Telegram bot access</li>
+            <li>Basic web scans</li>
+            <li>Limited blockchain queries</li>
+            <li>Community support</li>
+          </ul>
+          <a href="https://t.me/divergsec_bot" class="btn btn-outline">Get Started</a>
+        </article>
+
+        <article class="pricing-card featured">
+          <h3>Developer</h3>
+          <p class="pricing-desc">For professionals and teams</p>
+          <ul class="pricing-features">
+            <li>Unlimited scans</li>
+            <li>Full blockchain investigation</li>
+            <li>API access</li>
+            <li>Flow diagrams</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="mailto:hello@diverg.sec?subject=Developer Plan" class="btn btn-primary">Contact Sales</a>
+        </article>
+
+        <article class="pricing-card">
+          <h3>Enterprise</h3>
+          <p class="pricing-desc">For organizations at scale</p>
+          <ul class="pricing-features">
+            <li>Dedicated infrastructure</li>
+            <li>Custom integrations</li>
+            <li>SSO / SAML</li>
+            <li>SLA guarantees</li>
+            <li>Dedicated support</li>
+          </ul>
+          <a href="mailto:hello@diverg.sec?subject=Enterprise" class="btn btn-outline">Contact Sales</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="help-section">
+      <h2>Need Help?</h2>
+      <p>Get in touch for support, custom requirements, or partnership inquiries.</p>
+      <div class="help-links">
+        <a href="mailto:hello@diverg.sec" class="btn btn-primary">hello@diverg.sec</a>
+        <a href="https://x.com/DivergSec" target="_blank" rel="noopener" class="btn btn-outline">@DivergSec on X</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Diverg. All rights reserved.</p>
+      <a href="https://x.com/DivergSec" target="_blank" rel="noopener noreferrer" class="footer-x" aria-label="Diverg on X (Twitter)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+  </footer>
+</body>
+</html>
