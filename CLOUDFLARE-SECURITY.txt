@@ -1,0 +1,50 @@
+SECURITY HEADERS FOR DIVERGSEC.COM (CLOUDFLARE)
+================================================
+
+Apply these in Cloudflare so every response from divergsec.com includes strong security headers.
+
+--- STEP 1: Response headers (Transform Rules) ---
+
+Go to: Rules → Transform Rules → Modify Response Header → Create rule.
+
+Rule name: Security headers – divergsec.com
+
+WHEN (Custom filter expression):
+  (http.host eq "divergsec.com")
+
+THEN – Add the following headers one by one (Set static value):
+
+  X-Frame-Options              DENY
+  X-Content-Type-Options       nosniff
+  X-XSS-Protection             1; mode=block
+  Referrer-Policy              strict-origin-when-cross-origin
+  Permissions-Policy           geolocation=(), microphone=(), camera=(), payment=()
+  Strict-Transport-Security    max-age=31536000; includeSubDomains; preload
+
+Save and Deploy.
+
+--- STEP 2: SSL/TLS ---
+
+SSL/TLS → Overview: Encryption mode = Full (strict).
+Edge Certificates: Always Use HTTPS = On, Minimum TLS Version = 1.2.
+
+--- STEP 3: Security level and bots ---
+
+Security → Settings:
+  Security Level: Medium (or Higher if you prefer).
+  Bot Fight Mode: On (or Super Bot Fight Mode if on a paid plan).
+
+--- STEP 4: Scrape Shield ---
+
+Scrape Shield: Hotlink Protection = On.
+
+--- What these do ---
+
+  X-Frame-Options: DENY           – Site cannot be embedded in iframes (clickjacking).
+  X-Content-Type-Options: nosniff  – Prevents MIME sniffing.
+  X-XSS-Protection: 1; mode=block  – Legacy XSS filter (CSP is primary).
+  Referrer-Policy                 – Limits referrer sent to other sites.
+  Permissions-Policy              – Disables unneeded browser features.
+  Strict-Transport-Security       – Browsers only load site over HTTPS (HSTS).
+
+After saving, test: https://securityheaders.com/?q=divergsec.com

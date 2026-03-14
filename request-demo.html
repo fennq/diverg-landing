@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Demo | Diverg</title>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-src https://formsubmit.co https://www.google.com https://www.recaptcha.net; frame-ancestors 'none'; base-uri 'self'; form-action https://formsubmit.co;">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" integrity="sha384-lGzR8ZGPVSnVvvWTQh2zh7RR2IocVI1Wx04h/ujMPR4Co0tKOFFQEaDDj8us/6uo" crossorigin="anonymous">
+</head>
+<body>
+  <div class="mesh-overlay" aria-hidden="true"></div>
+  <div class="geo geo-left" aria-hidden="true">
+    <div class="geo-block"></div>
+    <div class="geo-block geo-accent"></div>
+  </div>
+  <div class="geo geo-right" aria-hidden="true">
+    <div class="geo-block geo-accent"></div>
+    <div class="geo-block"></div>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Diverg" class="logo-img">
+      </a>
+      <nav class="nav-links">
+        <a href="product.html">Product</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="company.html">Company</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="resources.html#demo" class="nav-link">Request a Demo</a>
+        <a href="request-demo.html" class="btn btn-primary">Request a Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content demo-page">
+    <section class="page-hero">
+      <h1 class="page-title">Request a Demo</h1>
+      <p class="page-sub">Tell us a bit about yourself and why you want to try Diverg. We’ll get back to you shortly.</p>
+    </section>
+
+    <div id="demo-success" class="demo-success" hidden>
+      <div class="demo-success-inner">
+        <h2>Thanks for your interest</h2>
+        <p>We’ve received your request and will reach out to <span id="success-email"></span> soon.</p>
+        <a href="index.html" class="btn btn-primary">Back to home</a>
+      </div>
+    </div>
+
+    <form id="demo-form" class="demo-form" action="https://formsubmit.co/leofunman64@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Diverg Demo Request">
+      <input type="hidden" name="_next" id="form-next" value="">
+      <input type="hidden" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required maxlength="200" placeholder="Your name" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required maxlength="254" placeholder="you@example.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" maxlength="50" placeholder="+1 (555) 000-0000" autocomplete="tel">
+      </div>
+      <div class="form-group">
+        <label for="reason">Reason for wanting to test Diverg</label>
+        <textarea id="reason" name="reason" rows="4" required maxlength="2000" placeholder="e.g. Security assessment for a launchpad, due diligence on a token, internal pentesting…"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-submit">Submit request</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Diverg. All rights reserved.</p>
+      <a href="https://x.com/DivergSec" target="_blank" rel="noopener noreferrer" class="footer-x" aria-label="Diverg on X (Twitter)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var form = document.getElementById('demo-form');
+      var successEl = document.getElementById('demo-success');
+      var successEmail = document.getElementById('success-email');
+      var nextInput = document.getElementById('form-next');
+
+      if (nextInput) {
+        var origin = window.location.origin;
+        var path = window.location.pathname.replace(/\/+$/, '') || '/';
+        var allowed = /^https:\/\/divergsec\.com$/i.test(origin) || /^https?:\/\/localhost(:\d+)?$/i.test(origin) || /^https:\/\/[a-zA-Z0-9-]+\.github\.io$/i.test(origin);
+        if (allowed && origin && path) nextInput.value = origin + path + '?submitted=1';
+      }
+
+      if (new URLSearchParams(window.location.search).get('submitted') === '1') {
+        var raw = sessionStorage.getItem('diverg_demo_email') || '';
+        var safe = raw.replace(/[<>"&]/g, '');
+        if (successEmail) successEmail.textContent = safe;
+        if (successEl) successEl.hidden = false;
+        if (form) form.hidden = true;
+        return;
+      }
+
+      if (form) {
+        form.addEventListener('submit', function() {
+          var emailInput = document.getElementById('email');
+          if (emailInput && emailInput.value) {
+            var v = String(emailInput.value).trim().slice(0, 254);
+            sessionStorage.setItem('diverg_demo_email', v);
+          }
+        });
+      }
+    })();
+  </script>
+  <script src="script.js" integrity="sha384-vurVSpR6pXdDjdWJWSXxD3AIcmbXLp36Ppu7EmPn5F7T23xLYgQKipUHeZAPPn1c" crossorigin="anonymous"></script>
+</body>
+</html>

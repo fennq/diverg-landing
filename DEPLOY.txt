@@ -1,0 +1,21 @@
+LIVE AT DIVERGSEC.COM — 2 STEPS
+================================
+
+1. ENABLE GITHUB PAGES (once)
+   - Open: https://github.com/fennq/diverg-landing/settings/pages
+   - Under "Build and deployment": Source = "Deploy from a branch"
+   - Branch = main, Folder = / (root), click Save
+   - Under "Custom domain": type divergsec.com, click Save
+   - Wait for DNS check; then check "Enforce HTTPS" when it appears
+
+2. SET DNS AT YOUR DOMAIN REGISTRAR (where you bought divergsec.com)
+   - Add one record:
+     Type: CNAME
+     Name: @  (or "divergsec.com" if your registrar asks for full name)
+     Value/Target: fennq.github.io
+   - Save. Propagation can take 5–60 minutes.
+   - After that, https://divergsec.com will serve this site.
+
+Done. You only need to change DNS (step 2) if Pages is already on; otherwise do step 1 then step 2.
+
+SECURITY: See CLOUDFLARE-SECURITY.txt for response headers (HSTS, X-Frame-Options, etc.) to set in Cloudflare. After editing script.js or styles.css, recompute SRI hashes (e.g. openssl dgst -sha384 -binary script.js | openssl base64 -A) and update the integrity attribute in all HTML files.

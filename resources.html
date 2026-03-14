@@ -4,12 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resources | Diverg</title>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" integrity="sha384-lGzR8ZGPVSnVvvWTQh2zh7RR2IocVI1Wx04h/ujMPR4Co0tKOFFQEaDDj8us/6uo" crossorigin="anonymous">
 </head>
 <body>
+  <div class="mesh-overlay" aria-hidden="true"></div>
   <div class="geo geo-left" aria-hidden="true">
     <div class="geo-block"></div>
     <div class="geo-block geo-accent"></div>
@@ -31,8 +35,8 @@
         <a href="resources.html" class="active">Resources</a>
       </nav>
       <div class="nav-actions">
-        <a href="resources.html#playground" class="nav-link">Playground</a>
-        <a href="mailto:hello@diverg.sec?subject=Demo" class="btn btn-primary">Request a Demo</a>
+        <a href="request-demo.html" class="nav-link">Request a Demo</a>
+        <a href="request-demo.html" class="btn btn-primary">Request a Demo</a>
       </div>
     </div>
   </header>
@@ -44,22 +48,22 @@
     </section>
 
     <section class="resources-grid">
-      <article class="resource-card" id="playground">
-        <h3>Playground</h3>
-        <p>Try Diverg instantly via our Telegram bot. Send a URL or wallet address and receive a comprehensive security report in seconds.</p>
+      <article class="resource-card" id="extension">
+        <h3>Chrome Web Extension</h3>
+        <p>One-click security and blockchain checks from your browser. Scan any site or wallet from the toolbar—coming soon.</p>
         <div class="resource-meta">
-          <span class="tag">No signup required</span>
+          <span class="tag">Coming Soon</span>
         </div>
-        <a href="https://t.me/divergsec_bot" target="_blank" rel="noopener" class="btn btn-primary">Open in Telegram</a>
+        <a href="#" class="btn btn-outline disabled" aria-disabled="true">Coming Soon</a>
       </article>
 
-      <article class="resource-card">
-        <h3>GitHub</h3>
-        <p>Explore our open source components, contribute to development, and self-host Diverg for your organization.</p>
+      <article class="resource-card" id="demo">
+        <h3>Request a Demo</h3>
+        <p>Schedule a walkthrough of Diverg. See web and blockchain investigation in action and discuss your use case with our team.</p>
         <div class="resource-meta">
-          <span class="tag">Open Source</span>
+          <span class="tag">Free</span>
         </div>
-        <a href="https://github.com/fennq/diverg" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub</a>
+        <a href="request-demo.html" class="btn btn-primary">Request a Demo</a>
       </article>
 
       <article class="resource-card">
@@ -72,12 +76,12 @@
       </article>
 
       <article class="resource-card">
-        <h3>API Reference</h3>
-        <p>Programmatic access to all Diverg capabilities. Integrate security scanning and blockchain investigation into your workflows.</p>
+        <h3>Integrations</h3>
+        <p>Connect Diverg with your stack. Telegram, CLI, and custom workflows. Enterprise integrations available on request.</p>
         <div class="resource-meta">
-          <span class="tag">Beta</span>
+          <span class="tag">Available</span>
         </div>
-        <a href="mailto:hello@diverg.sec?subject=API Access" class="btn btn-outline">Request Access</a>
+        <a href="request-demo.html" class="btn btn-outline">Contact Us</a>
       </article>
 
       <article class="resource-card">
@@ -86,61 +90,24 @@
         <div class="resource-meta">
           <span class="tag">Examples</span>
         </div>
-        <a href="#" class="btn btn-outline disabled" aria-disabled="true">View Samples</a>
+        <a href="https://x.com/DivergSec/status/2032473970424103123" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View latest on X</a>
       </article>
 
-      <article class="resource-card">
-        <h3>Chrome Extension</h3>
-        <p>Browser extension for quick site assessments. One-click scanning directly from your browser toolbar.</p>
+      <article class="resource-card" id="contact">
+        <h3>Get in Touch</h3>
+        <p>Questions, partnership, or custom deployments? Reach out for support, security assessments, or early access to new products.</p>
         <div class="resource-meta">
-          <span class="tag">In Development</span>
+          <span class="tag">We respond</span>
         </div>
-        <a href="#" class="btn btn-outline disabled" aria-disabled="true">Coming Soon</a>
+        <a href="request-demo.html" class="btn btn-outline">Contact Us</a>
       </article>
     </section>
 
     <section class="pricing-section">
       <h2 class="section-title">Pricing</h2>
-      <p class="section-sub">Start free, scale as you grow</p>
-      
-      <div class="pricing-grid">
-        <article class="pricing-card">
-          <h3>Free</h3>
-          <p class="pricing-desc">For testing and building</p>
-          <ul class="pricing-features">
-            <li>Telegram bot access</li>
-            <li>Basic web scans</li>
-            <li>Limited blockchain queries</li>
-            <li>Community support</li>
-          </ul>
-          <a href="https://t.me/divergsec_bot" class="btn btn-outline">Get Started</a>
-        </article>
-
-        <article class="pricing-card featured">
-          <h3>Developer</h3>
-          <p class="pricing-desc">For professionals and teams</p>
-          <ul class="pricing-features">
-            <li>Unlimited scans</li>
-            <li>Full blockchain investigation</li>
-            <li>API access</li>
-            <li>Flow diagrams</li>
-            <li>Priority support</li>
-          </ul>
-          <a href="mailto:hello@diverg.sec?subject=Developer Plan" class="btn btn-primary">Contact Sales</a>
-        </article>
-
-        <article class="pricing-card">
-          <h3>Enterprise</h3>
-          <p class="pricing-desc">For organizations at scale</p>
-          <ul class="pricing-features">
-            <li>Dedicated infrastructure</li>
-            <li>Custom integrations</li>
-            <li>SSO / SAML</li>
-            <li>SLA guarantees</li>
-            <li>Dedicated support</li>
-          </ul>
-          <a href="mailto:hello@diverg.sec?subject=Enterprise" class="btn btn-outline">Contact Sales</a>
-        </article>
+      <p class="section-sub">Plans and pricing tailored to your team. Get in touch to learn more.</p>
+      <div class="pricing-cta">
+        <a href="mailto:hello@diverg.sec?subject=Pricing" class="btn btn-primary">Contact Us</a>
       </div>
     </section>
 
@@ -149,7 +116,7 @@
       <p>Get in touch for support, custom requirements, or partnership inquiries.</p>
       <div class="help-links">
         <a href="mailto:hello@diverg.sec" class="btn btn-primary">hello@diverg.sec</a>
-        <a href="https://x.com/DivergSec" target="_blank" rel="noopener" class="btn btn-outline">@DivergSec on X</a>
+        <a href="https://x.com/DivergSec" target="_blank" rel="noopener noreferrer" class="btn btn-outline">@DivergSec on X</a>
       </div>
     </section>
   </main>
@@ -163,6 +130,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" integrity="sha384-vurVSpR6pXdDjdWJWSXxD3AIcmbXLp36Ppu7EmPn5F7T23xLYgQKipUHeZAPPn1c" crossorigin="anonymous"></script>
 </body>
 </html>

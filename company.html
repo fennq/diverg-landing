@@ -4,12 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Company | Diverg</title>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" integrity="sha384-lGzR8ZGPVSnVvvWTQh2zh7RR2IocVI1Wx04h/ujMPR4Co0tKOFFQEaDDj8us/6uo" crossorigin="anonymous">
 </head>
 <body>
+  <div class="mesh-overlay" aria-hidden="true"></div>
   <div class="geo geo-left" aria-hidden="true">
     <div class="geo-block"></div>
     <div class="geo-block geo-accent"></div>
@@ -31,8 +35,8 @@
         <a href="resources.html">Resources</a>
       </nav>
       <div class="nav-actions">
-        <a href="resources.html#playground" class="nav-link">Playground</a>
-        <a href="mailto:hello@diverg.sec?subject=Demo" class="btn btn-primary">Request a Demo</a>
+        <a href="request-demo.html" class="nav-link">Request a Demo</a>
+        <a href="request-demo.html" class="btn btn-primary">Request a Demo</a>
       </div>
     </div>
   </header>
@@ -67,7 +71,7 @@
           </div>
           <div class="value-item">
             <h4>Transparent</h4>
-            <p>Open source components, clear documentation, and honest reporting. We believe in showing our work and methodology.</p>
+            <p>Clear documentation, honest reporting, and visible methodology. We believe in showing our work.</p>
           </div>
         </div>
       </div>
@@ -104,6 +108,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" integrity="sha384-vurVSpR6pXdDjdWJWSXxD3AIcmbXLp36Ppu7EmPn5F7T23xLYgQKipUHeZAPPn1c" crossorigin="anonymous"></script>
 </body>
 </html>
