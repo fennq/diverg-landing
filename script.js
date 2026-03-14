@@ -58,17 +58,10 @@
     }
   }, { passive: true });
 
-  // Smooth reveal for page content
+  // Smooth reveal for page content (no initial hide to avoid logo flash)
   const pageContent = document.querySelector('.page-content');
   if (pageContent) {
-    pageContent.style.opacity = '0';
-    pageContent.style.transform = 'translateY(20px)';
-    pageContent.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-    
-    setTimeout(() => {
-      pageContent.style.opacity = '1';
-      pageContent.style.transform = 'translateY(0)';
-    }, 100);
+    pageContent.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
   }
 
   // Parallax effect for geometric shapes

@@ -172,6 +172,10 @@ body::before {
 .logo-img {
   height: 32px;
   width: auto;
+  max-width: 120px;
+  max-height: 40px;
+  object-fit: contain;
+  display: block;
   filter: brightness(1.1) drop-shadow(0 0 10px var(--accent-glow));
 }
 
