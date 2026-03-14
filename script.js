@@ -33,22 +33,29 @@
     });
   });
 
-  // Nav background on scroll
+  // Nav background on scroll with enhanced glass effect
   const nav = document.querySelector('.nav');
   let lastScroll = 0;
+  let ticking = false;
 
-  window.addEventListener('scroll', () => {
+  function updateNav() {
     const currentScroll = window.pageYOffset;
     
-    if (currentScroll > 100) {
-      nav.style.background = 'rgba(13, 13, 16, 0.98)';
-      nav.style.borderBottom = '1px solid var(--border)';
+    if (currentScroll > 50) {
+      nav.classList.add('scrolled');
     } else {
-      nav.style.background = 'linear-gradient(to bottom, rgba(13, 13, 16, 0.95) 0%, transparent 100%)';
-      nav.style.borderBottom = 'none';
+      nav.classList.remove('scrolled');
     }
     
     lastScroll = currentScroll;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateNav);
+      ticking = true;
+    }
   }, { passive: true });
 
   // Smooth reveal for page content
@@ -66,18 +73,30 @@
 
   // Parallax effect for geometric shapes
   const geoBlocks = document.querySelectorAll('.geo-block');
+  let geoTicking = false;
   
-  window.addEventListener('scroll', () => {
+  function updateGeoParallax() {
     const scrolled = window.pageYOffset;
     
     geoBlocks.forEach((block, index) => {
-      const speed = 0.5 + (index * 0.1);
-      const yPos = scrolled * speed;
-      block.style.transform = `perspective(800px) rotateX(20deg) rotateY(-20deg) translateY(${-yPos * 0.1}px)`;
+      const speed = 0.3 + (index * 0.05);
+      const yPos = scrolled * speed * 0.05;
+      const baseTransform = block.classList.contains('geo-accent') 
+        ? 'perspective(1000px) rotateX(15deg) rotateY(-15deg)'
+        : 'perspective(1000px) rotateX(15deg) rotateY(-15deg)';
+      block.style.transform = `${baseTransform} translateY(${-yPos}px)`;
     });
+    geoTicking = false;
+  }
+  
+  window.addEventListener('scroll', () => {
+    if (!geoTicking) {
+      requestAnimationFrame(updateGeoParallax);
+      geoTicking = true;
+    }
   }, { passive: true });
 
-  // Magnetic button effect
+  // Magnetic button effect with enhanced glow
   const buttons = document.querySelectorAll('.btn-primary, .btn-outline');
   
   buttons.forEach(btn => {
@@ -86,13 +105,56 @@
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
       
-      btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+      btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) scale(1.02)`;
+      
+      // Add dynamic glow based on cursor position
+      if (btn.classList.contains('btn-primary')) {
+        btn.style.boxShadow = `
+          0 6px 30px rgba(59, 130, 246, ${0.4 + Math.abs(x) / rect.width * 0.3}),
+          0 0 60px rgba(59, 130, 246, ${0.2 + Math.abs(y) / rect.height * 0.2})
+        `;
+      }
     });
     
     btn.addEventListener('mouseleave', () => {
       btn.style.transform = '';
+      btn.style.boxShadow = '';
+    });
+    
+    // Add click ripple effect
+    btn.addEventListener('click', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      ripple.style.cssText = `
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: rgba(255,255,255,0.4);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 0.6s ease-out;
+        left: ${e.clientX - rect.left - 10}px;
+        top: ${e.clientY - rect.top - 10}px;
+        pointer-events: none;
+      `;
+      btn.style.position = 'relative';
+      btn.style.overflow = 'hidden';
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
     });
   });
+  
+  // Add ripple keyframes
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes ripple {
+      to {
+        transform: scale(10);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
 
   // Glow effect on cards
   const cards = document.querySelectorAll('.feature-card, .resource-card, .solution-block');
