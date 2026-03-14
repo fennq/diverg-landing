@@ -18,4 +18,4 @@ LIVE AT DIVERGSEC.COM — 2 STEPS
 
 Done. You only need to change DNS (step 2) if Pages is already on; otherwise do step 1 then step 2.
 
-SECURITY: See CLOUDFLARE-SECURITY.txt for response headers (HSTS, X-Frame-Options, etc.) to set in Cloudflare. After editing script.js or styles.css, recompute SRI hashes (e.g. openssl dgst -sha384 -binary script.js | openssl base64 -A) and update the integrity attribute in all HTML files.
+SECURITY: See CLOUDFLARE-SECURITY.txt for response headers (HSTS, X-Frame-Options, etc.) to set in Cloudflare. We do not use SRI (integrity=) on self-hosted styles.css or script.js, so edits to those files never break the site; SRI is omitted to avoid hash mismatch after any CSS/JS change.
