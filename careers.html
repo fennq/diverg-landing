@@ -44,118 +44,78 @@
     </div>
   </header>
 
-  <main class="page-content">
+  <main class="page-content demo-page">
     <section class="page-hero">
       <h1 class="page-title">Careers</h1>
       <p class="page-sub">Join us in building the future of security and blockchain investigation.</p>
     </section>
 
-    <section class="careers-section">
-      <div class="careers-inner">
-        <div class="jobs-list">
-          <article class="job-listing">
-            <div class="job-header">
-              <h3 class="job-title">Head of Marketing</h3>
-              <span class="job-type">Full-time</span>
-            </div>
-            <p class="job-summary">Lead our brand, demand generation, and go-to-market strategy. Own messaging, campaigns, and growth across web and social channels.</p>
-            <ul class="job-highlights">
-              <li>Develop and execute marketing strategy</li>
-              <li>Own brand positioning and messaging</li>
-              <li>Build and manage growth campaigns</li>
-              <li>Collaborate with product on launches</li>
-            </ul>
-            <a href="#apply" class="btn btn-outline" data-role="Head of Marketing">Apply now</a>
-          </article>
-
-          <article class="job-listing">
-            <div class="job-header">
-              <h3 class="job-title">Graphic Designer</h3>
-              <span class="job-type">Full-time</span>
-            </div>
-            <p class="job-summary">Create visual identity, marketing assets, and product UI. Work across brand, web, and product to keep Diverg sharp and consistent.</p>
-            <ul class="job-highlights">
-              <li>Design brand assets and marketing materials</li>
-              <li>Create product UI/UX components</li>
-              <li>Maintain visual consistency across platforms</li>
-              <li>Collaborate with engineering on implementation</li>
-            </ul>
-            <a href="#apply" class="btn btn-outline" data-role="Graphic Designer">Apply now</a>
-          </article>
-
-          <article class="job-listing">
-            <div class="job-header">
-              <h3 class="job-title">Software Engineers</h3>
-              <span class="job-type">Full-time</span>
-            </div>
-            <p class="job-summary">Build and scale our security platform: APIs, scanning pipelines, and tooling. Strong fit if you care about security and clean code.</p>
-            <ul class="job-highlights">
-              <li>Develop security scanning infrastructure</li>
-              <li>Build APIs and data pipelines</li>
-              <li>Work with modern web and blockchain tech</li>
-              <li>Focus on performance and reliability</li>
-            </ul>
-            <a href="#apply" class="btn btn-outline" data-role="Software Engineers">Apply now</a>
-          </article>
+    <section class="company-section">
+      <div class="company-block">
+        <h2>Open positions</h2>
+        <div class="values-grid">
+          <div class="value-item">
+            <h4>Head of Marketing</h4>
+            <p>Lead our brand, demand generation, and go-to-market strategy. Own messaging, campaigns, and growth across web and social channels.</p>
+            <a href="#apply" class="btn btn-outline" data-role="Head of Marketing" style="margin-top: 1rem;">Apply now</a>
+          </div>
+          <div class="value-item">
+            <h4>Graphic Designer</h4>
+            <p>Create visual identity, marketing assets, and product UI. Work across brand, web, and product to keep Diverg sharp and consistent.</p>
+            <a href="#apply" class="btn btn-outline" data-role="Graphic Designer" style="margin-top: 1rem;">Apply now</a>
+          </div>
+          <div class="value-item">
+            <h4>Software Engineers</h4>
+            <p>Build and scale our security platform: APIs, scanning pipelines, and tooling. Strong fit if you care about security and clean code.</p>
+            <a href="#apply" class="btn btn-outline" data-role="Software Engineers" style="margin-top: 1rem;">Apply now</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="apply-section" id="apply">
-      <div class="apply-inner">
-        <h2 class="apply-title">Apply</h2>
-        <p class="apply-sub">Tell us about yourself and why you want to join Diverg.</p>
+    <section class="company-section" id="apply">
+      <div class="company-block">
+        <h2>Apply</h2>
+        <p>Tell us about yourself and why you want to join Diverg.</p>
 
-        <div id="apply-success" class="apply-success" hidden>
-          <div class="apply-success-inner">
-            <h3>Application received</h3>
+        <div id="apply-success" class="demo-success" hidden>
+          <div class="demo-success-inner">
+            <h2>Application received</h2>
             <p>Thanks for applying. We'll review your submission and reach out to <span id="success-email"></span> if there's a fit.</p>
-            <a href="careers.html" class="btn btn-outline">Back to careers</a>
+            <a href="careers.html" class="btn btn-primary">Back to careers</a>
           </div>
         </div>
 
-        <form id="apply-form" class="apply-form" action="https://formsubmit.co/leofunman64@gmail.com" method="POST">
+        <form id="apply-form" class="demo-form" action="https://formsubmit.co/leofunman64@gmail.com" method="POST">
           <input type="hidden" name="_subject" id="form-subject" value="Diverg Job Application">
           <input type="hidden" name="_next" id="form-next" value="">
           <input type="hidden" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;">
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="role">Position</label>
-              <select id="role" name="role" required aria-required="true">
-                <option value="">Select a role</option>
-                <option value="Head of Marketing">Head of Marketing</option>
-                <option value="Graphic Designer">Graphic Designer</option>
-                <option value="Software Engineers">Software Engineers</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="name">Full name</label>
-              <input type="text" id="name" name="name" required maxlength="200" placeholder="Your name" autocomplete="name">
-            </div>
+          <div class="form-group">
+            <label for="role">Position</label>
+            <select id="role" name="role" required aria-required="true">
+              <option value="">Select a role</option>
+              <option value="Head of Marketing">Head of Marketing</option>
+              <option value="Graphic Designer">Graphic Designer</option>
+              <option value="Software Engineers">Software Engineers</option>
+            </select>
           </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required maxlength="254" placeholder="you@example.com" autocomplete="email">
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone number</label>
-              <input type="tel" id="phone" name="phone" maxlength="50" placeholder="+1 (555) 000-0000" autocomplete="tel">
-            </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required maxlength="200" placeholder="Your name" autocomplete="name">
           </div>
-
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required maxlength="254" placeholder="you@example.com" autocomplete="email">
+          </div>
           <div class="form-group">
             <label for="linkedin">LinkedIn / Portfolio (optional)</label>
             <input type="url" id="linkedin" name="linkedin" maxlength="500" placeholder="https://linkedin.com/in/... or https://...">
           </div>
-
           <div class="form-group">
             <label for="message">Cover message</label>
-            <textarea id="message" name="message" rows="5" required maxlength="2000" placeholder="Tell us about your experience and why you're interested in this role..."></textarea>
+            <textarea id="message" name="message" rows="4" required maxlength="2000" placeholder="Tell us about your experience and why you're interested in this role..."></textarea>
           </div>
-
           <button type="submit" class="btn btn-primary btn-submit">Submit application</button>
         </form>
       </div>
@@ -219,8 +179,6 @@
         if (successEmail) successEmail.textContent = safe;
         if (successEl) successEl.hidden = false;
         if (form) form.hidden = true;
-        var applySection = document.getElementById('apply');
-        if (applySection) applySection.scrollIntoView({ behavior: 'smooth' });
         return;
       }
 
