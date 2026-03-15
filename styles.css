@@ -736,6 +736,74 @@ body::before {
   margin-bottom: 0;
 }
 
+/* ---- Hiring ---- */
+.hiring-section {
+  padding: 5rem 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hiring-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hiring-title {
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.hiring-sub {
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+}
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  text-align: left;
+}
+
+.job-card {
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-lighter) 100%);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.job-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px var(--accent-glow);
+  transform: translateY(-3px);
+}
+
+.job-role {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.job-desc {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.job-apply {
+  align-self: flex-start;
+}
+
 .stats-section {
   display: flex;
   justify-content: center;
@@ -1141,6 +1209,7 @@ body::before {
 }
 
 .form-group input,
+.form-group select,
 .form-group textarea {
   width: 100%;
   padding: 0.875rem 1rem;
@@ -1153,12 +1222,22 @@ body::before {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b8b9a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.25rem;
+}
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: var(--text-subtle);
 }
 
 .form-group input:focus,
+.form-group select:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--accent);
