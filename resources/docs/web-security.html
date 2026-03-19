@@ -34,9 +34,17 @@
     .docs-content { max-width: 800px; }
     .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--docs-border); }
     .docs-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--docs-text); margin-bottom: 0.5rem; }
+    .docs-subtitle { font-size: 1.125rem; color: var(--docs-text-muted); margin-bottom: 0; }
     .docs-article p { font-size: 1rem; line-height: 1.8; color: var(--docs-text-muted); margin-bottom: 1.25rem; }
     .docs-article a { color: var(--docs-accent); text-decoration: none; }
     .docs-article a:hover { text-decoration: underline; }
+    .docs-article h2 { font-size: 1.75rem; font-weight: 600; color: var(--docs-text); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .docs-article h3 { font-size: 1.375rem; font-weight: 600; color: var(--docs-text); margin-top: 2rem; margin-bottom: 0.75rem; }
+    .docs-article h4 { font-size: 1.125rem; font-weight: 600; color: var(--docs-text); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .docs-article ul, .docs-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .docs-article li { margin-bottom: 0.5rem; line-height: 1.75; color: var(--docs-text-muted); }
+    .docs-article strong { color: var(--docs-text); font-weight: 600; }
+    .highlight-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-left: 3px solid var(--docs-accent); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
     .coming-soon-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     @media (max-width: 900px) { .docs-sidebar-left { display: none; } .docs-content-wrapper { margin-left: 0; } .theme-toggle { bottom: 1rem; right: 1rem; } }
   </style>
@@ -105,11 +113,39 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>Web Security</h1>
-            <p class="docs-subtitle">This page is coming soon.</p>
+            <p class="docs-subtitle">Reconnaissance, vulnerability scanning, headers, SSL/TLS, auth, and API testing.</p>
           </header>
-          <div class="coming-soon-box">
-            <p>We're working on this guide. In the meantime, read the <a href="whitepaper.html">Whitepaper</a> for a full overview of Diverg, or return to the <a href="index.html">documentation home</a>.</p>
-          </div>
+
+          <h2 id="overview">Overview</h2>
+          <p>Diverg's web security capabilities cover infrastructure discovery, vulnerability detection, and configuration analysis. They follow established methodologies (OWASP, PTES) and produce structured findings with severity and evidence. All of this runs in the same workflow as blockchain and OSINT, so you get one correlated view.</p>
+
+          <h2 id="recon">Reconnaissance</h2>
+          <p>Before diving into vulnerabilities, Diverg maps the target:</p>
+          <ul>
+            <li><strong>Port scanning:</strong> Open ports with service detection and banner grabbing; nmap is used where available for depth.</li>
+            <li><strong>Subdomain enumeration:</strong> DNS brute force and certificate transparency logs to find subdomains and related hosts.</li>
+            <li><strong>Technology fingerprinting:</strong> Wappalyzer-style detection of frameworks, servers, and versions so later tests can be tailored.</li>
+          </ul>
+
+          <h2 id="vulns">Vulnerability scanning</h2>
+          <p>Automated checks for common web issues, with proof-of-concept where possible:</p>
+          <ul>
+            <li>Cross-site scripting (XSS), SQL injection (SQLi), CSRF, directory traversal</li>
+            <li>Misconfigurations (debug endpoints, default credentials, exposed backups)</li>
+            <li>OWASP Top 10 and other common CWE patterns</li>
+          </ul>
+          <p>Findings include severity, affected URL/parameter, and evidence (e.g. request/response or snippet).</p>
+
+          <h2 id="headers-ssl">Security headers &amp; SSL/TLS</h2>
+          <p>Analysis of HTTP security headers (CSP, HSTS, X-Frame-Options, etc.) and TLS configuration (certificate validity, cipher suites, protocol versions). Surfaces missing or weak settings that could lead to downgrade or injection risks.</p>
+
+          <h2 id="auth-api">Authentication &amp; API testing</h2>
+          <p>When the target has login or APIs, Diverg can test:</p>
+          <ul>
+            <li>Session management, cookie flags (HttpOnly, Secure, SameSite), and user enumeration</li>
+            <li>API endpoint discovery, CORS behavior, auth bypass, and IDOR-style access issues</li>
+          </ul>
+          <p>See <a href="skills.html">Skills System</a> for how these fit into the overall skill set, and <a href="reporting.html">Reporting</a> for how findings are structured.</p>
         </article>
       </main>
     </div>

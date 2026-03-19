@@ -34,9 +34,17 @@
     .docs-content { max-width: 800px; }
     .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--docs-border); }
     .docs-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--docs-text); margin-bottom: 0.5rem; }
+    .docs-subtitle { font-size: 1.125rem; color: var(--docs-text-muted); margin-bottom: 0; }
     .docs-article p { font-size: 1rem; line-height: 1.8; color: var(--docs-text-muted); margin-bottom: 1.25rem; }
     .docs-article a { color: var(--docs-accent); text-decoration: none; }
     .docs-article a:hover { text-decoration: underline; }
+    .docs-article h2 { font-size: 1.75rem; font-weight: 600; color: var(--docs-text); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .docs-article h3 { font-size: 1.375rem; font-weight: 600; color: var(--docs-text); margin-top: 2rem; margin-bottom: 0.75rem; }
+    .docs-article h4 { font-size: 1.125rem; font-weight: 600; color: var(--docs-text); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .docs-article ul, .docs-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .docs-article li { margin-bottom: 0.5rem; line-height: 1.75; color: var(--docs-text-muted); }
+    .docs-article strong { color: var(--docs-text); font-weight: 600; }
+    .highlight-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-left: 3px solid var(--docs-accent); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
     .coming-soon-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     @media (max-width: 900px) { .docs-sidebar-left { display: none; } .docs-content-wrapper { margin-left: 0; } .theme-toggle { bottom: 1rem; right: 1rem; } }
   </style>
@@ -105,11 +113,35 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>Reporting</h1>
-            <p class="docs-subtitle">This page is coming soon.</p>
+            <p class="docs-subtitle">Structured findings, severity, evidence, and multiple output formats.</p>
           </header>
-          <div class="coming-soon-box">
-            <p>We're working on this guide. In the meantime, read the <a href="whitepaper.html">Whitepaper</a> for a full overview of Diverg, or return to the <a href="index.html">documentation home</a>.</p>
-          </div>
+
+          <h2 id="overview">Overview</h2>
+          <p>Every Diverg investigation produces a structured report. Findings are classified by severity, include evidence (e.g. request/response, links, screenshots), and clearly indicate which checks were run and which were skipped. Reports can be viewed in the dashboard, exported as JSON/CSV, or delivered via Telegram or webhooks for monitoring.</p>
+
+          <h2 id="structure">Report structure</h2>
+          <ul>
+            <li><strong>Executive summary:</strong> High-level overview for leadership—key risks and recommended actions</li>
+            <li><strong>Technical findings:</strong> Per-finding detail: title, severity, affected asset, description, evidence, and remediation notes</li>
+            <li><strong>Skipped checks:</strong> Explicit list of tests not run (e.g. missing API key) so you know what is not covered</li>
+            <li><strong>Raw data:</strong> Optional JSON/CSV export for further analysis or integration into other tools</li>
+          </ul>
+
+          <h2 id="severity">Severity</h2>
+          <p>Findings are rated (e.g. Critical, High, Medium, Low, Info) based on impact and exploitability. Criteria align with common frameworks (CVSS-style where applicable) so reports are defensible for compliance or stakeholder review.</p>
+
+          <h2 id="visualizations">Visualizations</h2>
+          <p>For blockchain investigations, reports can include interactive flow diagrams showing fund movement between wallets, exchanges, and mixers. These are generated when the relevant API keys (e.g. Bubblemaps) are configured. See <a href="blockchain.html">Blockchain</a>.</p>
+
+          <h2 id="delivery">Delivery</h2>
+          <p>Depending on your setup:</p>
+          <ul>
+            <li><strong>Dashboard:</strong> View and filter reports in the web UI</li>
+            <li><strong>Telegram:</strong> Receive instant alerts or summaries in a channel or DM</li>
+            <li><strong>API:</strong> Fetch report JSON programmatically for CI/CD or custom tooling</li>
+            <li><strong>Webhooks:</strong> Push summary or full report to a URL (e.g. Slack, internal systems)</li>
+          </ul>
+          <p>See <a href="integrations.html">Integrations</a> for configuration.</p>
         </article>
       </main>
     </div>

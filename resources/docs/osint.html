@@ -34,9 +34,17 @@
     .docs-content { max-width: 800px; }
     .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--docs-border); }
     .docs-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--docs-text); margin-bottom: 0.5rem; }
+    .docs-subtitle { font-size: 1.125rem; color: var(--docs-text-muted); margin-bottom: 0; }
     .docs-article p { font-size: 1rem; line-height: 1.8; color: var(--docs-text-muted); margin-bottom: 1.25rem; }
     .docs-article a { color: var(--docs-accent); text-decoration: none; }
     .docs-article a:hover { text-decoration: underline; }
+    .docs-article h2 { font-size: 1.75rem; font-weight: 600; color: var(--docs-text); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .docs-article h3 { font-size: 1.375rem; font-weight: 600; color: var(--docs-text); margin-top: 2rem; margin-bottom: 0.75rem; }
+    .docs-article h4 { font-size: 1.125rem; font-weight: 600; color: var(--docs-text); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .docs-article ul, .docs-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .docs-article li { margin-bottom: 0.5rem; line-height: 1.75; color: var(--docs-text-muted); }
+    .docs-article strong { color: var(--docs-text); font-weight: 600; }
+    .highlight-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-left: 3px solid var(--docs-accent); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
     .coming-soon-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     @media (max-width: 900px) { .docs-sidebar-left { display: none; } .docs-content-wrapper { margin-left: 0; } .theme-toggle { bottom: 1rem; right: 1rem; } }
   </style>
@@ -105,11 +113,26 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>OSINT</h1>
-            <p class="docs-subtitle">This page is coming soon.</p>
+            <p class="docs-subtitle">Public data collection and correlation: WHOIS, DNS, historical data, and more.</p>
           </header>
-          <div class="coming-soon-box">
-            <p>We're working on this guide. In the meantime, read the <a href="whitepaper.html">Whitepaper</a> for a full overview of Diverg, or return to the <a href="index.html">documentation home</a>.</p>
-          </div>
+
+          <h2 id="overview">Overview</h2>
+          <p>Diverg's OSINT (open-source intelligence) skills gather public data about domains, infrastructure, and historical activity. This is used both standalone and to enrich web and blockchain investigations—for example linking a wallet to a domain or past hosting.</p>
+
+          <h2 id="what-we-collect">What we collect</h2>
+          <ul>
+            <li><strong>WHOIS:</strong> Domain registration details and history, registrant and nameserver data</li>
+            <li><strong>DNS:</strong> Enumerating records (A, AAAA, MX, TXT, etc.) and subdomains to map infrastructure</li>
+            <li><strong>Email patterns:</strong> Discovery of contact and notification addresses tied to the target</li>
+            <li><strong>Historical data:</strong> Integration with Wayback Machine and similar archives to see how a site or domain changed over time</li>
+            <li><strong>Correlation:</strong> Cross-referencing across web, DNS, and (where applicable) blockchain to surface connections</li>
+          </ul>
+
+          <h2 id="sources">Data sources</h2>
+          <p>We use public APIs and, where configured, services like Shodan and Censys for broader internet visibility. Historical and archival data comes from partners such as Common Crawl and the Internet Archive. Results are presented in the same report as web and chain findings so you get one correlated view.</p>
+
+          <h2 id="use-cases">Use cases</h2>
+          <p>OSINT is useful for due diligence (who owns this domain?), incident response (what else is on this infrastructure?), and attribution (linking personas or wallets to real-world entities). Combined with <a href="web-security.html">Web Security</a> and <a href="blockchain.html">Blockchain</a>, it helps build a complete picture of a target.</p>
         </article>
       </main>
     </div>

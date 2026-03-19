@@ -34,9 +34,17 @@
     .docs-content { max-width: 800px; }
     .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--docs-border); }
     .docs-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--docs-text); margin-bottom: 0.5rem; }
+    .docs-subtitle { font-size: 1.125rem; color: var(--docs-text-muted); margin-bottom: 0; }
     .docs-article p { font-size: 1rem; line-height: 1.8; color: var(--docs-text-muted); margin-bottom: 1.25rem; }
     .docs-article a { color: var(--docs-accent); text-decoration: none; }
     .docs-article a:hover { text-decoration: underline; }
+    .docs-article h2 { font-size: 1.75rem; font-weight: 600; color: var(--docs-text); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .docs-article h3 { font-size: 1.375rem; font-weight: 600; color: var(--docs-text); margin-top: 2rem; margin-bottom: 0.75rem; }
+    .docs-article h4 { font-size: 1.125rem; font-weight: 600; color: var(--docs-text); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .docs-article ul, .docs-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .docs-article li { margin-bottom: 0.5rem; line-height: 1.75; color: var(--docs-text-muted); }
+    .docs-article strong { color: var(--docs-text); font-weight: 600; }
+    .highlight-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-left: 3px solid var(--docs-accent); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
     .coming-soon-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     @media (max-width: 900px) { .docs-sidebar-left { display: none; } .docs-content-wrapper { margin-left: 0; } .theme-toggle { bottom: 1rem; right: 1rem; } }
   </style>
@@ -105,11 +113,27 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>What is Diverg?</h1>
-            <p class="docs-subtitle">This page is coming soon.</p>
+            <p class="docs-subtitle">A unified platform for security and blockchain investigation—web, chain, and OSINT in one place.</p>
           </header>
-          <div class="coming-soon-box">
-            <p>We're working on this guide. In the meantime, read the <a href="whitepaper.html">Whitepaper</a> for a full overview of Diverg, or return to the <a href="index.html">documentation home</a>.</p>
+
+          <h2 id="overview">Overview</h2>
+          <p>Diverg is an autonomous security and blockchain investigation platform. Unlike toolchains that force analysts to juggle block explorers, web scanners, and OSINT tools separately, Diverg provides a single environment where one investigation can span web infrastructure, wallets and tokens, and open-source intelligence—with one report that ties everything together.</p>
+
+          <div class="highlight-box">
+            <h4>Key points</h4>
+            <ul>
+              <li><strong>Unified:</strong> Web security, blockchain analysis, and OSINT in one workflow</li>
+              <li><strong>Fact-only:</strong> We never show placeholder or synthetic data; reports clearly state what was verified and what was skipped</li>
+              <li><strong>Modular:</strong> Skill-based architecture that adapts to the target (e.g. DeFi vs. traditional web)</li>
+              <li><strong>Multi-modal:</strong> Use the dashboard, CLI, API, or (soon) browser extension</li>
+            </ul>
           </div>
+
+          <h2 id="problem">The problem we solve</h2>
+          <p>Security investigations today require switching between many disconnected tools: block explorers, labeling services, vulnerability scanners, DNS/WHOIS tools, and manual correlation in spreadsheets. That fragmentation wastes time and increases the risk of missing connections. At the same time, many tools present synthetic or example data when real data is unavailable, which undermines trust in findings.</p>
+
+          <h2 id="solution">The Diverg approach</h2>
+          <p>Diverg unifies reconnaissance, vulnerability assessment, and chain analysis into a single platform. You submit a target (URL, domain, or wallet); the system runs the right combination of skills and correlates results. Reports distinguish verified findings from skipped checks, so you always know what you can rely on. For the full technical and product story, see the <a href="whitepaper.html">Whitepaper</a>.</p>
         </article>
       </main>
     </div>

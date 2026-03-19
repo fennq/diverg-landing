@@ -34,9 +34,17 @@
     .docs-content { max-width: 800px; }
     .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--docs-border); }
     .docs-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--docs-text); margin-bottom: 0.5rem; }
+    .docs-subtitle { font-size: 1.125rem; color: var(--docs-text-muted); margin-bottom: 0; }
     .docs-article p { font-size: 1rem; line-height: 1.8; color: var(--docs-text-muted); margin-bottom: 1.25rem; }
     .docs-article a { color: var(--docs-accent); text-decoration: none; }
     .docs-article a:hover { text-decoration: underline; }
+    .docs-article h2 { font-size: 1.75rem; font-weight: 600; color: var(--docs-text); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .docs-article h3 { font-size: 1.375rem; font-weight: 600; color: var(--docs-text); margin-top: 2rem; margin-bottom: 0.75rem; }
+    .docs-article h4 { font-size: 1.125rem; font-weight: 600; color: var(--docs-text); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .docs-article ul, .docs-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .docs-article li { margin-bottom: 0.5rem; line-height: 1.75; color: var(--docs-text-muted); }
+    .docs-article strong { color: var(--docs-text); font-weight: 600; }
+    .highlight-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-left: 3px solid var(--docs-accent); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
     .coming-soon-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     @media (max-width: 900px) { .docs-sidebar-left { display: none; } .docs-content-wrapper { margin-left: 0; } .theme-toggle { bottom: 1rem; right: 1rem; } }
   </style>
@@ -105,11 +113,35 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>Skills System</h1>
-            <p class="docs-subtitle">This page is coming soon.</p>
+            <p class="docs-subtitle">Modular capabilities that combine to form full investigations.</p>
           </header>
-          <div class="coming-soon-box">
-            <p>We're working on this guide. In the meantime, read the <a href="whitepaper.html">Whitepaper</a> for a full overview of Diverg, or return to the <a href="index.html">documentation home</a>.</p>
-          </div>
+
+          <h2 id="overview">Overview</h2>
+          <p>Each Diverg <strong>skill</strong> is a discrete unit of work: recon, vulnerability checks, header/SSL analysis, auth testing, API testing, blockchain analysis, or OSINT. The system selects and runs the right skills for the target type and correlates results into a single report. Below is the set of skills available today.</p>
+
+          <h2 id="recon">Reconnaissance</h2>
+          <p>Port scanning (with service detection and nmap fallback), subdomain enumeration (DNS brute force and certificate transparency), and technology fingerprinting (e.g. Wappalyzer). Builds a map of the target's infrastructure before deeper testing.</p>
+
+          <h2 id="web-vulns">Web vulnerabilities</h2>
+          <p>Detection for XSS, SQL injection, CSRF, directory traversal, and common misconfigurations. Includes proof-of-concept validation where applicable. Aligns with OWASP Top 10 and beyond.</p>
+
+          <h2 id="headers-ssl">Headers &amp; SSL/TLS</h2>
+          <p>Security header audit (CSP, HSTS, CORS, X-Frame-Options, etc.), TLS configuration analysis, and certificate validation. Surfaces configuration issues that could weaken security.</p>
+
+          <h2 id="auth">Authentication testing</h2>
+          <p>Login form analysis, session management checks, cookie flags (HttpOnly, Secure, SameSite), and user-enumeration detection. Helps assess identity and access controls.</p>
+
+          <h2 id="api">API security</h2>
+          <p>Endpoint discovery, CORS checks, auth-bypass and IDOR-style testing, and parameter fuzzing. Targets APIs and backend services exposed by the target.</p>
+
+          <h2 id="blockchain">Blockchain analysis</h2>
+          <p>Wallet profiling, token and transfer analysis, flow mapping, and counterparty identification. Integrates with Solscan, Arkham, Etherscan, and Bubblemaps when API keys are set. Supports Ethereum and Solana (and more over time). See <a href="blockchain.html">Blockchain</a> for details.</p>
+
+          <h2 id="osint">OSINT collection</h2>
+          <p>WHOIS and domain history, DNS enumeration, email pattern discovery, and historical data (e.g. Wayback Machine). Used to correlate targets with infrastructure and past activity. See <a href="osint.html">OSINT</a>.</p>
+
+          <h2 id="combining">How skills combine</h2>
+          <p>For a URL or domain, Diverg typically runs recon first, then web vulns, headers/SSL, and—if applicable—auth and API skills. For a wallet or token, it runs blockchain (and optionally OSINT). For targets with both web and chain presence, both sets can run and results are merged. The exact sequence and scope are adapted to the target type.</p>
         </article>
       </main>
     </div>

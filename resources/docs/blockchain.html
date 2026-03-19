@@ -34,9 +34,17 @@
     .docs-content { max-width: 800px; }
     .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--docs-border); }
     .docs-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--docs-text); margin-bottom: 0.5rem; }
+    .docs-subtitle { font-size: 1.125rem; color: var(--docs-text-muted); margin-bottom: 0; }
     .docs-article p { font-size: 1rem; line-height: 1.8; color: var(--docs-text-muted); margin-bottom: 1.25rem; }
     .docs-article a { color: var(--docs-accent); text-decoration: none; }
     .docs-article a:hover { text-decoration: underline; }
+    .docs-article h2 { font-size: 1.75rem; font-weight: 600; color: var(--docs-text); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .docs-article h3 { font-size: 1.375rem; font-weight: 600; color: var(--docs-text); margin-top: 2rem; margin-bottom: 0.75rem; }
+    .docs-article h4 { font-size: 1.125rem; font-weight: 600; color: var(--docs-text); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .docs-article ul, .docs-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .docs-article li { margin-bottom: 0.5rem; line-height: 1.75; color: var(--docs-text-muted); }
+    .docs-article strong { color: var(--docs-text); font-weight: 600; }
+    .highlight-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-left: 3px solid var(--docs-accent); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
     .coming-soon-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     @media (max-width: 900px) { .docs-sidebar-left { display: none; } .docs-content-wrapper { margin-left: 0; } .theme-toggle { bottom: 1rem; right: 1rem; } }
   </style>
@@ -105,11 +113,36 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>Blockchain</h1>
-            <p class="docs-subtitle">This page is coming soon.</p>
+            <p class="docs-subtitle">Wallet and token analysis, flow mapping, and entity labeling across chains.</p>
           </header>
-          <div class="coming-soon-box">
-            <p>We're working on this guide. In the meantime, read the <a href="whitepaper.html">Whitepaper</a> for a full overview of Diverg, or return to the <a href="index.html">documentation home</a>.</p>
-          </div>
+
+          <h2 id="overview">Overview</h2>
+          <p>Diverg's blockchain capabilities let you profile wallets, trace tokens and funds, and map counterparties. We support Ethereum and Solana today, with more chains and Layer 2s on the roadmap. When you configure API keys for Solscan Pro, Arkham, Etherscan, and Bubblemaps, you get richer labels and flow visualizations; without them, we still run analysis and clearly mark what was skipped. See <a href="fact-only.html">Fact-Only Reporting</a>.</p>
+
+          <h2 id="wallet-token">Wallet &amp; token analysis</h2>
+          <p>For any address or token contract, Diverg can:</p>
+          <ul>
+            <li>Profile the wallet: balance history, top tokens, and transaction patterns</li>
+            <li>Analyze token distribution, holder clustering, and large movements</li>
+            <li>Normalize transfers across tokens and chains for consistent reporting</li>
+          </ul>
+          <p>With Arkham (and similar) integration, addresses can be labeled (e.g. exchange, known scam) so reports are easier to interpret.</p>
+
+          <h2 id="flows">Flow visualization</h2>
+          <p>Fund flows are mapped into diagrams showing movement between wallets, mixers, CEXs, and bridges. Bubblemaps-style integration helps identify clustering and suspicious patterns. Outputs are suitable for incident response, due diligence, or evidence packaging.</p>
+
+          <h2 id="integrations">Data sources</h2>
+          <p>Blockchain data is pulled from:</p>
+          <ul>
+            <li><strong>Solscan Pro</strong> — Solana-focused data and labels</li>
+            <li><strong>Arkham</strong> — Entity labeling and intelligence</li>
+            <li><strong>Etherscan</strong> — Ethereum data and verification</li>
+            <li><strong>Bubblemaps</strong> — Holder and flow visualization</li>
+          </ul>
+          <p>Public RPC and block explorer data is used when API keys are not set; advanced features (e.g. full flow diagrams, labels) are then marked as skipped in the report.</p>
+
+          <h2 id="use-cases">Use cases</h2>
+          <p>Typical applications: token launch and deployer due diligence, incident response (tracking attacker wallets and exchange deposits), rug-pull and centralization analysis, and compliance or legal evidence. See the <a href="whitepaper.html">Whitepaper</a> for more.</p>
         </article>
       </main>
     </div>

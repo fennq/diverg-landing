@@ -34,9 +34,17 @@
     .docs-content { max-width: 800px; }
     .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--docs-border); }
     .docs-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--docs-text); margin-bottom: 0.5rem; }
+    .docs-subtitle { font-size: 1.125rem; color: var(--docs-text-muted); margin-bottom: 0; }
     .docs-article p { font-size: 1rem; line-height: 1.8; color: var(--docs-text-muted); margin-bottom: 1.25rem; }
     .docs-article a { color: var(--docs-accent); text-decoration: none; }
     .docs-article a:hover { text-decoration: underline; }
+    .docs-article h2 { font-size: 1.75rem; font-weight: 600; color: var(--docs-text); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .docs-article h3 { font-size: 1.375rem; font-weight: 600; color: var(--docs-text); margin-top: 2rem; margin-bottom: 0.75rem; }
+    .docs-article h4 { font-size: 1.125rem; font-weight: 600; color: var(--docs-text); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .docs-article ul, .docs-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .docs-article li { margin-bottom: 0.5rem; line-height: 1.75; color: var(--docs-text-muted); }
+    .docs-article strong { color: var(--docs-text); font-weight: 600; }
+    .highlight-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-left: 3px solid var(--docs-accent); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
     .coming-soon-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     @media (max-width: 900px) { .docs-sidebar-left { display: none; } .docs-content-wrapper { margin-left: 0; } .theme-toggle { bottom: 1rem; right: 1rem; } }
   </style>
@@ -105,11 +113,41 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>Installation</h1>
-            <p class="docs-subtitle">This page is coming soon.</p>
+            <p class="docs-subtitle">How to get Diverg running: cloud access, CLI, API, and enterprise deployment.</p>
           </header>
-          <div class="coming-soon-box">
-            <p>We're working on this guide. In the meantime, read the <a href="whitepaper.html">Whitepaper</a> for a full overview of Diverg, or return to the <a href="index.html">documentation home</a>.</p>
-          </div>
+
+          <h2 id="overview">Overview</h2>
+          <p>Diverg can be used in several ways depending on your role and requirements: managed cloud (SaaS), local CLI, API for automation, browser extension (coming soon), or self-hosted enterprise. Access is provided after you <a href="../../request-demo.html">request a demo</a> or contact us for enterprise.</p>
+
+          <h2 id="cloud-dashboard">Cloud &amp; dashboard</h2>
+          <p>When you sign up for a demo or cloud account, you get access to the web dashboard. From there you can:</p>
+          <ul>
+            <li>Run investigations on URLs, domains, or wallet addresses</li>
+            <li>View structured reports with findings, severity, and evidence</li>
+            <li>Configure API keys (Solscan, Arkham, Etherscan, etc.) for full blockchain and OSINT coverage</li>
+            <li>Schedule recurring scans and set up alerts (e.g. Telegram)</li>
+          </ul>
+          <p>No local installation required—use the dashboard from any browser.</p>
+
+          <h2 id="cli">CLI</h2>
+          <p>The Diverg CLI runs investigations locally. It is available to customers with API access. Typical use cases:</p>
+          <ul>
+            <li>Developers and researchers who prefer the command line</li>
+            <li>CI/CD or scripted pipelines (e.g. run a scan on every deploy)</li>
+            <li>Air-gapped or restricted environments where cloud is not allowed</li>
+          </ul>
+          <p>After access is granted, you receive installation instructions and an API key. The CLI authenticates with Diverg's API and streams results to your terminal or to files (JSON/HTML).</p>
+
+          <h2 id="api-keys">API keys &amp; integrations</h2>
+          <p>To get the most from Diverg, you can configure third-party API keys. These are optional but enable richer data:</p>
+          <ul>
+            <li><strong>Blockchain:</strong> Solscan Pro, Arkham, Etherscan — for wallet labels, token metadata, and flow data</li>
+            <li><strong>Web/OSINT:</strong> Wappalyzer, Shodan, Censys — for technology detection and infrastructure lookup</li>
+          </ul>
+          <p>Without these keys, Diverg still runs all skills but will mark certain checks as "skipped" in the report and will not substitute fake data. See <a href="integrations.html">Integrations</a> and <a href="fact-only.html">Fact-Only Reporting</a> for details.</p>
+
+          <h2 id="enterprise">Enterprise &amp; on-premise</h2>
+          <p>For self-hosted deployment, custom integrations, or strict compliance requirements, we offer enterprise installations. Contact <a href="mailto:hello@diverg.sec">hello@diverg.sec</a> to discuss architecture, SSO, RBAC, and threat-intel feeds.</p>
         </article>
       </main>
     </div>

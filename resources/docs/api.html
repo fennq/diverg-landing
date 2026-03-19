@@ -34,9 +34,18 @@
     .docs-content { max-width: 800px; }
     .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--docs-border); }
     .docs-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--docs-text); margin-bottom: 0.5rem; }
+    .docs-subtitle { font-size: 1.125rem; color: var(--docs-text-muted); margin-bottom: 0; }
     .docs-article p { font-size: 1rem; line-height: 1.8; color: var(--docs-text-muted); margin-bottom: 1.25rem; }
     .docs-article a { color: var(--docs-accent); text-decoration: none; }
     .docs-article a:hover { text-decoration: underline; }
+    .docs-article h2 { font-size: 1.75rem; font-weight: 600; color: var(--docs-text); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .docs-article h3 { font-size: 1.375rem; font-weight: 600; color: var(--docs-text); margin-top: 2rem; margin-bottom: 0.75rem; }
+    .docs-article h4 { font-size: 1.125rem; font-weight: 600; color: var(--docs-text); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .docs-article ul, .docs-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .docs-article li { margin-bottom: 0.5rem; line-height: 1.75; color: var(--docs-text-muted); }
+    .docs-article strong { color: var(--docs-text); font-weight: 600; }
+    .docs-article code { font-family: monospace; font-size: 0.9em; background: var(--docs-card-bg); border: 1px solid var(--docs-border); padding: 0.2em 0.5em; border-radius: 4px; }
+    .highlight-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-left: 3px solid var(--docs-accent); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
     .coming-soon-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     @media (max-width: 900px) { .docs-sidebar-left { display: none; } .docs-content-wrapper { margin-left: 0; } .theme-toggle { bottom: 1rem; right: 1rem; } }
   </style>
@@ -105,11 +114,31 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>API Reference</h1>
-            <p class="docs-subtitle">This page is coming soon.</p>
+            <p class="docs-subtitle">Programmatic access to run investigations and retrieve reports.</p>
           </header>
-          <div class="coming-soon-box">
-            <p>We're working on this guide. In the meantime, read the <a href="whitepaper.html">Whitepaper</a> for a full overview of Diverg, or return to the <a href="index.html">documentation home</a>.</p>
-          </div>
+
+          <h2 id="overview">Overview</h2>
+          <p>The Diverg API lets you trigger investigations and fetch results from your own scripts, CI/CD pipelines, or applications. Access is provided when you sign up for a demo or cloud account. This page summarizes authentication and main endpoints; a full OpenAPI/Swagger spec and SDKs are available in the dashboard once you have access.</p>
+
+          <h2 id="auth">Authentication</h2>
+          <p>API requests are authenticated with an API key that you obtain from the Diverg dashboard (or from your account manager for enterprise). Include the key in the request header, for example:</p>
+          <p><code>Authorization: Bearer YOUR_API_KEY</code></p>
+          <p>Keys can be scoped to specific operations or environments. Keep keys secret and rotate them if compromised.</p>
+
+          <h2 id="endpoints">Main endpoints</h2>
+          <ul>
+            <li><strong>Run investigation:</strong> POST a target (URL, domain, or wallet address) and optional options (e.g. skill subset, depth). Returns a job ID.</li>
+            <li><strong>Get status:</strong> GET job status by ID to see if the investigation is still running or completed.</li>
+            <li><strong>Get report:</strong> GET the full report (JSON) for a completed job. Includes findings, severity, evidence, and skipped checks.</li>
+            <li><strong>List jobs:</strong> GET a paginated list of your investigations for filtering and audit.</li>
+          </ul>
+          <p>Base URL and full request/response schemas are in the dashboard under API docs. Rate limits and quotas depend on your plan.</p>
+
+          <h2 id="webhooks">Webhooks</h2>
+          <p>You can register a webhook URL to receive notifications when an investigation completes (or fails). The payload includes the job ID and a summary so your system can fetch the full report or trigger downstream actions. Configure webhooks in the dashboard or via the API.</p>
+
+          <h2 id="access">Getting access</h2>
+          <p>To obtain API keys and the full documentation, <a href="../../request-demo.html">request a demo</a> or contact <a href="mailto:hello@diverg.sec">hello@diverg.sec</a> for enterprise.</p>
         </article>
       </main>
     </div>

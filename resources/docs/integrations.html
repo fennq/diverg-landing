@@ -34,9 +34,17 @@
     .docs-content { max-width: 800px; }
     .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--docs-border); }
     .docs-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--docs-text); margin-bottom: 0.5rem; }
+    .docs-subtitle { font-size: 1.125rem; color: var(--docs-text-muted); margin-bottom: 0; }
     .docs-article p { font-size: 1rem; line-height: 1.8; color: var(--docs-text-muted); margin-bottom: 1.25rem; }
     .docs-article a { color: var(--docs-accent); text-decoration: none; }
     .docs-article a:hover { text-decoration: underline; }
+    .docs-article h2 { font-size: 1.75rem; font-weight: 600; color: var(--docs-text); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .docs-article h3 { font-size: 1.375rem; font-weight: 600; color: var(--docs-text); margin-top: 2rem; margin-bottom: 0.75rem; }
+    .docs-article h4 { font-size: 1.125rem; font-weight: 600; color: var(--docs-text); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .docs-article ul, .docs-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .docs-article li { margin-bottom: 0.5rem; line-height: 1.75; color: var(--docs-text-muted); }
+    .docs-article strong { color: var(--docs-text); font-weight: 600; }
+    .highlight-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-left: 3px solid var(--docs-accent); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
     .coming-soon-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     @media (max-width: 900px) { .docs-sidebar-left { display: none; } .docs-content-wrapper { margin-left: 0; } .theme-toggle { bottom: 1rem; right: 1rem; } }
   </style>
@@ -105,11 +113,43 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>Integrations</h1>
-            <p class="docs-subtitle">This page is coming soon.</p>
+            <p class="docs-subtitle">Telegram, CLI, webhooks, and third-party data sources.</p>
           </header>
-          <div class="coming-soon-box">
-            <p>We're working on this guide. In the meantime, read the <a href="whitepaper.html">Whitepaper</a> for a full overview of Diverg, or return to the <a href="index.html">documentation home</a>.</p>
-          </div>
+
+          <h2 id="overview">Overview</h2>
+          <p>Diverg integrates with messaging platforms, automation tools, and external data providers. This page covers how to connect them and what each integration does.</p>
+
+          <h2 id="telegram">Telegram</h2>
+          <p>Receive investigation results and alerts directly in Telegram. You can:</p>
+          <ul>
+            <li>Get a summary when an investigation completes (with link to full report)</li>
+            <li>Run quick checks from a bot (e.g. submit a URL or wallet and get a condensed result)</li>
+            <li>Use Telegram for monitoring alerts (e.g. wallet activity, new vulnerabilities)</li>
+          </ul>
+          <p>Setup is done in the Diverg dashboard: connect your bot token and choose the channel or chat where you want delivery.</p>
+
+          <h2 id="cli">CLI</h2>
+          <p>The Diverg CLI runs on your machine and talks to the Diverg API. Use it for:</p>
+          <ul>
+            <li>One-off investigations from the terminal</li>
+            <li>Scripts and automation (e.g. run a scan on every deploy)</li>
+            <li>CI/CD pipelines (GitHub Actions, GitLab CI—plugins coming soon)</li>
+          </ul>
+          <p>You authenticate with your API key; installation and usage instructions are provided when you get access. See <a href="installation.html">Installation</a>.</p>
+
+          <h2 id="webhooks">Webhooks</h2>
+          <p>Register a URL to receive HTTP callbacks when jobs complete or when monitoring rules fire. Useful for pushing results into Slack, internal dashboards, or ticketing systems. Payloads include job ID and summary; you can then fetch the full report via API if needed.</p>
+
+          <h2 id="third-party">Third-party API keys</h2>
+          <p>To get the most from Diverg, you can configure API keys for:</p>
+          <ul>
+            <li><strong>Blockchain:</strong> Solscan Pro, Arkham, Etherscan, Bubblemaps — for labels, flows, and richer chain data</li>
+            <li><strong>Web/OSINT:</strong> Wappalyzer, Shodan, Censys — for tech detection and infrastructure lookup</li>
+          </ul>
+          <p>Keys are set in the dashboard (or via config in enterprise deployments). Without them, Diverg still runs but marks certain checks as skipped. See <a href="fact-only.html">Fact-Only Reporting</a> and <a href="installation.html">Installation</a>.</p>
+
+          <h2 id="enterprise">Enterprise</h2>
+          <p>On-premise and enterprise customers can add custom integrations: SSO (SAML/OIDC), threat-intel feeds, and internal tools. Contact <a href="mailto:hello@diverg.sec">hello@diverg.sec</a> to discuss.</p>
         </article>
       </main>
     </div>

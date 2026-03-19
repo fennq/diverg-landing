@@ -34,9 +34,19 @@
     .docs-content { max-width: 800px; }
     .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--docs-border); }
     .docs-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--docs-text); margin-bottom: 0.5rem; }
+    .docs-subtitle { font-size: 1.125rem; color: var(--docs-text-muted); margin-bottom: 0; }
     .docs-article p { font-size: 1rem; line-height: 1.8; color: var(--docs-text-muted); margin-bottom: 1.25rem; }
     .docs-article a { color: var(--docs-accent); text-decoration: none; }
     .docs-article a:hover { text-decoration: underline; }
+    .docs-article h2 { font-size: 1.75rem; font-weight: 600; color: var(--docs-text); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .docs-article h3 { font-size: 1.375rem; font-weight: 600; color: var(--docs-text); margin-top: 2rem; margin-bottom: 0.75rem; }
+    .docs-article h4 { font-size: 1.125rem; font-weight: 600; color: var(--docs-text); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .docs-article ul, .docs-article ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .docs-article li { margin-bottom: 0.5rem; line-height: 1.75; color: var(--docs-text-muted); }
+    .docs-article strong { color: var(--docs-text); font-weight: 600; }
+    .highlight-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-left: 3px solid var(--docs-accent); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+    .changelog-entry { border-left: 3px solid var(--docs-accent); padding-left: 1.25rem; margin-bottom: 2rem; }
+    .changelog-date { font-size: 0.875rem; color: var(--docs-text-muted); margin-bottom: 0.5rem; }
     .coming-soon-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
     @media (max-width: 900px) { .docs-sidebar-left { display: none; } .docs-content-wrapper { margin-left: 0; } .theme-toggle { bottom: 1rem; right: 1rem; } }
   </style>
@@ -105,11 +115,31 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>Changelog</h1>
-            <p class="docs-subtitle">This page is coming soon.</p>
+            <p class="docs-subtitle">Version history and notable updates to the platform and documentation.</p>
           </header>
-          <div class="coming-soon-box">
-            <p>We're working on this guide. In the meantime, read the <a href="whitepaper.html">Whitepaper</a> for a full overview of Diverg, or return to the <a href="index.html">documentation home</a>.</p>
+
+          <h2 id="docs-2026-03">Documentation (March 2026)</h2>
+          <div class="changelog-entry">
+            <p class="changelog-date">Documentation site launch</p>
+            <p>Initial release of the Diverg documentation site with the following sections:</p>
+            <ul>
+              <li><strong>Getting Started:</strong> Quick Start, Installation — how to get access and run your first investigation</li>
+              <li><strong>Core Concepts:</strong> What is Diverg?, Architecture, Skills System, Fact-Only Reporting — platform overview and design</li>
+              <li><strong>Features:</strong> Web Security, Blockchain, OSINT, Reporting — detailed capability docs</li>
+              <li><strong>Reference:</strong> Whitepaper (full technical document), API Reference, Integrations, Changelog</li>
+            </ul>
+            <p>Dark/light theme toggle, responsive layout, and consistent styling across all pages. Future product and doc updates will be listed here with dates and summaries.</p>
           </div>
+
+          <h2 id="future">Upcoming (next 3 months)</h2>
+          <p>Planned updates in the next 3 months (see also <a href="whitepaper.html">Whitepaper</a> roadmap section):</p>
+          <ul>
+            <li>Browser extension public release</li>
+            <li>Expanded blockchain support (e.g. Bitcoin, Layer 2s)</li>
+            <li>Full API reference (OpenAPI/Swagger) and SDKs</li>
+            <li>CI/CD plugins (GitHub Actions, GitLab CI)</li>
+          </ul>
+          <p>For the latest product news, follow <a href="https://x.com/DivergSec" target="_blank" rel="noopener noreferrer">@DivergSec on X</a> or contact <a href="mailto:hello@diverg.sec">hello@diverg.sec</a>.</p>
         </article>
       </main>
     </div>
