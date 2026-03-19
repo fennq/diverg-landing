@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Reference | Diverg Docs</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon.png?v=2">
+  <link rel="stylesheet" href="../../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --docs-bg: #0a0a0f; --docs-text: #f0f0f5; --docs-text-muted: #8b8b9a; --docs-border: #2a2a35; --docs-accent: #60a5fa; --docs-sidebar-bg: #121218; --docs-card-bg: #16161b; --docs-hover: #1e1e25; --docs-nav-active: rgba(96, 165, 250, 0.15); }
+    [data-theme="light"] { --docs-bg: #fafafa; --docs-text: #1a1a1a; --docs-text-muted: #6b7280; --docs-border: #e5e7eb; --docs-accent: #3b82f6; --docs-sidebar-bg: #fff; --docs-card-bg: #fff; --docs-hover: #f3f4f6; --docs-nav-active: rgba(59, 130, 246, 0.1); }
+    .docs-page { background: var(--docs-bg); color: var(--docs-text); }
+    .docs-page .mesh-overlay, .docs-page .geo { display: none; }
+    .theme-toggle { position: fixed; bottom: 2rem; right: 2rem; z-index: 1000; background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .theme-toggle:hover { border-color: var(--docs-accent); }
+    .theme-toggle svg { width: 24px; height: 24px; color: var(--docs-text); }
+    [data-theme="light"] .theme-toggle .moon { display: block; } [data-theme="light"] .theme-toggle .sun { display: none; }
+    :root:not([data-theme="light"]) .theme-toggle .moon { display: none; } :root:not([data-theme="light"]) .theme-toggle .sun { display: block; }
+    .docs-page .nav { background: rgba(18, 18, 24, 0.95); border-bottom: 1px solid var(--docs-border); }
+    [data-theme="light"] .docs-page .nav { background: rgba(255,255,255,0.95); }
+    .docs-page .nav-links a { color: var(--docs-text-muted); }
+    .docs-page .nav-links a:hover, .docs-page .nav-links a.active { color: var(--docs-accent); }
+    .docs-page .logo-img { filter: brightness(1.1); } [data-theme="light"] .docs-page .logo-img { filter: none; }
+    .docs-container { display: flex; max-width: 1600px; margin: 0 auto; padding-top: 64px; min-height: 100vh; }
+    .docs-sidebar-left { width: 280px; background: var(--docs-sidebar-bg); border-right: 1px solid var(--docs-border); padding: 1.5rem 0; position: fixed; top: 64px; left: 0; bottom: 0; overflow-y: auto; }
+    .docs-sidebar-title { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--docs-text-muted); margin-bottom: 0.75rem; padding: 0 1.25rem; }
+    .docs-nav { list-style: none; padding: 0; }
+    .docs-nav-item { margin-bottom: 0.125rem; }
+    .docs-nav-item a { display: block; padding: 0.5rem 0.75rem; font-size: 0.875rem; color: var(--docs-text-muted); text-decoration: none; border-radius: 6px; }
+    .docs-nav-item a:hover { background: var(--docs-hover); color: var(--docs-text); }
+    .docs-nav-item a.active { background: var(--docs-nav-active); color: var(--docs-accent); font-weight: 500; }
+    .docs-content-wrapper { flex: 1; margin-left: 280px; padding: 2rem 3rem; }
+    .docs-content { max-width: 800px; }
+    .docs-header { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--docs-border); }
+    .docs-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--docs-text); margin-bottom: 0.5rem; }
+    .docs-article p { font-size: 1rem; line-height: 1.8; color: var(--docs-text-muted); margin-bottom: 1.25rem; }
+    .docs-article a { color: var(--docs-accent); text-decoration: none; }
+    .docs-article a:hover { text-decoration: underline; }
+    .coming-soon-box { background: var(--docs-card-bg); border: 1px solid var(--docs-border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
+    @media (max-width: 900px) { .docs-sidebar-left { display: none; } .docs-content-wrapper { margin-left: 0; } .theme-toggle { bottom: 1rem; right: 1rem; } }
+  </style>
+</head>
+<body class="docs-page">
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo"><img src="../../assets/logo.png" alt="Diverg" class="logo-img" width="32" height="32"></a>
+      <nav class="nav-links">
+        <a href="../../product/">Product</a>
+        <a href="../../solutions/">Solutions</a>
+        <a href="../../company/">Company</a>
+        <a href="../../careers/">Careers</a>
+        <a href="../">Resources</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="../../request-demo.html" class="nav-link">Request a Demo</a>
+        <a href="../../request-demo.html" class="btn btn-primary">Request a Demo</a>
+      </div>
+    </div>
+  </header>
+  <div class="docs-container">
+    <aside class="docs-sidebar-left">
+      <div class="docs-nav-section">
+        <p class="docs-sidebar-title">Getting Started</p>
+        <ul class="docs-nav">
+          <li class="docs-nav-item"><a href="index.html">Welcome</a></li>
+          <li class="docs-nav-item"><a href="quickstart.html">Quick Start</a></li>
+          <li class="docs-nav-item"><a href="installation.html">Installation</a></li>
+        </ul>
+      </div>
+      <div class="docs-nav-section">
+        <p class="docs-sidebar-title">Core Concepts</p>
+        <ul class="docs-nav">
+          <li class="docs-nav-item"><a href="what-is-diverg.html">What is Diverg?</a></li>
+          <li class="docs-nav-item"><a href="architecture.html">Architecture</a></li>
+          <li class="docs-nav-item"><a href="skills.html">Skills System</a></li>
+          <li class="docs-nav-item"><a href="fact-only.html">Fact-Only Reporting</a></li>
+        </ul>
+      </div>
+      <div class="docs-nav-section">
+        <p class="docs-sidebar-title">Features</p>
+        <ul class="docs-nav">
+          <li class="docs-nav-item"><a href="web-security.html">Web Security</a></li>
+          <li class="docs-nav-item"><a href="blockchain.html">Blockchain</a></li>
+          <li class="docs-nav-item"><a href="osint.html">OSINT</a></li>
+          <li class="docs-nav-item"><a href="reporting.html">Reporting</a></li>
+        </ul>
+      </div>
+      <div class="docs-nav-section">
+        <p class="docs-sidebar-title">Reference</p>
+        <ul class="docs-nav">
+          <li class="docs-nav-item"><a href="whitepaper.html">Whitepaper</a></li>
+          <li class="docs-nav-item"><a href="api.html" class="active">API Reference</a></li>
+          <li class="docs-nav-item"><a href="integrations.html">Integrations</a></li>
+          <li class="docs-nav-item"><a href="changelog.html">Changelog</a></li>
+        </ul>
+      </div>
+    </aside>
+    <div class="docs-content-wrapper">
+      <main class="docs-content">
+        <article class="docs-article">
+          <header class="docs-header">
+            <h1>API Reference</h1>
+            <p class="docs-subtitle">This page is coming soon.</p>
+          </header>
+          <div class="coming-soon-box">
+            <p>We're working on this guide. In the meantime, read the <a href="whitepaper.html">Whitepaper</a> for a full overview of Diverg, or return to the <a href="index.html">documentation home</a>.</p>
+          </div>
+        </article>
+      </main>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var themeToggle = document.getElementById('themeToggle');
+      var html = document.documentElement;
+      var saved = localStorage.getItem('diverg-theme');
+      if (saved === 'light') html.setAttribute('data-theme', 'light');
+      themeToggle.addEventListener('click', function() {
+        if (html.getAttribute('data-theme') === 'light') { html.removeAttribute('data-theme'); localStorage.removeItem('diverg-theme'); }
+        else { html.setAttribute('data-theme', 'light'); localStorage.setItem('diverg-theme', 'light'); }
+      });
+    })();
+  </script>
+</body>
+</html>
