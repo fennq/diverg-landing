@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whitepaper | Diverg Documentation</title>
+  <link rel="canonical" href="https://divergsec.com/resources/docs/whitepaper.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://divergsec.com/resources/docs/whitepaper.html">
+  <meta property="og:title" content="Diverg Whitepaper | Security &amp; Blockchain Investigation">
+  <meta property="og:description" content="What Diverg is: mission, technology, and principles for a unified security and blockchain investigation platform.">
+  <meta property="og:image" content="https://divergsec.com/assets/og-image.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon.png?v=2">
+  <link rel="shortcut icon" href="../../favicon.png?v=2" type="image/png">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:;">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <div class="mesh-overlay" aria-hidden="true"></div>
+  <div class="geo geo-left" aria-hidden="true">
+    <div class="geo-block"></div>
+    <div class="geo-block geo-accent"></div>
+  </div>
+  <div class="geo geo-right" aria-hidden="true">
+    <div class="geo-block geo-accent"></div>
+    <div class="geo-block"></div>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo">
+        <img src="../../assets/logo.png" alt="Diverg" class="logo-img" width="32" height="32" loading="eager">
+      </a>
+      <nav class="nav-links">
+        <a href="../../product/">Product</a>
+        <a href="../../solutions/">Solutions</a>
+        <a href="../../company/">Company</a>
+        <a href="../../careers/">Careers</a>
+        <a href="../">Resources</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="../../request-demo.html" class="nav-link">Request a Demo</a>
+        <a href="../../request-demo.html" class="btn btn-primary">Request a Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="docs-layout">
+    <aside class="docs-sidebar">
+      <p class="docs-sidebar-title">Documentation</p>
+      <ul class="docs-nav">
+        <li class="docs-nav-item"><a href="index.html">Overview</a></li>
+        <li class="docs-nav-item"><a href="whitepaper.html" class="active">Whitepaper</a></li>
+      </ul>
+    </aside>
+
+    <main class="docs-main">
+      <article class="docs-article">
+        <h1>Diverg Whitepaper</h1>
+        <p class="docs-meta">Security &amp; Blockchain Investigation — unified platform, fact-only reporting</p>
+
+        <h2 id="introduction">Introduction</h2>
+        <p>Diverg is a security technology company focused on multimodal investigation and efficiency. We provide a single platform that combines traditional web security assessment with blockchain investigation and open-source intelligence (OSINT). This document describes what Diverg is, our mission and principles, the technology behind the platform, and how we intend to build on it.</p>
+
+        <h2 id="what-is-diverg">What is Diverg?</h2>
+        <p>Diverg is an autonomous security and blockchain investigation platform. It performs reconnaissance, vulnerability scanning, and chain analysis in a unified workflow. Investigations can be run on demand (e.g. from a browser extension or CLI), scheduled for continuous monitoring, or deployed in enterprise environments with custom integrations.</p>
+        <p>Unlike toolchains that require analysts to switch between many separate products, Diverg is built so that one investigation can span web surfaces, wallets, and public data—with a single report that ties findings together.</p>
+
+        <h2 id="mission">Mission</h2>
+        <p>We believe security investigations should be comprehensive, factual, and accessible. Diverg was founded to bridge the gap between traditional web security and blockchain investigation—providing one platform that sees the full picture.</p>
+        <p>Whether you are tracking an attacker across multiple chains, assessing a token launch for investment, or conducting authorized penetration testing, Diverg is designed to deliver the tools you need with data you can trust.</p>
+
+        <h2 id="technology">Technology</h2>
+        <p>Diverg is built on a modular, skill-based architecture powered by modern reasoning systems. Each “skill” corresponds to a well-defined capability (recon, web vulns, headers/SSL, auth testing, API testing, chain analysis, etc.). The system follows established methodologies—such as the OWASP Testing Guide and PTES—while adapting dynamically to the type of target (e.g. web app vs. DeFi protocol vs. wallet).</p>
+        <p>We integrate with industry-standard data sources (including Solscan Pro, Arkham, Etherscan, Bubblemaps) and maintain the ability to operate in a degraded or standalone mode when API keys are not configured. In those cases, reports clearly indicate which checks were skipped rather than presenting synthetic or placeholder data.</p>
+
+        <h2 id="multi-surface">Multi-Surface Investigation</h2>
+        <p>Investigations can span:</p>
+        <ul>
+          <li><strong>Web:</strong> Port scanning, subdomain enumeration, technology fingerprinting, XSS/SQLi/CSRF and misconfiguration checks, security headers, TLS, auth and API testing.</li>
+          <li><strong>Blockchain:</strong> Wallet and token analysis, transfer normalization, flow diagrams, counterparty mapping, and integration with block explorers and labeling services.</li>
+          <li><strong>OSINT:</strong> WHOIS, DNS, email patterns, historical data (e.g. Wayback), and correlation across surfaces.</li>
+        </ul>
+        <p>Results are presented in a structured format (findings, severity, evidence) and can include interactive flow visualizations for funds and relationships.</p>
+
+        <h2 id="fact-only">Fact-Only Reporting</h2>
+        <p>We never present placeholder or synthetic data as real. When external APIs are configured, you get live data; when they are not, reports explicitly state what was skipped and why. This transparency is core to how we build: analysts and stakeholders should be able to rely on every line in a Diverg report.</p>
+
+        <h2 id="use-cases">Use Cases</h2>
+        <p>Diverg supports:</p>
+        <ul>
+          <li><strong>Crypto &amp; DeFi security:</strong> Smart contract and token launch assessment, deployer and holder analysis, rug-pull indicators.</li>
+          <li><strong>Incident response:</strong> Attack timeline reconstruction, attacker wallet tracking, exchange deposit identification, evidence packaging.</li>
+          <li><strong>Due diligence:</strong> Pre-investment or pre-acquisition security and infrastructure review, on-chain entity checks.</li>
+          <li><strong>Continuous monitoring:</strong> Scheduled scans and wallet alerts, with delivery via dashboard or messaging (e.g. Telegram).</li>
+        </ul>
+
+        <h2 id="roadmap">Roadmap and Extensibility</h2>
+        <p>We are expanding the documentation with installation guides, configuration reference, and API documentation. The same layout and design used here will be used for all future docs so that the experience stays consistent and professional. Enterprise deployments, custom skills, and deeper integrations are available on request.</p>
+
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Diverg aims to be the platform of choice for teams that need both web security and blockchain investigation in one place, with fact-only outputs and a clear methodology. For a hands-on introduction, <a href="../../request-demo.html">request a demo</a> or reach out at <a href="mailto:hello@diverg.sec">hello@diverg.sec</a>.</p>
+
+        <nav class="docs-toc" aria-label="On this page">
+          <p class="docs-toc-title">On this page</p>
+          <ul class="docs-toc-list">
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#what-is-diverg">What is Diverg?</a></li>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#multi-surface">Multi-Surface Investigation</a></li>
+            <li><a href="#fact-only">Fact-Only Reporting</a></li>
+            <li><a href="#use-cases">Use Cases</a></li>
+            <li><a href="#roadmap">Roadmap and Extensibility</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+          </ul>
+        </nav>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Diverg. All rights reserved.</p>
+      <a href="https://x.com/DivergSec" target="_blank" rel="noopener noreferrer" class="footer-x" aria-label="Diverg on X (Twitter)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>
