@@ -17,337 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
-  <style>
-    :root {
-      --docs-bg: #0a0a0f;
-      --docs-text: #f0f0f5;
-      --docs-text-muted: #8b8b9a;
-      --docs-text-subtle: #6b6b7b;
-      --docs-border: #2a2a35;
-      --docs-border-light: #3a3a45;
-      --docs-accent: #60a5fa;
-      --docs-accent-glow: rgba(96, 165, 250, 0.3);
-      --docs-sidebar-bg: #121218;
-      --docs-card-bg: #16161b;
-      --docs-hover: #1e1e25;
-      --docs-nav-active: rgba(96, 165, 250, 0.15);
-    }
-    
-    [data-theme="light"] {
-      --docs-bg: #fafafa;
-      --docs-text: #1a1a1a;
-      --docs-text-muted: #6b7280;
-      --docs-text-subtle: #9ca3af;
-      --docs-border: #e5e7eb;
-      --docs-border-light: #f3f4f6;
-      --docs-accent: #3b82f6;
-      --docs-accent-glow: rgba(59, 130, 246, 0.2);
-      --docs-sidebar-bg: #ffffff;
-      --docs-card-bg: #ffffff;
-      --docs-hover: #f3f4f6;
-      --docs-nav-active: rgba(59, 130, 246, 0.1);
-    }
-    
-    .docs-page {
-      background: var(--docs-bg);
-      color: var(--docs-text);
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-    
-    .docs-page .mesh-overlay,
-    .docs-page .geo {
-      display: none;
-    }
-    
-    .theme-toggle {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 1000;
-      background: var(--docs-card-bg);
-      border: 1px solid var(--docs-border);
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-    
-    .theme-toggle:hover {
-      transform: scale(1.1);
-      border-color: var(--docs-accent);
-      box-shadow: 0 0 20px var(--docs-accent-glow);
-    }
-    
-    .theme-toggle svg {
-      width: 24px;
-      height: 24px;
-      color: var(--docs-text);
-    }
-    
-    [data-theme="light"] .theme-toggle .moon { display: block; }
-    [data-theme="light"] .theme-toggle .sun { display: none; }
-    :root:not([data-theme="light"]) .theme-toggle .moon { display: none; }
-    :root:not([data-theme="light"]) .theme-toggle .sun { display: block; }
-    
-    .docs-page .nav {
-      background: rgba(18, 18, 24, 0.95);
-      border-bottom: 1px solid var(--docs-border);
-      backdrop-filter: blur(20px);
-    }
-    
-    [data-theme="light"] .docs-page .nav {
-      background: rgba(255, 255, 255, 0.95);
-    }
-    
-    .docs-page .nav-links a { color: var(--docs-text-muted); }
-    .docs-page .nav-links a:hover,
-    .docs-page .nav-links a.active { color: var(--docs-accent); }
-    .docs-page .nav-link { color: var(--docs-text-muted); }
-    .docs-page .logo-img { filter: brightness(1.1) drop-shadow(0 0 10px var(--docs-accent-glow)); }
-    [data-theme="light"] .docs-page .logo-img { filter: none; }
-    
-    .docs-container {
-      display: flex;
-      max-width: 1600px;
-      margin: 0 auto;
-      padding-top: 64px;
-      min-height: 100vh;
-    }
-    
-    .docs-sidebar-left {
-      width: 280px;
-      background: var(--docs-sidebar-bg);
-      border-right: 1px solid var(--docs-border);
-      padding: 1.5rem 0;
-      position: fixed;
-      top: 64px;
-      left: 0;
-      bottom: 0;
-      overflow-y: auto;
-      transition: background 0.3s ease;
-    }
-    
-    .docs-sidebar-title {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--docs-text-subtle);
-      margin-bottom: 0.75rem;
-      padding: 0 1.25rem;
-    }
-    
-    .docs-nav { list-style: none; padding: 0; }
-    .docs-nav-section { margin-bottom: 1.5rem; padding: 0 0.75rem; }
-    
-    .docs-nav-section-title {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--docs-text-subtle);
-      padding: 0.5rem 0.5rem;
-      margin-bottom: 0.25rem;
-    }
-    
-    .docs-nav-item { margin-bottom: 0.125rem; }
-    
-    .docs-nav-item a {
-      display: block;
-      padding: 0.5rem 0.75rem;
-      font-size: 0.875rem;
-      color: var(--docs-text-muted);
-      text-decoration: none;
-      border-radius: 6px;
-      transition: all 0.15s ease;
-      line-height: 1.4;
-    }
-    
-    .docs-nav-item a:hover {
-      background: var(--docs-hover);
-      color: var(--docs-text);
-    }
-    
-    .docs-nav-item a.active {
-      background: var(--docs-nav-active);
-      color: var(--docs-accent);
-      font-weight: 500;
-    }
-    
-    .docs-content-wrapper {
-      flex: 1;
-      margin-left: 280px;
-      display: flex;
-      justify-content: center;
-      padding: 2rem 3rem;
-    }
-    
-    .docs-content {
-      max-width: 800px;
-      width: 100%;
-    }
-    
-    .docs-sidebar-right {
-      width: 260px;
-      padding: 2rem 1.5rem;
-      position: fixed;
-      top: 64px;
-      right: 0;
-      bottom: 0;
-      overflow-y: auto;
-    }
-    
-    .toc-title {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--docs-text-subtle);
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--docs-border);
-    }
-    
-    .toc-list { list-style: none; }
-    .toc-list li { margin-bottom: 0.25rem; }
-    
-    .toc-list a {
-      display: block;
-      font-size: 0.8125rem;
-      color: var(--docs-text-muted);
-      text-decoration: none;
-      padding: 0.35rem 0.5rem;
-      border-radius: 4px;
-      border-left: 2px solid transparent;
-      transition: all 0.15s ease;
-      line-height: 1.4;
-    }
-    
-    .toc-list a:hover {
-      color: var(--docs-accent);
-      background: var(--docs-hover);
-      border-left-color: var(--docs-accent);
-    }
-    
-    .docs-header {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--docs-border);
-    }
-    
-    .docs-header h1 {
-      font-size: 2.75rem;
-      font-weight: 700;
-      color: var(--docs-text);
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-    
-    .docs-meta {
-      font-size: 1.125rem;
-      color: var(--docs-text-muted);
-      font-weight: 400;
-      line-height: 1.6;
-    }
-    
-    .docs-article h2 {
-      font-size: 1.875rem;
-      font-weight: 600;
-      color: var(--docs-text);
-      margin-top: 3rem;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.01em;
-      line-height: 1.3;
-    }
-    
-    .docs-article h3 {
-      font-size: 1.375rem;
-      font-weight: 600;
-      color: var(--docs-text);
-      margin-top: 2.25rem;
-      margin-bottom: 1rem;
-    }
-    
-    .docs-article h4 {
-      font-size: 1.125rem;
-      font-weight: 600;
-      color: var(--docs-text);
-      margin-top: 1.75rem;
-      margin-bottom: 0.75rem;
-    }
-    
-    .docs-article p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--docs-text-muted);
-      margin-bottom: 1.25rem;
-    }
-    
-    .docs-article ul, .docs-article ol {
-      margin-bottom: 1.5rem;
-      padding-left: 1.5rem;
-    }
-    
-    .docs-article li {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--docs-text-muted);
-      margin-bottom: 0.5rem;
-    }
-    
-    .docs-article strong { font-weight: 600; color: var(--docs-text); }
-    
-    .docs-article a {
-      color: var(--docs-accent);
-      text-decoration: none;
-      font-weight: 500;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-    
-    .docs-article a:hover { border-bottom-color: var(--docs-accent); }
-    
-    .highlight-box {
-      background: var(--docs-card-bg);
-      border: 1px solid var(--docs-border);
-      border-left: 3px solid var(--docs-accent);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-    }
-    
-    .highlight-box h4 {
-      margin-top: 0;
-      color: var(--docs-text);
-      font-size: 1rem;
-    }
-    
-    .docs-footer {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--docs-border);
-      color: var(--docs-text-subtle);
-      font-size: 0.875rem;
-    }
-    
-    @media (max-width: 1200px) {
-      .docs-sidebar-right { display: none; }
-      .docs-content-wrapper { padding: 2rem; }
-    }
-    
-    @media (max-width: 900px) {
-      .docs-sidebar-left { display: none; }
-      .docs-content-wrapper { margin-left: 0; padding: 1.5rem; }
-      .docs-header h1 { font-size: 2rem; }
-      .theme-toggle { bottom: 1rem; right: 1rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="docs.css">
 </head>
 <body class="docs-page">
   <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -379,15 +49,19 @@
         <a href="../../careers/">Careers</a>
         <a href="../">Resources</a>
       </nav>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
       <div class="nav-actions">
-        <a href="../../request-demo.html" class="nav-link">Request a Demo</a>
         <a href="../../request-demo.html" class="btn btn-primary">Request a Demo</a>
       </div>
     </div>
   </header>
 
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
   <div class="docs-container">
-    <aside class="docs-sidebar-left">
+    <aside class="docs-sidebar-left" id="docsSidebar">
       <div class="docs-nav-section">
         <p class="docs-sidebar-title">Getting Started</p>
         <ul class="docs-nav">
@@ -678,17 +352,14 @@
   </div>
 
   <script>
+    // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
-    
     const savedTheme = localStorage.getItem('diverg-theme');
-    if (savedTheme === 'light') {
-      html.setAttribute('data-theme', 'light');
-    }
+    if (savedTheme === 'light') html.setAttribute('data-theme', 'light');
     
     themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      if (currentTheme === 'light') {
+      if (html.getAttribute('data-theme') === 'light') {
         html.removeAttribute('data-theme');
         localStorage.removeItem('diverg-theme');
       } else {
@@ -696,6 +367,19 @@
         localStorage.setItem('diverg-theme', 'light');
       }
     });
+
+    // Mobile menu
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const docsSidebar = document.getElementById('docsSidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    function toggleSidebar() {
+      docsSidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('open');
+    }
+    
+    mobileMenuToggle.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
   </script>
 </body>
 </html>
