@@ -10,27 +10,252 @@
   <meta property="og:title" content="Diverg | Security &amp; Blockchain Investigation">
   <meta property="og:description" content="Documentation and whitepaper for Diverg — security and blockchain investigation platform.">
   <meta property="og:image" content="https://divergsec.com/assets/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon.png?v=2">
   <link rel="shortcut icon" href="../../favicon.png?v=2" type="image/png">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:;">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
+  <style>
+    /* GitBook/Notion-style clean documentation */
+    .docs-page {
+      --docs-bg: #fafafa;
+      --docs-text: #1a1a1a;
+      --docs-text-muted: #6b7280;
+      --docs-border: #e5e7eb;
+      --docs-accent: #3b82f6;
+      --docs-sidebar-bg: #ffffff;
+      --docs-card-bg: #ffffff;
+      --docs-hover: #f3f4f6;
+      background: var(--docs-bg);
+      color: var(--docs-text);
+    }
+    
+    .docs-page .mesh-overlay,
+    .docs-page .geo {
+      display: none;
+    }
+    
+    .docs-page .nav {
+      background: var(--docs-sidebar-bg);
+      border-bottom: 1px solid var(--docs-border);
+      backdrop-filter: none;
+    }
+    
+    .docs-page .nav-links a {
+      color: var(--docs-text-muted);
+    }
+    
+    .docs-page .nav-links a:hover,
+    .docs-page .nav-links a.active {
+      color: var(--docs-text);
+    }
+    
+    .docs-page .nav-link {
+      color: var(--docs-text-muted);
+    }
+    
+    .docs-page .logo-img {
+      filter: none;
+    }
+    
+    .docs-container {
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 64px;
+      min-height: 100vh;
+    }
+    
+    .docs-sidebar-left {
+      width: 280px;
+      background: var(--docs-sidebar-bg);
+      border-right: 1px solid var(--docs-border);
+      padding: 2rem 1.5rem;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      bottom: 0;
+      overflow-y: auto;
+    }
+    
+    .docs-sidebar-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--docs-text-muted);
+      margin-bottom: 1rem;
+      padding: 0 0.75rem;
+    }
+    
+    .docs-nav {
+      list-style: none;
+    }
+    
+    .docs-nav-item {
+      margin-bottom: 0.125rem;
+    }
+    
+    .docs-nav-item a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      color: var(--docs-text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+    
+    .docs-nav-item a:hover {
+      background: var(--docs-hover);
+      color: var(--docs-text);
+    }
+    
+    .docs-nav-item a.active {
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--docs-accent);
+      font-weight: 500;
+    }
+    
+    .docs-content-wrapper {
+      flex: 1;
+      margin-left: 280px;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .docs-content {
+      max-width: 720px;
+      width: 100%;
+    }
+    
+    .docs-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--docs-border);
+    }
+    
+    .docs-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--docs-text);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .docs-subtitle {
+      font-size: 1.125rem;
+      color: var(--docs-text-muted);
+      font-weight: 400;
+    }
+    
+    .docs-article {
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+    
+    .docs-article h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--docs-text);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+    
+    .docs-article h2:first-of-type {
+      margin-top: 0;
+    }
+    
+    .docs-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--docs-text);
+      margin-bottom: 1.25rem;
+    }
+    
+    .docs-article a {
+      color: var(--docs-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .docs-article a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Hub cards */
+    .docs-hub-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .docs-hub-card {
+      display: block;
+      background: var(--docs-card-bg);
+      border: 1px solid var(--docs-border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    
+    .docs-hub-card:hover {
+      border-color: var(--docs-accent);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+    
+    .docs-hub-card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--docs-text);
+      margin-bottom: 0.5rem;
+    }
+    
+    .docs-hub-card p {
+      font-size: 0.875rem;
+      color: var(--docs-text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    .docs-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--docs-border);
+      color: var(--docs-text-muted);
+      font-size: 0.875rem;
+    }
+    
+    @media (max-width: 900px) {
+      .docs-sidebar-left {
+        display: none;
+      }
+      
+      .docs-content-wrapper {
+        margin-left: 0;
+        padding: 1.5rem;
+      }
+      
+      .docs-header h1 {
+        font-size: 1.875rem;
+      }
+      
+      .docs-hub-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body>
-  <div class="mesh-overlay" aria-hidden="true"></div>
-  <div class="geo geo-left" aria-hidden="true">
-    <div class="geo-block"></div>
-    <div class="geo-block geo-accent"></div>
-  </div>
-  <div class="geo geo-right" aria-hidden="true">
-    <div class="geo-block geo-accent"></div>
-    <div class="geo-block"></div>
-  </div>
-
+<body class="docs-page">
   <header class="nav">
     <div class="nav-inner">
       <a href="../../" class="logo">
@@ -50,8 +275,8 @@
     </div>
   </header>
 
-  <div class="docs-layout">
-    <aside class="docs-sidebar">
+  <div class="docs-container">
+    <aside class="docs-sidebar-left">
       <p class="docs-sidebar-title">Documentation</p>
       <ul class="docs-nav">
         <li class="docs-nav-item"><a href="index.html" class="active">Overview</a></li>
@@ -59,45 +284,45 @@
       </ul>
     </aside>
 
-    <main class="docs-main">
-      <div class="docs-article">
-        <h1>Documentation</h1>
-        <p class="docs-meta">Guides, whitepaper, and reference for Diverg</p>
-        <p>Welcome to the Diverg documentation. Here you’ll find our whitepaper, product overview, and—as we expand—installation guides, API reference, and best practices for security and blockchain investigation.</p>
+    <div class="docs-content-wrapper">
+      <main class="docs-content">
+        <article class="docs-article">
+          <header class="docs-header">
+            <h1>Documentation</h1>
+            <p class="docs-subtitle">Guides, whitepaper, and reference for Diverg</p>
+          </header>
 
-        <h2>Contents</h2>
-        <div class="docs-hub-cards">
-          <a href="whitepaper.html" class="docs-hub-card">
-            <h3>Whitepaper</h3>
-            <p>What Diverg is, our mission, technology, and principles. Read this for a full picture of the platform.</p>
-          </a>
-          <a href="../#demo" class="docs-hub-card">
-            <h3>Request a Demo</h3>
-            <p>See Diverg in action. Schedule a walkthrough with our team.</p>
-          </a>
-          <a href="../../product/" class="docs-hub-card">
-            <h3>Product</h3>
-            <p>Capabilities: web security, blockchain investigation, OSINT, and reporting.</p>
-          </a>
-          <a href="../../solutions/" class="docs-hub-card">
-            <h3>Solutions</h3>
-            <p>Use cases: crypto security, incident response, due diligence, monitoring.</p>
-          </a>
-        </div>
+          <p>Welcome to the Diverg documentation. Here you'll find our whitepaper, product overview, and—as we expand—installation guides, API reference, and best practices for security and blockchain investigation.</p>
 
-        <p style="margin-top: 2rem;">More guides (installation, configuration, API) will be added here as we ship. For questions or custom deployments, <a href="../../request-demo.html">get in touch</a>.</p>
-      </div>
-    </main>
-  </div>
+          <h2>Contents</h2>
+          <div class="docs-hub-cards">
+            <a href="whitepaper.html" class="docs-hub-card">
+              <h3>Whitepaper</h3>
+              <p>What Diverg is, our mission, technology, and principles. Read this for a full picture of the platform.</p>
+            </a>
+            <a href="../#demo" class="docs-hub-card">
+              <h3>Request a Demo</h3>
+              <p>See Diverg in action. Schedule a walkthrough with our team.</p>
+            </a>
+            <a href="../../product/" class="docs-hub-card">
+              <h3>Product</h3>
+              <p>Capabilities: web security, blockchain investigation, OSINT, and reporting.</p>
+            </a>
+            <a href="../../solutions/" class="docs-hub-card">
+              <h3>Solutions</h3>
+              <p>Use cases: crypto security, incident response, due diligence, monitoring.</p>
+            </a>
+          </div>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <p class="footer-copy">&copy; 2026 Diverg. All rights reserved.</p>
-      <a href="https://x.com/DivergSec" target="_blank" rel="noopener noreferrer" class="footer-x" aria-label="Diverg on X (Twitter)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
+          <p style="margin-top: 2rem;">More guides (installation, configuration, API) will be added here as we ship. For questions or custom deployments, <a href="../../request-demo.html">get in touch</a>.</p>
+
+          <footer class="docs-footer">
+            <p>&copy; 2026 Diverg. All rights reserved.</p>
+          </footer>
+        </article>
+      </main>
     </div>
-  </footer>
+  </div>
 
   <script src="../../script.js"></script>
 </body>

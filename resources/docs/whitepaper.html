@@ -16,20 +16,289 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:;">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css">
+  <style>
+    /* GitBook/Notion-style clean documentation */
+    .docs-page {
+      --docs-bg: #fafafa;
+      --docs-text: #1a1a1a;
+      --docs-text-muted: #6b7280;
+      --docs-border: #e5e7eb;
+      --docs-accent: #3b82f6;
+      --docs-sidebar-bg: #ffffff;
+      --docs-card-bg: #ffffff;
+      --docs-hover: #f3f4f6;
+      background: var(--docs-bg);
+      color: var(--docs-text);
+    }
+    
+    .docs-page .mesh-overlay,
+    .docs-page .geo {
+      display: none;
+    }
+    
+    .docs-page .nav {
+      background: var(--docs-sidebar-bg);
+      border-bottom: 1px solid var(--docs-border);
+      backdrop-filter: none;
+    }
+    
+    .docs-page .nav-links a {
+      color: var(--docs-text-muted);
+    }
+    
+    .docs-page .nav-links a:hover,
+    .docs-page .nav-links a.active {
+      color: var(--docs-text);
+    }
+    
+    .docs-page .nav-link {
+      color: var(--docs-text-muted);
+    }
+    
+    .docs-page .logo-img {
+      filter: none;
+    }
+    
+    .docs-container {
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 64px;
+      min-height: 100vh;
+    }
+    
+    .docs-sidebar-left {
+      width: 280px;
+      background: var(--docs-sidebar-bg);
+      border-right: 1px solid var(--docs-border);
+      padding: 2rem 1.5rem;
+      position: fixed;
+      top: 64px;
+      left: 0;
+      bottom: 0;
+      overflow-y: auto;
+    }
+    
+    .docs-sidebar-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--docs-text-muted);
+      margin-bottom: 1rem;
+      padding: 0 0.75rem;
+    }
+    
+    .docs-nav {
+      list-style: none;
+    }
+    
+    .docs-nav-item {
+      margin-bottom: 0.125rem;
+    }
+    
+    .docs-nav-item a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      color: var(--docs-text-muted);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+    
+    .docs-nav-item a:hover {
+      background: var(--docs-hover);
+      color: var(--docs-text);
+    }
+    
+    .docs-nav-item a.active {
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--docs-accent);
+      font-weight: 500;
+    }
+    
+    .docs-content-wrapper {
+      flex: 1;
+      margin-left: 280px;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .docs-content {
+      max-width: 720px;
+      width: 100%;
+    }
+    
+    .docs-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--docs-border);
+    }
+    
+    .docs-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--docs-text);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    
+    .docs-subtitle {
+      font-size: 1.125rem;
+      color: var(--docs-text-muted);
+      font-weight: 400;
+    }
+    
+    .docs-article {
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+    
+    .docs-article::before {
+      display: none;
+    }
+    
+    .docs-article h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--docs-text);
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--docs-border);
+      letter-spacing: -0.01em;
+    }
+    
+    .docs-article h2:first-of-type {
+      margin-top: 0;
+    }
+    
+    .docs-article h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--docs-text);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .docs-article p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--docs-text);
+      margin-bottom: 1.25rem;
+    }
+    
+    .docs-article ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    
+    .docs-article li {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--docs-text);
+      margin-bottom: 0.5rem;
+    }
+    
+    .docs-article strong {
+      font-weight: 600;
+      color: var(--docs-text);
+    }
+    
+    .docs-article a {
+      color: var(--docs-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .docs-article a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Right sidebar TOC */
+    .docs-sidebar-right {
+      width: 240px;
+      padding: 2rem 1rem;
+      position: fixed;
+      top: 64px;
+      right: 0;
+      bottom: 0;
+      overflow-y: auto;
+    }
+    
+    .toc-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--docs-text-muted);
+      margin-bottom: 1rem;
+    }
+    
+    .toc-list {
+      list-style: none;
+    }
+    
+    .toc-list li {
+      margin-bottom: 0.375rem;
+    }
+    
+    .toc-list a {
+      display: block;
+      font-size: 0.8125rem;
+      color: var(--docs-text-muted);
+      text-decoration: none;
+      padding: 0.25rem 0;
+      border-left: 2px solid transparent;
+      padding-left: 0.75rem;
+      transition: all 0.15s ease;
+    }
+    
+    .toc-list a:hover {
+      color: var(--docs-accent);
+      border-left-color: var(--docs-accent);
+    }
+    
+    .docs-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--docs-border);
+      color: var(--docs-text-muted);
+      font-size: 0.875rem;
+    }
+    
+    @media (max-width: 1200px) {
+      .docs-sidebar-right {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .docs-sidebar-left {
+        display: none;
+      }
+      
+      .docs-content-wrapper {
+        margin-left: 0;
+        padding: 1.5rem;
+      }
+      
+      .docs-header h1 {
+        font-size: 1.875rem;
+      }
+      
+      .docs-article h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
-<body>
-  <div class="mesh-overlay" aria-hidden="true"></div>
-  <div class="geo geo-left" aria-hidden="true">
-    <div class="geo-block"></div>
-    <div class="geo-block geo-accent"></div>
-  </div>
-  <div class="geo geo-right" aria-hidden="true">
-    <div class="geo-block geo-accent"></div>
-    <div class="geo-block"></div>
-  </div>
-
+<body class="docs-page">
   <header class="nav">
     <div class="nav-inner">
       <a href="../../" class="logo">
@@ -49,8 +318,8 @@
     </div>
   </header>
 
-  <div class="docs-layout">
-    <aside class="docs-sidebar">
+  <div class="docs-container">
+    <aside class="docs-sidebar-left">
       <p class="docs-sidebar-title">Documentation</p>
       <ul class="docs-nav">
         <li class="docs-nav-item"><a href="index.html">Overview</a></li>
@@ -58,79 +327,78 @@
       </ul>
     </aside>
 
-    <main class="docs-main">
-      <article class="docs-article">
-        <h1>Diverg Whitepaper</h1>
-        <p class="docs-meta">Security &amp; Blockchain Investigation — unified platform, fact-only reporting</p>
+    <div class="docs-content-wrapper">
+      <main class="docs-content">
+        <article class="docs-article">
+          <header class="docs-header">
+            <h1>Diverg Whitepaper</h1>
+            <p class="docs-subtitle">Security &amp; Blockchain Investigation — unified platform, fact-only reporting</p>
+          </header>
 
-        <h2 id="introduction">Introduction</h2>
-        <p>Diverg is a security technology company focused on multimodal investigation and efficiency. We provide a single platform that combines traditional web security assessment with blockchain investigation and open-source intelligence (OSINT). This document describes what Diverg is, our mission and principles, the technology behind the platform, and how we intend to build on it.</p>
+          <h2 id="introduction">Introduction</h2>
+          <p>Diverg is a security technology company focused on multimodal investigation and efficiency. We provide a single platform that combines traditional web security assessment with blockchain investigation and open-source intelligence (OSINT). This document describes what Diverg is, our mission and principles, the technology behind the platform, and how we intend to build on it.</p>
 
-        <h2 id="what-is-diverg">What is Diverg?</h2>
-        <p>Diverg is an autonomous security and blockchain investigation platform. It performs reconnaissance, vulnerability scanning, and chain analysis in a unified workflow. Investigations can be run on demand (e.g. from a browser extension or CLI), scheduled for continuous monitoring, or deployed in enterprise environments with custom integrations.</p>
-        <p>Unlike toolchains that require analysts to switch between many separate products, Diverg is built so that one investigation can span web surfaces, wallets, and public data—with a single report that ties findings together.</p>
+          <h2 id="what-is-diverg">What is Diverg?</h2>
+          <p>Diverg is an autonomous security and blockchain investigation platform. It performs reconnaissance, vulnerability scanning, and chain analysis in a unified workflow. Investigations can be run on demand (e.g. from a browser extension or CLI), scheduled for continuous monitoring, or deployed in enterprise environments with custom integrations.</p>
+          <p>Unlike toolchains that require analysts to switch between many separate products, Diverg is built so that one investigation can span web surfaces, wallets, and public data—with a single report that ties findings together.</p>
 
-        <h2 id="mission">Mission</h2>
-        <p>We believe security investigations should be comprehensive, factual, and accessible. Diverg was founded to bridge the gap between traditional web security and blockchain investigation—providing one platform that sees the full picture.</p>
-        <p>Whether you are tracking an attacker across multiple chains, assessing a token launch for investment, or conducting authorized penetration testing, Diverg is designed to deliver the tools you need with data you can trust.</p>
+          <h2 id="mission">Mission</h2>
+          <p>We believe security investigations should be comprehensive, factual, and accessible. Diverg was founded to bridge the gap between traditional web security and blockchain investigation—providing one platform that sees the full picture.</p>
+          <p>Whether you are tracking an attacker across multiple chains, assessing a token launch for investment, or conducting authorized penetration testing, Diverg is designed to deliver the tools you need with data you can trust.</p>
 
-        <h2 id="technology">Technology</h2>
-        <p>Diverg is built on a modular, skill-based architecture powered by modern reasoning systems. Each “skill” corresponds to a well-defined capability (recon, web vulns, headers/SSL, auth testing, API testing, chain analysis, etc.). The system follows established methodologies—such as the OWASP Testing Guide and PTES—while adapting dynamically to the type of target (e.g. web app vs. DeFi protocol vs. wallet).</p>
-        <p>We integrate with industry-standard data sources (including Solscan Pro, Arkham, Etherscan, Bubblemaps) and maintain the ability to operate in a degraded or standalone mode when API keys are not configured. In those cases, reports clearly indicate which checks were skipped rather than presenting synthetic or placeholder data.</p>
+          <h2 id="technology">Technology</h2>
+          <p>Diverg is built on a modular, skill-based architecture powered by modern reasoning systems. Each "skill" corresponds to a well-defined capability (recon, web vulns, headers/SSL, auth testing, API testing, chain analysis, etc.). The system follows established methodologies—such as the OWASP Testing Guide and PTES—while adapting dynamically to the type of target (e.g. web app vs. DeFi protocol vs. wallet).</p>
+          <p>We integrate with industry-standard data sources (including Solscan Pro, Arkham, Etherscan, Bubblemaps) and maintain the ability to operate in a degraded or standalone mode when API keys are not configured. In those cases, reports clearly indicate which checks were skipped rather than presenting synthetic or placeholder data.</p>
 
-        <h2 id="multi-surface">Multi-Surface Investigation</h2>
-        <p>Investigations can span:</p>
-        <ul>
-          <li><strong>Web:</strong> Port scanning, subdomain enumeration, technology fingerprinting, XSS/SQLi/CSRF and misconfiguration checks, security headers, TLS, auth and API testing.</li>
-          <li><strong>Blockchain:</strong> Wallet and token analysis, transfer normalization, flow diagrams, counterparty mapping, and integration with block explorers and labeling services.</li>
-          <li><strong>OSINT:</strong> WHOIS, DNS, email patterns, historical data (e.g. Wayback), and correlation across surfaces.</li>
-        </ul>
-        <p>Results are presented in a structured format (findings, severity, evidence) and can include interactive flow visualizations for funds and relationships.</p>
-
-        <h2 id="fact-only">Fact-Only Reporting</h2>
-        <p>We never present placeholder or synthetic data as real. When external APIs are configured, you get live data; when they are not, reports explicitly state what was skipped and why. This transparency is core to how we build: analysts and stakeholders should be able to rely on every line in a Diverg report.</p>
-
-        <h2 id="use-cases">Use Cases</h2>
-        <p>Diverg supports:</p>
-        <ul>
-          <li><strong>Crypto &amp; DeFi security:</strong> Smart contract and token launch assessment, deployer and holder analysis, rug-pull indicators.</li>
-          <li><strong>Incident response:</strong> Attack timeline reconstruction, attacker wallet tracking, exchange deposit identification, evidence packaging.</li>
-          <li><strong>Due diligence:</strong> Pre-investment or pre-acquisition security and infrastructure review, on-chain entity checks.</li>
-          <li><strong>Continuous monitoring:</strong> Scheduled scans and wallet alerts, with delivery via dashboard or messaging (e.g. Telegram).</li>
-        </ul>
-
-        <h2 id="roadmap">Roadmap and Extensibility</h2>
-        <p>We are expanding the documentation with installation guides, configuration reference, and API documentation. The same layout and design used here will be used for all future docs so that the experience stays consistent and professional. Enterprise deployments, custom skills, and deeper integrations are available on request.</p>
-
-        <h2 id="conclusion">Conclusion</h2>
-        <p>Diverg aims to be the platform of choice for teams that need both web security and blockchain investigation in one place, with fact-only outputs and a clear methodology. For a hands-on introduction, <a href="../../request-demo.html">request a demo</a> or reach out at <a href="mailto:hello@diverg.sec">hello@diverg.sec</a>.</p>
-
-        <nav class="docs-toc" aria-label="On this page">
-          <p class="docs-toc-title">On this page</p>
-          <ul class="docs-toc-list">
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#what-is-diverg">What is Diverg?</a></li>
-            <li><a href="#mission">Mission</a></li>
-            <li><a href="#technology">Technology</a></li>
-            <li><a href="#multi-surface">Multi-Surface Investigation</a></li>
-            <li><a href="#fact-only">Fact-Only Reporting</a></li>
-            <li><a href="#use-cases">Use Cases</a></li>
-            <li><a href="#roadmap">Roadmap and Extensibility</a></li>
-            <li><a href="#conclusion">Conclusion</a></li>
+          <h2 id="multi-surface">Multi-Surface Investigation</h2>
+          <p>Investigations can span:</p>
+          <ul>
+            <li><strong>Web:</strong> Port scanning, subdomain enumeration, technology fingerprinting, XSS/SQLi/CSRF and misconfiguration checks, security headers, TLS, auth and API testing.</li>
+            <li><strong>Blockchain:</strong> Wallet and token analysis, transfer normalization, flow diagrams, counterparty mapping, and integration with block explorers and labeling services.</li>
+            <li><strong>OSINT:</strong> WHOIS, DNS, email patterns, historical data (e.g. Wayback), and correlation across surfaces.</li>
           </ul>
-        </nav>
-      </article>
-    </main>
-  </div>
+          <p>Results are presented in a structured format (findings, severity, evidence) and can include interactive flow visualizations for funds and relationships.</p>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <p class="footer-copy">&copy; 2026 Diverg. All rights reserved.</p>
-      <a href="https://x.com/DivergSec" target="_blank" rel="noopener noreferrer" class="footer-x" aria-label="Diverg on X (Twitter)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
+          <h2 id="fact-only">Fact-Only Reporting</h2>
+          <p>We never present placeholder or synthetic data as real. When external APIs are configured, you get live data; when they are not, reports explicitly state what was skipped and why. This transparency is core to how we build: analysts and stakeholders should be able to rely on every line in a Diverg report.</p>
+
+          <h2 id="use-cases">Use Cases</h2>
+          <p>Diverg supports:</p>
+          <ul>
+            <li><strong>Crypto &amp; DeFi security:</strong> Smart contract and token launch assessment, deployer and holder analysis, rug-pull indicators.</li>
+            <li><strong>Incident response:</strong> Attack timeline reconstruction, attacker wallet tracking, exchange deposit identification, evidence packaging.</li>
+            <li><strong>Due diligence:</strong> Pre-investment or pre-acquisition security and infrastructure review, on-chain entity checks.</li>
+            <li><strong>Continuous monitoring:</strong> Scheduled scans and wallet alerts, with delivery via dashboard or messaging (e.g. Telegram).</li>
+          </ul>
+
+          <h2 id="roadmap">Roadmap and Extensibility</h2>
+          <p>We are expanding the documentation with installation guides, configuration reference, and API documentation. The same layout and design used here will be used for all future docs so that the experience stays consistent and professional. Enterprise deployments, custom skills, and deeper integrations are available on request.</p>
+
+          <h2 id="conclusion">Conclusion</h2>
+          <p>Diverg aims to be the platform of choice for teams that need both web security and blockchain investigation in one place, with fact-only outputs and a clear methodology. For a hands-on introduction, <a href="../../request-demo.html">request a demo</a> or reach out at <a href="mailto:hello@diverg.sec">hello@diverg.sec</a>.</p>
+
+          <footer class="docs-footer">
+            <p>&copy; 2026 Diverg. All rights reserved.</p>
+          </footer>
+        </article>
+      </main>
     </div>
-  </footer>
+
+    <aside class="docs-sidebar-right">
+      <p class="toc-title">On this page</p>
+      <ul class="toc-list">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#what-is-diverg">What is Diverg?</a></li>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#multi-surface">Multi-Surface Investigation</a></li>
+        <li><a href="#fact-only">Fact-Only Reporting</a></li>
+        <li><a href="#use-cases">Use Cases</a></li>
+        <li><a href="#roadmap">Roadmap and Extensibility</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </aside>
+  </div>
 
   <script src="../../script.js"></script>
 </body>
