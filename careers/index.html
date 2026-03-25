@@ -124,7 +124,7 @@
           </div>
           <div class="form-group">
             <label for="linkedin">LinkedIn / Portfolio (optional)</label>
-            <input type="url" id="linkedin" name="linkedin" maxlength="500" placeholder="https://linkedin.com/in/... or https://...">
+            <input type="text" id="linkedin" name="linkedin" maxlength="500" placeholder="https://linkedin.com/in/... or portfolio URL" inputmode="url" autocomplete="url">
           </div>
           <div class="form-group">
             <label for="message">Cover message</label>
@@ -254,24 +254,32 @@
 
         if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY.length > 10) {
           if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+          var payload = {
+            access_key: WEB3FORMS_ACCESS_KEY,
+            subject: subject,
+            name: name,
+            email: email,
+            message: message,
+            role: roleVal,
+            linkedin: linkedin || '(none)',
+          };
           fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-            body: JSON.stringify({
-              access_key: WEB3FORMS_ACCESS_KEY,
-              subject: subject,
-              name: name,
-              email: email,
-              message: message,
-              role: roleVal,
-              linkedin: linkedin || '(none)',
-              from_name: 'Diverg Careers',
-            }),
+            body: JSON.stringify(payload),
           })
-            .then(function(r) { return r.json().then(function(j) { return { ok: r.ok, j: j }; }); })
+            .then(function(r) {
+              return r.text().then(function(t) {
+                var j = null;
+                try { j = t ? JSON.parse(t) : null; } catch (e) { j = null; }
+                return { status: r.status, ok: r.ok, j: j, raw: t };
+              });
+            })
             .then(function(res) {
               if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit application'; }
-              if (res.ok && res.j && res.j.success) {
+              var j = res.j;
+              var apiSuccess = j && j.success === true;
+              if (res.ok && apiSuccess) {
                 try { sessionStorage.removeItem('diverg_apply_via_mailto'); } catch (_) {}
                 try {
                   history.replaceState(null, '', window.location.pathname + '?submitted=1#apply');
@@ -279,8 +287,12 @@
                 showSuccess(email, false);
                 return;
               }
-              var errMsg = (res.j && res.j.message) ? String(res.j.message) : 'Could not send application. Try again or use the email link below.';
-              showError(errMsg);
+              var errMsg =
+                (j && j.message) ||
+                (j && j.body && j.body.message) ||
+                (!j && res.status >= 400 ? 'Could not reach the form service (HTTP ' + res.status + '). If this persists, email us using the link below.' : '') ||
+                'Could not send application. Try again or use the email link below.';
+              showError(String(errMsg));
             })
             .catch(function() {
               if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit application'; }
