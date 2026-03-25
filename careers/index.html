@@ -23,7 +23,7 @@
   <link rel="shortcut icon" href="../favicon.png?v=2" type="image/png">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-src https://formsubmit.co https://www.google.com https://www.recaptcha.net; frame-ancestors 'none'; base-uri 'self'; form-action https://formsubmit.co;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -95,16 +95,15 @@
 
         <div id="apply-success" class="demo-success" hidden>
           <div class="demo-success-inner">
-            <h2>Application received</h2>
-            <p>Thanks for applying. We'll review your submission and reach out to <span id="success-email"></span> if there's a fit.</p>
+            <h2 id="apply-success-title">Application received</h2>
+            <p id="apply-success-detail">Thanks for applying. We'll review your submission and reach out to <span id="success-email"></span> if there's a fit.</p>
             <a href="../careers/" class="btn btn-primary">Back to careers</a>
           </div>
         </div>
 
-        <form id="apply-form" class="demo-form" action="https://formsubmit.co/leofunman64@gmail.com" method="POST">
-          <input type="hidden" name="_subject" id="form-subject" value="Diverg Job Application">
-          <input type="hidden" name="_next" id="form-next" value="">
-          <input type="hidden" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;">
+        <p id="apply-form-error" class="page-sub" style="color:#f85149;margin-bottom:1rem;display:none;" role="alert"></p>
+        <form id="apply-form" class="demo-form" action="#" method="post">
+          <input type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;">
 
           <div class="form-group">
             <label for="role">Position</label>
@@ -131,8 +130,9 @@
             <label for="message">Cover message</label>
             <textarea id="message" name="message" rows="4" required maxlength="2000" placeholder="Tell us about your experience and why you're interested in this role..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-submit">Submit application</button>
+          <button type="submit" class="btn btn-primary btn-submit" id="apply-submit-btn">Submit application</button>
         </form>
+        <p class="page-sub" style="margin-top:1rem;font-size:0.875rem;color:var(--muted,#8b949e);">Prefer email? Reach us at <a href="mailto:leofunman64@gmail.com?subject=Diverg%20Job%20Application">leofunman64@gmail.com</a>.</p>
       </div>
     </section>
   </main>
@@ -148,28 +148,57 @@
 
   <script>
     (function() {
+      /**
+       * FormSubmit.co free tier caps monthly submissions ("submission limit reached").
+       * Web3Forms: create a free access key at https://web3forms.com (set destination inbox there).
+       * Paste the key below for server-side delivery without that cap. If empty, submit uses mailto (no third-party quota).
+       */
+      var WEB3FORMS_ACCESS_KEY = '';
+      var CAREERS_INBOX = 'leofunman64@gmail.com';
+
       var form = document.getElementById('apply-form');
       var successEl = document.getElementById('apply-success');
       var successEmail = document.getElementById('success-email');
-      var nextInput = document.getElementById('form-next');
-      var subjectInput = document.getElementById('form-subject');
       var roleSelect = document.getElementById('role');
       var applyButtons = document.querySelectorAll('a[href="#apply"][data-role]');
+      var errEl = document.getElementById('apply-form-error');
+      var submitBtn = document.getElementById('apply-submit-btn');
 
-      if (nextInput) {
-        var origin = window.location.origin;
-        var path = window.location.pathname.replace(/\/+$/, '') || '/';
-        var allowed = /^https:\/\/divergsec\.com$/i.test(origin) || /^https?:\/\/localhost(:\d+)?$/i.test(origin) || /^https:\/\/[a-zA-Z0-9-]+\.github\.io$/i.test(origin);
-        if (allowed && origin && path) nextInput.value = origin + path + '?submitted=1#apply';
+      function subjectForRole(roleVal) {
+        return roleVal ? 'Diverg Job Application - ' + roleVal : 'Diverg Job Application';
+      }
+
+      function showError(msg) {
+        if (!errEl) return;
+        errEl.textContent = msg;
+        errEl.style.display = msg ? 'block' : 'none';
+      }
+
+      function showSuccess(email, viaMailto) {
+        var safe = String(email || '').replace(/[<>"&]/g, '');
+        if (successEmail) successEmail.textContent = safe;
+        var detail = document.getElementById('apply-success-detail');
+        var title = document.getElementById('apply-success-title');
+        if (viaMailto && detail && title) {
+          title.textContent = 'Almost done';
+          detail.innerHTML = 'Your email app should open with a draft to <strong>' + CAREERS_INBOX.replace(/</g, '') + '</strong>. <strong>Send that email</strong> to complete your application. We’ll reply to <span id="success-email"></span> if there’s a fit.';
+          successEmail = document.getElementById('success-email');
+          if (successEmail) successEmail.textContent = safe;
+        } else if (detail && title) {
+          title.textContent = 'Application received';
+          detail.innerHTML = 'Thanks for applying. We\'ll review your submission and reach out to <span id="success-email"></span> if there\'s a fit.';
+          successEmail = document.getElementById('success-email');
+          if (successEmail) successEmail.textContent = safe;
+        }
+        if (successEl) successEl.hidden = false;
+        if (form) form.hidden = true;
+        showError('');
       }
 
       applyButtons.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function() {
           var role = btn.getAttribute('data-role');
-          if (role && roleSelect) {
-            roleSelect.value = role;
-            if (subjectInput) subjectInput.value = 'Diverg Job Application - ' + role;
-          }
+          if (role && roleSelect) roleSelect.value = role;
         });
       });
 
@@ -182,32 +211,94 @@
           'software-engineers': 'Software Engineers'
         };
         var value = map[roleParam];
-        if (value) {
-          roleSelect.value = value;
-          if (subjectInput) subjectInput.value = 'Diverg Job Application - ' + value;
-        }
+        if (value) roleSelect.value = value;
       }
 
       if (params.get('submitted') === '1') {
         var raw = sessionStorage.getItem('diverg_apply_email') || '';
-        var safe = raw.replace(/[<>"&]/g, '');
-        if (successEmail) successEmail.textContent = safe;
-        if (successEl) successEl.hidden = false;
-        if (form) form.hidden = true;
+        var viaM = sessionStorage.getItem('diverg_apply_via_mailto') === '1';
+        showSuccess(raw, viaM);
         return;
       }
 
-      if (form) {
-        form.addEventListener('submit', function() {
-          var emailInput = document.getElementById('email');
-          if (emailInput && emailInput.value) {
-            var v = String(emailInput.value).trim().slice(0, 254);
-            sessionStorage.setItem('diverg_apply_email', v);
-          }
-          var roleVal = roleSelect && roleSelect.value;
-          if (subjectInput && roleVal) subjectInput.value = 'Diverg Job Application - ' + roleVal;
-        });
-      }
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showError('');
+        if (typeof form.reportValidity === 'function' && !form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        var botcheck = form.querySelector('[name="botcheck"]');
+        if (botcheck && botcheck.value) return;
+
+        var nameEl = document.getElementById('name');
+        var emailEl = document.getElementById('email');
+        var linkedinEl = document.getElementById('linkedin');
+        var messageEl = document.getElementById('message');
+        var roleVal = roleSelect && roleSelect.value;
+        var name = nameEl && nameEl.value ? String(nameEl.value).trim() : '';
+        var email = emailEl && emailEl.value ? String(emailEl.value).trim().slice(0, 254) : '';
+        var linkedin = linkedinEl && linkedinEl.value ? String(linkedinEl.value).trim() : '';
+        var message = messageEl && messageEl.value ? String(messageEl.value).trim() : '';
+
+        if (!roleVal || !name || !email || !message) {
+          showError('Please fill in all required fields.');
+          return;
+        }
+
+        sessionStorage.setItem('diverg_apply_email', email);
+        var subject = subjectForRole(roleVal);
+
+        if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY.length > 10) {
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({
+              access_key: WEB3FORMS_ACCESS_KEY,
+              subject: subject,
+              name: name,
+              email: email,
+              message: message,
+              role: roleVal,
+              linkedin: linkedin || '(none)',
+              from_name: 'Diverg Careers',
+            }),
+          })
+            .then(function(r) { return r.json().then(function(j) { return { ok: r.ok, j: j }; }); })
+            .then(function(res) {
+              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit application'; }
+              if (res.ok && res.j && res.j.success) {
+                try { sessionStorage.removeItem('diverg_apply_via_mailto'); } catch (_) {}
+                try {
+                  history.replaceState(null, '', window.location.pathname + '?submitted=1#apply');
+                } catch (_) {}
+                showSuccess(email, false);
+                return;
+              }
+              var errMsg = (res.j && res.j.message) ? String(res.j.message) : 'Could not send application. Try again or use the email link below.';
+              showError(errMsg);
+            })
+            .catch(function() {
+              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit application'; }
+              showError('Network error. Check your connection or email us directly.');
+            });
+          return;
+        }
+
+        var body = 'Position: ' + roleVal + '\n\nName: ' + name + '\nEmail: ' + email + '\nLinkedIn / portfolio: ' + (linkedin || '(none)') + '\n\n---\n' + message;
+        try { sessionStorage.setItem('diverg_apply_via_mailto', '1'); } catch (_) {}
+        window.location.href = 'mailto:' + encodeURIComponent(CAREERS_INBOX) +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(body.slice(0, 18000));
+        try {
+          history.replaceState(null, '', window.location.pathname + '?submitted=1#apply');
+        } catch (_) {}
+        showSuccess(email, true);
+      });
     })();
   </script>
   <script src="../script.js"></script>
