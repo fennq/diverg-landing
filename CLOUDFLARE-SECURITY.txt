@@ -16,10 +16,16 @@ THEN – Add the following headers one by one (Set static value):
 
   X-Frame-Options              DENY
   X-Content-Type-Options       nosniff
-  X-XSS-Protection             1; mode=block
   Referrer-Policy              strict-origin-when-cross-origin
   Permissions-Policy           geolocation=(), microphone=(), camera=(), payment=()
   Strict-Transport-Security    max-age=31536000; includeSubDomains; preload
+  Cross-Origin-Opener-Policy   same-origin
+  Cross-Origin-Resource-Policy same-site
+  X-Permitted-Cross-Domain-Policies none
+  Content-Security-Policy      default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.recaptcha.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com https://formsubmit.co; frame-src https://formsubmit.co https://www.google.com https://www.recaptcha.net; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co; upgrade-insecure-requests
+
+  # Remove permissive CORS if present (this site doesn’t need cross-origin reads)
+  Access-Control-Allow-Origin  (remove header)
 
 Save and Deploy.
 
@@ -27,6 +33,9 @@ Save and Deploy.
 
 SSL/TLS → Overview: Encryption mode = Full (strict).
 Edge Certificates: Always Use HTTPS = On, Minimum TLS Version = 1.2.
+
+Optional (recommended):
+  Edge Certificates → HSTS: enable and match the header value above. Cloudflare’s HSTS toggle is the cleanest place to manage HSTS.
 
 --- STEP 3: Security level and bots ---
 
@@ -42,9 +51,11 @@ Scrape Shield: Hotlink Protection = On.
 
   X-Frame-Options: DENY           – Site cannot be embedded in iframes (clickjacking).
   X-Content-Type-Options: nosniff  – Prevents MIME sniffing.
-  X-XSS-Protection: 1; mode=block  – Legacy XSS filter (CSP is primary).
   Referrer-Policy                 – Limits referrer sent to other sites.
   Permissions-Policy              – Disables unneeded browser features.
   Strict-Transport-Security       – Browsers only load site over HTTPS (HSTS).
+  Cross-Origin-Opener-Policy      – Process isolation boundary (reduces cross-origin opener risks).
+  Cross-Origin-Resource-Policy    – Default resource isolation for modern browsers.
+  Content-Security-Policy         – Primary browser mitigation for XSS / injection, plus frame-ancestors.
 
 After saving, test: https://securityheaders.com/?q=divergsec.com
