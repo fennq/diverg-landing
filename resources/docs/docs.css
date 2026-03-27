@@ -1,21 +1,20 @@
-/* Diverg Documentation Styles - Professional, Clean, Unified */
+/* Diverg Documentation Styles */
 
 :root {
-  /* Dark theme (default) */
-  --docs-bg: #0a0a0f;
-  --docs-text: #f0f0f5;
-  --docs-text-muted: #8b8b9a;
-  --docs-text-subtle: #6b6b7b;
-  --docs-border: #2a2a35;
-  --docs-border-light: #3a3a45;
-  --docs-accent: #60a5fa;
-  --docs-accent-glow: rgba(96, 165, 250, 0.3);
-  --docs-accent-hover: #3b82f6;
-  --docs-sidebar-bg: #121218;
-  --docs-card-bg: #16161b;
-  --docs-hover: #1e1e25;
-  --docs-nav-active: rgba(96, 165, 250, 0.15);
-  --docs-code-bg: #0d0d12;
+  --docs-bg: #000000;
+  --docs-text: #ffffff;
+  --docs-text-muted: #a0a0a8;
+  --docs-text-subtle: #4a4a56;
+  --docs-border: rgba(255,255,255,0.08);
+  --docs-border-light: rgba(255,255,255,0.12);
+  --docs-accent: #3b6ff5;
+  --docs-accent-glow: rgba(59,111,245,0.2);
+  --docs-accent-hover: #60a5fa;
+  --docs-sidebar-bg: #050508;
+  --docs-card-bg: #0d0d14;
+  --docs-hover: #131320;
+  --docs-nav-active: rgba(59,111,245,0.12);
+  --docs-code-bg: #0a0a12;
 }
 
 [data-theme="light"] {

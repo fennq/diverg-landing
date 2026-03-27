@@ -23,7 +23,7 @@
     <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
   </button>
 
-  <header class="nav">
+  <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="../../" class="logo">
         <img src="../../assets/logo.png" alt="Diverg" class="logo-img" width="32" height="32">
@@ -42,7 +42,7 @@
         <a href="../../request-demo.html" class="btn btn-primary">Request a Demo</a>
       </div>
     </div>
-  </header>
+  </nav>
 
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
@@ -208,35 +208,6 @@
     </aside>
   </div>
 
-  <script>
-    // Theme toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-    const savedTheme = localStorage.getItem('diverg-theme');
-    if (savedTheme === 'light') html.setAttribute('data-theme', 'light');
-    
-    themeToggle.addEventListener('click', () => {
-      if (html.getAttribute('data-theme') === 'light') {
-        html.removeAttribute('data-theme');
-        localStorage.removeItem('diverg-theme');
-      } else {
-        html.setAttribute('data-theme', 'light');
-        localStorage.setItem('diverg-theme', 'light');
-      }
-    });
-
-    // Mobile menu
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const docsSidebar = document.getElementById('docsSidebar');
-    const sidebarOverlay = document.getElementById('sidebarOverlay');
-    
-    function toggleSidebar() {
-      docsSidebar.classList.toggle('open');
-      sidebarOverlay.classList.toggle('open');
-    }
-    
-    mobileMenuToggle.addEventListener('click', toggleSidebar);
-    sidebarOverlay.addEventListener('click', toggleSidebar);
-  </script>
+  <script src="docs-ui.js"></script>
 </body>
 </html>

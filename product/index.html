@@ -3,141 +3,346 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product | Diverg</title>
+  <title>Product — Diverg</title>
   <link rel="canonical" href="https://divergsec.com/product/">
+  <meta name="description" content="Active vulnerability probing, attack-path reasoning, and blockchain forensics. The complete security stack for autonomous agents and CI.">
+  <meta property="og:title" content="Product — Diverg">
+  <meta property="og:description" content="Active vulnerability probing, attack-path reasoning, and blockchain forensics.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://divergsec.com/product/">
-  <meta property="og:title" content="Diverg | Security &amp; Blockchain Investigation">
-  <meta property="og:description" content="We are a security technology company, with a focus on multimodal investigation and efficiency. We deliver autonomous security assessments and offer enterprise deployments of our investigation platforms.">
-  <meta property="og:image" content="https://divergsec.com/assets/og-image.png">
-  <meta property="og:image:width" content="1024">
-  <meta property="og:image:height" content="495">
-  <meta property="og:image:alt" content="Diverg — Security &amp; Blockchain Investigation">
-  <meta property="og:site_name" content="Diverg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Diverg | Security &amp; Blockchain Investigation">
-  <meta name="twitter:description" content="We are a security technology company, with a focus on multimodal investigation and efficiency. We deliver autonomous security assessments and offer enterprise deployments of our investigation platforms.">
-  <meta name="twitter:image" content="https://divergsec.com/assets/og-image.png">
-  <meta name="twitter:image:alt" content="Diverg — Security &amp; Blockchain Investigation">
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png?v=2">
-  <link rel="shortcut icon" href="../favicon.png?v=2" type="image/png">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <div class="mesh-overlay" aria-hidden="true"></div>
-  <div class="geo geo-left" aria-hidden="true">
-    <div class="geo-block"></div>
-    <div class="geo-block geo-accent"></div>
-    <div class="geo-block"></div>
-  </div>
-  <div class="geo geo-right" aria-hidden="true">
-    <div class="geo-block geo-accent"></div>
-    <div class="geo-block"></div>
-    <div class="geo-block geo-accent"></div>
-  </div>
 
-  <header class="nav">
+  <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="../" class="logo">
-        <img src="../assets/logo.png" alt="Diverg" class="logo-img" width="32" height="32" loading="eager" fetchpriority="high">
+      <a href="/" class="nav-logo">
+        <img src="../assets/logo.png" alt="Diverg" onerror="this.setAttribute('hidden','');this.nextElementSibling.removeAttribute('hidden')">
+        <span class="nav-wordmark" hidden>Diverg</span>
       </a>
-      <nav class="nav-links">
+      <div class="nav-links">
         <a href="../product/" class="active">Product</a>
         <a href="../solutions/">Solutions</a>
         <a href="../company/">Company</a>
         <a href="../careers/">Careers</a>
-        <a href="../resources/">Resources</a>
-      </nav>
+      </div>
       <div class="nav-actions">
-        <a href="../request-demo.html" class="nav-link">Request a Demo</a>
-        <a href="../request-demo.html" class="btn btn-primary">Request a Demo</a>
+        <a href="../resources/docs/" class="nav-btn-ghost">Docs</a>
+        <a href="../request-demo.html" class="nav-btn-fill">Request Demo</a>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <main class="page-content">
-    <section class="page-hero">
-      <h1 class="page-title">Product</h1>
-      <p class="page-sub">Autonomous security and blockchain investigation platform</p>
-    </section>
-
-    <section class="features">
-      <div class="feature-grid">
-        <article class="feature-card">
-          <h3>Web Security Scanning</h3>
-          <p>Comprehensive reconnaissance including port scanning, subdomain enumeration, and technology fingerprinting. Detect XSS, SQL injection, CSRF vulnerabilities, and misconfigurations automatically.</p>
-        </article>
-
-        <article class="feature-card">
-          <h3>Blockchain Investigation</h3>
-          <p>Wallet and token analysis with Solscan, Arkham, and Etherscan integration. Generate flow diagrams, map counterparties, and identify suspicious transaction patterns in real-time.</p>
-        </article>
-
-        <article class="feature-card">
-          <h3>OSINT Intelligence</h3>
-          <p>WHOIS analysis, DNS enumeration, email pattern discovery, and Wayback Machine integration. Surface hidden connections between targets and infrastructure.</p>
-        </article>
-
-        <article class="feature-card">
-          <h3>Flow Visualization</h3>
-          <p>Interactive transaction flow diagrams showing fund movement across wallets. Identify mixers, CEX deposits, and suspicious clustering with Bubblemaps integration.</p>
-        </article>
-
-        <article class="feature-card">
-          <h3>Adaptive Scanning</h3>
-          <p>Dynamic scan planning that adjusts based on target type. Focus on crypto launchpads, DeFi protocols, or traditional web infrastructure with tailored investigation paths.</p>
-        </article>
-
-        <article class="feature-card">
-          <h3>Fact-Only Reporting</h3>
-          <p>Structured findings with severity classifications. No placeholder data—when APIs are configured, you get live data; otherwise, reports clearly indicate skipped checks.</p>
-        </article>
+  <!-- Hero -->
+  <section class="inner-hero">
+    <div class="container">
+      <p class="eyebrow">PRODUCT</p>
+      <h1 class="inner-title">Security from surface<br>to chain.</h1>
+      <p class="inner-sub">
+        Passive analysis, active vulnerability probing, attack-path reasoning,
+        and blockchain forensics — unified in a single platform built for agents and CI.
+      </p>
+      <div class="hero-actions" class="mt-xl">
+        <a href="../resources/docs/quickstart.html" class="btn-fill">Get started</a>
+        <a href="../request-demo.html" class="btn-ghost">Request demo &rarr;</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="api-section">
-      <h2 class="section-title">Core Capabilities</h2>
-      <div class="api-grid">
-        <div class="api-item">
-          <h4>Recon</h4>
-          <p>Port scanning with nmap fallback, subdomain enumeration, Wappalyzer tech detection</p>
+  <!-- Stats strip -->
+  <div class="inner-stats">
+    <div class="container">
+      <div class="inner-stats-grid">
+        <div class="inner-stat">
+          <div class="inner-stat-n">6</div>
+          <div class="inner-stat-l">Active probe types</div>
         </div>
-        <div class="api-item">
-          <h4>Web Vulns</h4>
-          <p>XSS, SQLi, CSRF, directory traversal detection with proof-of-concept validation</p>
+        <div class="inner-stat">
+          <div class="inner-stat-n">3</div>
+          <div class="inner-stat-l">Blockchain networks</div>
         </div>
-        <div class="api-item">
-          <h4>Headers/SSL</h4>
-          <p>Security header audit, TLS configuration analysis, certificate validation</p>
+        <div class="inner-stat">
+          <div class="inner-stat-n">0</div>
+          <div class="inner-stat-l">Destructive payloads</div>
         </div>
-        <div class="api-item">
-          <h4>Auth Testing</h4>
-          <p>Login form analysis, session management, cookie flags, user enumeration checks</p>
-        </div>
-        <div class="api-item">
-          <h4>API Testing</h4>
-          <p>Endpoint discovery, CORS checks, auth bypass, IDOR detection</p>
-        </div>
-        <div class="api-item">
-          <h4>Chain Analysis</h4>
-          <p>Solana + Ethereum support, transfer normalization, entity labeling via Arkham</p>
+        <div class="inner-stat">
+          <div class="inner-stat-n">MIT</div>
+          <div class="inner-stat-l">Open source license</div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+
+  <!-- Row 1: Diverg Auto -->
+  <section class="product-row">
+    <div class="container product-row-inner">
+      <div class="product-text">
+        <p class="eyebrow">DIVERG AUTO</p>
+        <h2 class="product-title">Active vulnerability probing<br>that finds real bugs.</h2>
+        <p class="product-body">
+          Most scanners stop at headers. Diverg Auto goes further — passively analysing
+          your security posture then actively injecting non-destructive test payloads to
+          confirm exploitable vulnerabilities with evidence, not guesses.
+        </p>
+        <ul class="product-list">
+          <li>Reflected XSS — HTML, attribute, script, and comment context detection</li>
+          <li>SQL injection — error-based and boolean-blind with payload evidence</li>
+          <li>SSRF — cloud metadata endpoints and internal network ranges</li>
+          <li>Path traversal, open redirects, and authentication bypass</li>
+          <li>Passive: headers, SSL/TLS, CSP, cookies, content analysis</li>
+        </ul>
+        <div class="product-actions">
+          <a href="../resources/docs/quickstart.html" class="btn-fill">Get started</a>
+          <a href="../resources/docs/web-security.html" class="btn-ghost-sm">Full docs &rarr;</a>
+        </div>
+      </div>
+      <div class="product-visual">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="term-dot red"></span>
+            <span class="term-dot yellow"></span>
+            <span class="term-dot green"></span>
+          </div>
+          <pre class="terminal-body"><span class="t-dim">$</span> diverg-scan https://target.com <span class="t-dim">--type active</span>
+
+<span class="t-muted">Passive scan ........... 8 findings</span>
+<span class="t-muted">Discovering injection points ...</span>
+<span class="t-muted">Running 6 probes .............</span>
+
+<span class="t-red">[CRITICAL]</span> Reflected XSS
+  <span class="t-dim">→ /search?q= — HTML body context</span>
+  <span class="t-dim">→ canary confirmed in response</span>
+
+<span class="t-red">[HIGH]   </span> SQL Injection (boolean-blind)
+  <span class="t-dim">→ /api/users?id= — 42% length delta</span>
+
+<span class="t-yellow">[MEDIUM] </span> Open Redirect
+  <span class="t-dim">→ /login?next= — Location header</span>
+
+<span class="t-muted">──────────────────────────────────</span>
+Score  <span class="t-red">23/100</span>   Grade  <span class="t-red">F</span>
+Probes  6/6     Findings  11</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Row 2: Attack Paths -->
+  <section class="product-row product-row-alt">
+    <div class="container product-row-inner product-row-reverse">
+      <div class="product-text">
+        <p class="eyebrow">ATTACK INTELLIGENCE</p>
+        <h2 class="product-title">Findings chained into<br>exploit narratives.</h2>
+        <p class="product-body">
+          Twelve disconnected findings mean nothing to a developer. Attack-path reasoning
+          chains vulnerabilities together, shows how each one enables the next, and gives
+          your team a clear picture of what an attacker can actually do — and in what order
+          to fix it.
+        </p>
+        <ul class="product-list">
+          <li>XSS + missing HttpOnly = Session Hijack</li>
+          <li>SQLi + error disclosure = Database Compromise</li>
+          <li>SSRF + internal access = Network Pivot</li>
+          <li>Severity, likelihood, and impact summary per path</li>
+          <li>Prioritised remediation ordered by exploitability</li>
+        </ul>
+        <div class="product-actions">
+          <a href="../resources/docs/quickstart.html" class="btn-fill">Get started</a>
+          <a href="../resources/docs/web-security.html" class="btn-ghost-sm">Full docs &rarr;</a>
+        </div>
+      </div>
+      <div class="product-visual">
+        <div class="path-card">
+          <div class="path-header">
+            <span class="path-badge critical">CRITICAL</span>
+            <span class="path-name">Session Hijack via XSS</span>
+          </div>
+          <div class="path-chain">
+            <div class="chain-step">
+              <div class="chain-dot red"></div>
+              <div class="chain-text">
+                <div class="chain-label">Reflected XSS</div>
+                <div class="chain-desc">/search?q= — HTML body, canary confirmed</div>
+              </div>
+            </div>
+            <div class="chain-line"></div>
+            <div class="chain-step">
+              <div class="chain-dot yellow"></div>
+              <div class="chain-text">
+                <div class="chain-label">Weak Session Cookie</div>
+                <div class="chain-desc">HttpOnly not set — accessible via JS</div>
+              </div>
+            </div>
+            <div class="chain-line"></div>
+            <div class="chain-step">
+              <div class="chain-dot white"></div>
+              <div class="chain-text">
+                <div class="chain-label">Account Takeover</div>
+                <div class="chain-desc">Steal session, impersonate any user</div>
+              </div>
+            </div>
+          </div>
+          <div class="path-footer">
+            <span class="path-stat">Likelihood <strong>0.82</strong></span>
+            <span class="path-stat">Impact <strong>Critical</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Row 3: Diverg Chain -->
+  <section class="product-row">
+    <div class="container product-row-inner">
+      <div class="product-text">
+        <p class="eyebrow">DIVERG CHAIN</p>
+        <h2 class="product-title">On-chain forensics across<br>every major network.</h2>
+        <p class="product-body">
+          Multi-modal blockchain investigation across Ethereum, Bitcoin, and Solana.
+          Trace funds across bridges, identify mixer usage, cluster entities, and score
+          wallets for risk — all from the same platform as your web security data.
+        </p>
+        <ul class="product-list">
+          <li>Transaction graph traversal — trace hops across wallets</li>
+          <li>Entity clustering and exchange identification</li>
+          <li>Risk scoring with sanctions and mixer detection</li>
+          <li>Fund flow across bridges and wrapped assets</li>
+          <li>Natural language queries via OpenClaw integration</li>
+        </ul>
+        <div class="product-actions">
+          <a href="../resources/docs/quickstart.html" class="btn-fill">Get started</a>
+          <a href="../resources/docs/blockchain.html" class="btn-ghost-sm">Blockchain docs &rarr;</a>
+        </div>
+      </div>
+      <div class="product-visual">
+        <div class="chain-visual">
+          <div class="node node-center">
+            <div class="node-dot blue"></div>
+            <div class="node-label">Target Wallet</div>
+          </div>
+          <div class="node-edges">
+            <div class="edge">
+              <div class="edge-line"></div>
+              <div class="node-dot red small"></div>
+              <div class="node-label small">High-risk Exchange</div>
+            </div>
+            <div class="edge">
+              <div class="edge-line"></div>
+              <div class="node-dot yellow small"></div>
+              <div class="node-label small">Mixer Protocol</div>
+            </div>
+            <div class="edge">
+              <div class="edge-line"></div>
+              <div class="node-dot muted small"></div>
+              <div class="node-label small">Unknown Wallet &times;4</div>
+            </div>
+          </div>
+          <div class="chain-meta">
+            <div class="chain-meta-row"><span>Risk Score</span><span class="t-red">87/100</span></div>
+            <div class="chain-meta-row"><span>Hops Traced</span><span>14</span></div>
+            <div class="chain-meta-row"><span>Networks</span><span>ETH &middot; SOL &middot; BTC</span></div>
+            <div class="chain-meta-row"><span>Flagged</span><span class="t-red">Mixer exposure</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capability table -->
+  <section class="capability-section">
+    <div class="container">
+      <div class="capability-header">
+        <p class="eyebrow">CAPABILITIES</p>
+        <h2 class="product-title">Every check, documented.</h2>
+      </div>
+      <div class="cap-grid">
+        <div class="cap-col">
+          <p class="cap-col-title">Passive Scanning</p>
+          <ul class="cap-list">
+            <li>Security headers (CSP, HSTS, X-Frame)</li>
+            <li>SSL/TLS configuration and cert analysis</li>
+            <li>Cookie flags (HttpOnly, Secure, SameSite)</li>
+            <li>Content analysis and tech fingerprinting</li>
+            <li>Redirect chain inspection</li>
+            <li>Security scoring (0–100, A–F grade)</li>
+          </ul>
+        </div>
+        <div class="cap-col">
+          <p class="cap-col-title">Active Probing</p>
+          <ul class="cap-list">
+            <li>Reflected XSS — 4 injection contexts</li>
+            <li>SQL injection — error-based + boolean-blind</li>
+            <li>SSRF — cloud metadata + internal ranges</li>
+            <li>Path traversal — LFI sequence detection</li>
+            <li>Open redirect — parameter and header</li>
+            <li>Auth bypass — forced browse, verb tamper, IDOR</li>
+          </ul>
+        </div>
+        <div class="cap-col">
+          <p class="cap-col-title">Integrations</p>
+          <ul class="cap-list">
+            <li>Python SDK — <code>pip install diverg-lite</code></li>
+            <li>CLI — <code>diverg-scan</code></li>
+            <li>GitHub Actions + GitLab CI</li>
+            <li>JSON and Markdown output</li>
+            <li>OpenClaw agent integration</li>
+            <li>Batch scanning + <code>--fail-on</code> gates</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="inner-cta">
+    <div class="container">
+      <h2 class="cta-title">Start scanning in one command.</h2>
+      <div class="cta-code">pip install diverg-lite</div>
+      <div class="cta-actions">
+        <a href="../resources/docs/quickstart.html" class="btn-fill btn-fill-lg">Read the quick start</a>
+        <a href="../request-demo.html" class="btn-ghost btn-ghost-lg">Request demo &rarr;</a>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
-    <div class="footer-inner">
-      <p class="footer-copy">&copy; 2026 Diverg. All rights reserved.</p>
-      <a href="https://x.com/DivergSec" target="_blank" rel="noopener noreferrer" class="footer-x" aria-label="Diverg on X (Twitter)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="../assets/logo.png" alt="Diverg" class="footer-logo" onerror="this.setAttribute('hidden','');this.nextElementSibling.removeAttribute('hidden')">
+          <span class="footer-wordmark" hidden>Diverg</span>
+          <p class="footer-tag">Autonomous security & blockchain investigation.</p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="../product/">Diverg Auto</a>
+            <a href="../product/">Diverg Chain</a>
+            <a href="../product/">OpenClaw</a>
+          </div>
+          <div class="footer-col">
+            <h4>Developers</h4>
+            <a href="../resources/docs/">Documentation</a>
+            <a href="../resources/docs/quickstart.html">Quick Start</a>
+            <a href="https://github.com/fennq/diverg-auto" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="../company/">About</a>
+            <a href="../careers/">Careers</a>
+            <a href="../request-demo.html">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>2026 Diverg. All rights reserved.</p>
+        <a href="https://x.com/DivergSec" target="_blank" rel="noopener" aria-label="X">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
     </div>
   </footer>
 
