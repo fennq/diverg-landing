@@ -38,7 +38,7 @@ Run the scan after deploying:
 
 ```bash
 cd /Users/fen/Documents/diverg-auto
-# diverg_lite is the Python import path for the open-source Diverg Auto scanner (repo: diverg-auto).
+# diverg_lite is the Python import path for the open-source Diverg Open scanner (repo: diverg-auto).
 python3 -c "
 import sys, warnings; warnings.filterwarnings('ignore'); sys.path.insert(0,'.')
 from diverg_lite import scan
