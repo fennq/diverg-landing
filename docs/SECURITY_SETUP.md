@@ -1,11 +1,11 @@
 # Diverg Security Headers Setup
 
-Current scan score: **30/100 (F)**. All issues are missing HTTP headers and TLS config.
+Current scan score: **30/100 (F)** — all issues are missing HTTP headers and TLS config.
 Target after setup: **94–97/100 (A)**.
 
 ---
 
-## Step 1: Fix TLS (2 minutes, Cloudflare dashboard)
+## Step 1 — Fix TLS (2 minutes, Cloudflare dashboard)
 
 Fixes: `TLSv1.0 accepted` and `TLSv1.1 accepted` (+16 points)
 
@@ -16,7 +16,7 @@ Fixes: `TLSv1.0 accepted` and `TLSv1.1 accepted` (+16 points)
 
 ---
 
-## Step 2: Deploy the Cloudflare Worker (5 minutes)
+## Step 2 — Deploy the Cloudflare Worker (5 minutes)
 
 Fixes all remaining header issues (+51 points). The worker is in `cloudflare-worker.js`.
 
@@ -32,7 +32,7 @@ That's it. The worker will now inject all security headers and remove the `Acces
 
 ---
 
-## Step 3: Verify
+## Step 3 — Verify
 
 Run the scan after deploying:
 
@@ -55,6 +55,6 @@ The only remaining finding will be `Server: cloudflare` (Low, -3) which Cloudfla
 
 ## Why not just the `_headers` file?
 
-The `_headers` file in the repo works on **Netlify** and **Cloudflare Pages**, but the site is currently on **GitHub Pages**, which ignores it. The Worker approach works regardless of hosting.
+The `_headers` file in the repo works on **Netlify** and **Cloudflare Pages** — but the site is currently on **GitHub Pages**, which ignores it. The Worker approach works regardless of hosting.
 
-If you ever move to Cloudflare Pages (recommended: same workflow, just push to GitHub), the `_headers` file will activate automatically and you can remove the Worker.
+If you ever move to Cloudflare Pages (recommended — same workflow, just push to GitHub), the `_headers` file will activate automatically and you can remove the Worker.

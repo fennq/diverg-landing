@@ -1,142 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Blockchain | Diverg Docs</title>
- <link rel="canonical" href="https://divergsec.com/resources/docs/blockchain.html">
- <meta property="og:type" content="article">
- <meta property="og:url" content="https://divergsec.com/resources/docs/blockchain.html">
- <meta property="og:title" content="Blockchain | Diverg Docs">
- <meta property="og:description" content="Wallet and token analysis, flow mapping, and entity labeling across chains.">
- <meta property="og:image" content="https://divergsec.com/assets/og-image.png">
- <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon.png?v=2">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="../../styles.css?v=2">
- <link rel="stylesheet" href="docs.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain | Diverg Docs</title>
+  <link rel="canonical" href="https://divergsec.com/resources/docs/blockchain.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://divergsec.com/resources/docs/blockchain.html">
+  <meta property="og:title" content="Blockchain | Diverg Docs">
+  <meta property="og:description" content="Wallet and token analysis, flow mapping, and entity labeling across chains.">
+  <meta property="og:image" content="https://divergsec.com/assets/og-image.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon.png?v=2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css?v=2">
+  <link rel="stylesheet" href="docs.css">
 </head>
 <body class="docs-page">
- <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
- <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
- <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
- </button>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
 
- <nav class="nav" id="nav">
- <div class="nav-inner">
- <a href="../../" class="logo">
- <img src="../../assets/logo.png" alt="Diverg" class="logo-img" width="32" height="32">
- </a>
- <nav class="nav-links">
- <a href="../../product/">Product</a>
- <a href="../../solutions/">Solutions</a>
- <a href="../../company/">Company</a>
- <a href="../../careers/">Careers</a>
- <a href="../">Resources</a>
- </nav>
- <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
- <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
- </button>
- <div class="nav-actions">
- <a href="mailto:company@divergsec.com?subject=Booking%3A%20Investigation%20or%20security%20assessment" class="btn btn-outline btn-book-nav">Request booking</a>
- <a href="https://dash.divergsec.com/login" class="btn btn-primary">Diverg Auto</a>
- </div>
- </div>
- </nav>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../../" class="logo">
+        <img src="../../assets/logo.png" alt="Diverg" class="logo-img" width="32" height="32">
+      </a>
+      <nav class="nav-links">
+        <a href="../../product/">Product</a>
+        <a href="../../solutions/">Solutions</a>
+        <a href="../../company/">Company</a>
+        <a href="../../careers/">Careers</a>
+        <a href="../">Resources</a>
+      </nav>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="nav-actions">
+        <a href="mailto:company@divergsec.com?subject=Booking%3A%20Investigation%20or%20security%20assessment" class="btn btn-outline btn-book-nav">Request booking</a>
+        <a href="https://dash.divergsec.com/login" class="btn btn-primary">Diverg Auto</a>
+      </div>
+    </div>
+  </nav>
 
- <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
- <div class="docs-container">
- <aside class="docs-sidebar-left" id="docsSidebar">
- <div class="docs-nav-section">
- <p class="docs-sidebar-title">Getting Started</p>
- <ul class="docs-nav">
- <li class="docs-nav-item"><a href="index.html">Welcome</a></li>
- <li class="docs-nav-item"><a href="quickstart.html">Quick Start</a></li>
- <li class="docs-nav-item"><a href="installation.html">Installation</a></li>
- </ul>
- </div>
- <div class="docs-nav-section">
- <p class="docs-sidebar-title">Core Concepts</p>
- <ul class="docs-nav">
- <li class="docs-nav-item"><a href="what-is-diverg.html">What is Diverg?</a></li>
- <li class="docs-nav-item"><a href="architecture.html">Architecture</a></li>
- <li class="docs-nav-item"><a href="skills.html">Skills System</a></li>
- <li class="docs-nav-item"><a href="fact-only.html">Fact-Only Reporting</a></li>
- </ul>
- </div>
- <div class="docs-nav-section">
- <p class="docs-sidebar-title">Features</p>
- <ul class="docs-nav">
- <li class="docs-nav-item"><a href="web-security.html">Web Security</a></li>
- <li class="docs-nav-item"><a href="blockchain.html" class="active">Blockchain</a></li>
- <li class="docs-nav-item"><a href="osint.html">OSINT</a></li>
- <li class="docs-nav-item"><a href="reporting.html">Reporting</a></li>
- </ul>
- </div>
- <div class="docs-nav-section">
- <p class="docs-sidebar-title">Reference</p>
- <ul class="docs-nav">
- <li class="docs-nav-item"><a href="whitepaper.html">Whitepaper</a></li>
- <li class="docs-nav-item"><a href="api.html">API Reference</a></li>
- <li class="docs-nav-item"><a href="integrations.html">Integrations</a></li>
- <li class="docs-nav-item"><a href="changelog.html">Changelog</a></li>
- </ul>
- </div>
- </aside>
+  <div class="docs-container">
+    <aside class="docs-sidebar-left" id="docsSidebar">
+      <div class="docs-nav-section">
+        <p class="docs-sidebar-title">Getting Started</p>
+        <ul class="docs-nav">
+          <li class="docs-nav-item"><a href="index.html">Welcome</a></li>
+          <li class="docs-nav-item"><a href="quickstart.html">Quick Start</a></li>
+          <li class="docs-nav-item"><a href="installation.html">Installation</a></li>
+        </ul>
+      </div>
+      <div class="docs-nav-section">
+        <p class="docs-sidebar-title">Core Concepts</p>
+        <ul class="docs-nav">
+          <li class="docs-nav-item"><a href="what-is-diverg.html">What is Diverg?</a></li>
+          <li class="docs-nav-item"><a href="architecture.html">Architecture</a></li>
+          <li class="docs-nav-item"><a href="skills.html">Skills System</a></li>
+          <li class="docs-nav-item"><a href="fact-only.html">Fact-Only Reporting</a></li>
+        </ul>
+      </div>
+      <div class="docs-nav-section">
+        <p class="docs-sidebar-title">Features</p>
+        <ul class="docs-nav">
+          <li class="docs-nav-item"><a href="web-security.html">Web Security</a></li>
+          <li class="docs-nav-item"><a href="blockchain.html" class="active">Blockchain</a></li>
+          <li class="docs-nav-item"><a href="osint.html">OSINT</a></li>
+          <li class="docs-nav-item"><a href="reporting.html">Reporting</a></li>
+        </ul>
+      </div>
+      <div class="docs-nav-section">
+        <p class="docs-sidebar-title">Reference</p>
+        <ul class="docs-nav">
+          <li class="docs-nav-item"><a href="whitepaper.html">Whitepaper</a></li>
+          <li class="docs-nav-item"><a href="api.html">API Reference</a></li>
+          <li class="docs-nav-item"><a href="integrations.html">Integrations</a></li>
+          <li class="docs-nav-item"><a href="changelog.html">Changelog</a></li>
+        </ul>
+      </div>
+    </aside>
 
- <div class="docs-content-wrapper">
- <main class="docs-content">
- <article class="docs-article">
- <header class="docs-header">
- <h1>Blockchain</h1>
- <p class="docs-subtitle">Wallet and token analysis, flow mapping, and entity labeling across chains.</p>
- </header>
+    <div class="docs-content-wrapper">
+      <main class="docs-content">
+        <article class="docs-article">
+          <header class="docs-header">
+            <h1>Blockchain</h1>
+            <p class="docs-subtitle">Wallet and token analysis, flow mapping, and entity labeling across chains.</p>
+          </header>
 
- <h2 id="overview">Overview</h2>
- <p>Diverg's blockchain capabilities let you profile wallets, trace tokens and funds, and map counterparties. We support Ethereum and Solana today, with more chains and Layer 2s on the roadmap. When you configure API keys for Solscan Pro, Arkham, Etherscan, and Bubblemaps, you get richer labels and flow visualizations; without them, we still run analysis and clearly mark what was skipped. See <a href="fact-only.html">Fact-Only Reporting</a>.</p>
+          <h2 id="overview">Overview</h2>
+          <p>Diverg's blockchain capabilities let you profile wallets, trace tokens and funds, and map counterparties. We support Ethereum and Solana today, with more chains and Layer 2s on the roadmap. When you configure API keys for Solscan Pro, Arkham, Etherscan, and Bubblemaps, you get richer labels and flow visualizations; without them, we still run analysis and clearly mark what was skipped. See <a href="fact-only.html">Fact-Only Reporting</a>.</p>
 
- <h2 id="wallet-token">Wallet &amp; token analysis</h2>
- <p>For any address or token contract, Diverg can:</p>
- <ul>
- <li>Profile the wallet: balance history, top tokens, and transaction patterns</li>
- <li>Analyze token distribution, holder clustering, and large movements</li>
- <li>Normalize transfers across tokens and chains for consistent reporting</li>
- </ul>
- <p>With Arkham (and similar) integration, addresses can be labeled (e.g. exchange, known scam) so reports are easier to interpret.</p>
+          <h2 id="wallet-token">Wallet &amp; token analysis</h2>
+          <p>For any address or token contract, Diverg can:</p>
+          <ul>
+            <li>Profile the wallet: balance history, top tokens, and transaction patterns</li>
+            <li>Analyze token distribution, holder clustering, and large movements</li>
+            <li>Normalize transfers across tokens and chains for consistent reporting</li>
+          </ul>
+          <p>With Arkham (and similar) integration, addresses can be labeled (e.g. exchange, known scam) so reports are easier to interpret.</p>
 
- <h2 id="flows">Flow visualization</h2>
- <p>Fund flows are mapped into diagrams showing movement between wallets, mixers, CEXs, and bridges. Bubblemaps-style integration helps identify clustering and suspicious patterns. Outputs are suitable for incident response, due diligence, or evidence packaging.</p>
+          <h2 id="flows">Flow visualization</h2>
+          <p>Fund flows are mapped into diagrams showing movement between wallets, mixers, CEXs, and bridges. Bubblemaps-style integration helps identify clustering and suspicious patterns. Outputs are suitable for incident response, due diligence, or evidence packaging.</p>
 
- <h2 id="integrations">Data sources</h2>
- <p>Blockchain data is pulled from:</p>
- <ul>
- <li><strong>Solscan Pro</strong>, Solana-focused data and labels</li>
- <li><strong>Arkham</strong>, Entity labeling and intelligence</li>
- <li><strong>Etherscan</strong>, Ethereum data and verification</li>
- <li><strong>Bubblemaps</strong>, Holder and flow visualization</li>
- </ul>
- <p>Public RPC and block explorer data is used when API keys are not set; advanced features (e.g. full flow diagrams, labels) are then marked as skipped in the report.</p>
+          <h2 id="integrations">Data sources</h2>
+          <p>Blockchain data is pulled from:</p>
+          <ul>
+            <li><strong>Solscan Pro</strong> — Solana-focused data and labels</li>
+            <li><strong>Arkham</strong> — Entity labeling and intelligence</li>
+            <li><strong>Etherscan</strong> — Ethereum data and verification</li>
+            <li><strong>Bubblemaps</strong> — Holder and flow visualization</li>
+          </ul>
+          <p>Public RPC and block explorer data is used when API keys are not set; advanced features (e.g. full flow diagrams, labels) are then marked as skipped in the report.</p>
 
- <h2 id="use-cases">Use cases</h2>
- <p>Typical applications: token launch and deployer due diligence, incident response (tracking attacker wallets and exchange deposits), rug-pull and centralization analysis, and compliance or legal evidence. See the <a href="whitepaper.html">Whitepaper</a> for more.</p>
- </article>
- </main>
- </div>
+          <h2 id="use-cases">Use cases</h2>
+          <p>Typical applications: token launch and deployer due diligence, incident response (tracking attacker wallets and exchange deposits), rug-pull and centralization analysis, and compliance or legal evidence. See the <a href="whitepaper.html">Whitepaper</a> for more.</p>
+        </article>
+      </main>
+    </div>
 
- <aside class="docs-sidebar-right">
- <p class="toc-title">On this page</p>
- <ul class="toc-list">
- <li><a href="#overview">Overview</a></li>
- <li><a href="#wallet-token">Wallet &amp; token analysis</a></li>
- <li><a href="#flows">Flow visualization</a></li>
- <li><a href="#integrations">Data sources</a></li>
- <li><a href="#use-cases">Use cases</a></li>
- </ul>
- </aside>
- </div>
+    <aside class="docs-sidebar-right">
+      <p class="toc-title">On this page</p>
+      <ul class="toc-list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#wallet-token">Wallet &amp; token analysis</a></li>
+        <li><a href="#flows">Flow visualization</a></li>
+        <li><a href="#integrations">Data sources</a></li>
+        <li><a href="#use-cases">Use cases</a></li>
+      </ul>
+    </aside>
+  </div>
 
- <script src="docs-ui.js"></script>
+  <script src="docs-ui.js"></script>
 </body>
 </html>
