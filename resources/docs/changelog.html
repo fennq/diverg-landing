@@ -84,31 +84,54 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>Changelog</h1>
-            <p class="docs-subtitle">Version history and notable updates to the platform and documentation.</p>
+            <p class="docs-subtitle">Daily product and platform updates, published in a clean end-of-day format.</p>
           </header>
 
-          <h2 id="docs-2026-03">Documentation (March 2026)</h2>
-          <div class="changelog-entry">
-            <p class="changelog-date">Documentation site launch</p>
-            <p>Initial release of the Diverg documentation site with the following sections:</p>
+          <h2 id="how-we-publish">How we publish updates</h2>
+          <div class="highlight-box">
             <ul>
-              <li><strong>Getting Started:</strong> Quick Start, Installation, how to get access and run your first investigation</li>
-              <li><strong>Core Concepts:</strong> What is Diverg?, Architecture, Skills System, Fact-Only Reporting, platform overview and design</li>
-              <li><strong>Features:</strong> Web Security, Blockchain, OSINT, Reporting, detailed capability docs</li>
-              <li><strong>Reference:</strong> Whitepaper (full technical document), API Reference, Integrations, Changelog</li>
+              <li>New updates are added here at the end of each working day.</li>
+              <li>Entries focus on shipped outcomes: UX, platform changes, and validation.</li>
+              <li>Critical fixes and significant behavior changes are prioritized in notes.</li>
             </ul>
-            <p>Dark/light theme toggle, responsive layout, and consistent styling across all pages. Future product and doc updates will be listed here with dates and summaries.</p>
           </div>
 
-          <h2 id="future">Upcoming (next 3 months)</h2>
-          <p>Planned updates in the next 3 months (see also <a href="whitepaper.html">Whitepaper</a> roadmap section):</p>
-          <ul>
-            <li>Browser extension public release</li>
-            <li>Expanded blockchain support (e.g. Bitcoin, Layer 2s)</li>
-            <li>Full API reference (OpenAPI/Swagger) and SDKs</li>
-            <li>CI/CD plugins (GitHub Actions, GitLab CI)</li>
-          </ul>
-          <p>For the latest product news, follow <a href="https://x.com/DivergSec" target="_blank" rel="noopener noreferrer">@DivergSec on X</a>.</p>
+          <h2 id="latest">Latest updates</h2>
+
+          <section class="changelog-day">
+            <div class="changelog-day-head">
+              <h3>2026-04-06</h3>
+              <span class="changelog-badge">Daily update</span>
+            </div>
+            <div class="changelog-entry">
+              <p class="changelog-date">Week 1 close + Week 2 kickoff</p>
+              <ul>
+                <li><strong>Scanner UX:</strong> completed guided onboarding, richer finding trust details, and false-positive feedback flow.</li>
+                <li><strong>UI cleanup:</strong> removed the Scanner Readiness panel from scanner view by product direction.</li>
+                <li><strong>Week 2 Part 1:</strong> shipped recheck and scan diff flow with <code>new</code>, <code>fixed</code>, <code>regressed</code>, and <code>improved</code> states.</li>
+                <li><strong>API:</strong> scan responses now include structured diff payloads for same-target historical comparison.</li>
+                <li><strong>Validation:</strong> scan-diff test suite passed and same-target repeat scans validated baseline/diff behavior.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="changelog-day">
+            <div class="changelog-day-head">
+              <h3>2026-03</h3>
+              <span class="changelog-badge">Documentation</span>
+            </div>
+            <div class="changelog-entry">
+              <p class="changelog-date">Documentation site launch</p>
+              <ul>
+                <li>Published complete docs structure: Getting Started, Core Concepts, Features, and Reference.</li>
+                <li>Added whitepaper, API reference, integrations pages, and initial changelog page.</li>
+                <li>Shipped responsive docs layout and dark/light theme support.</li>
+              </ul>
+            </div>
+          </section>
+
+          <h2 id="next">What gets logged here</h2>
+          <p>This page tracks shipped work that affects platform capability, reliability, or user experience. For roadmap context, see the <a href="whitepaper.html">Whitepaper</a>.</p>
         </article>
       </main>
     </div>

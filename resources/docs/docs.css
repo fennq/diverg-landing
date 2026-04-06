@@ -530,6 +530,38 @@
   margin-bottom: 2rem;
 }
 
+.changelog-day {
+  background: var(--docs-card-bg);
+  border: 1px solid var(--docs-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem 0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.changelog-day-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.changelog-day-head h3 {
+  margin: 0;
+}
+
+.changelog-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--docs-border-light);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  color: var(--docs-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .changelog-date {
   font-size: 0.875rem;
   color: var(--docs-text-muted);
@@ -621,7 +653,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Docs nav: booking + Diverg Open */
+/* Docs nav: booking + Diverg Auto */
 .docs-page .nav-inner > .nav-actions {
   display: flex;
   flex-wrap: wrap;
