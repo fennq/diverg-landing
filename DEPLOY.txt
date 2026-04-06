@@ -1,4 +1,4 @@
-LIVE AT DIVERGSEC.COM — 2 STEPS
+LIVE AT DIVERGSEC.COM: 2 STEPS
 ================================
 
 1. ENABLE GITHUB PAGES (once)
