@@ -84,7 +84,7 @@
         <article class="docs-article">
           <header class="docs-header">
             <h1>Integrations</h1>
-            <p class="docs-subtitle">Telegram, CLI, webhooks, and blockchain data—Arkham, Solscan, Helius, FrontrunPro, Bubblemaps.</p>
+            <p class="docs-subtitle">Telegram, CLI, webhooks, and blockchain data, Arkham, Solscan, Helius, FrontrunPro, Bubblemaps.</p>
           </header>
 
           <h2 id="overview">Overview</h2>
@@ -104,7 +104,7 @@
           <ul>
             <li>One-off investigations from the terminal</li>
             <li>Scripts and automation (e.g. run a scan on every deploy)</li>
-            <li>CI/CD pipelines (GitHub Actions, GitLab CI—plugins coming soon)</li>
+            <li>CI/CD pipelines (GitHub Actions, GitLab CI, plugins coming soon)</li>
           </ul>
           <p>You authenticate with your API key; installation and usage instructions are provided when you get access. See <a href="installation.html">Installation</a>.</p>
 
@@ -115,34 +115,34 @@
           <p>To get the most from Diverg, you can configure API keys for blockchain data and web/OSINT tools. Keys are set in the dashboard (or via config in enterprise deployments). Without them, Diverg still runs but marks certain checks as skipped. See <a href="fact-only.html">Fact-Only Reporting</a> and <a href="installation.html">Installation</a>.</p>
 
           <h2 id="blockchain-integrations">Blockchain data integrations</h2>
-          <p>Our blockchain investigation pipeline uses five core data sources. Each adds a layer of depth—from on-chain state and token metadata to wallet attribution, flow mapping, and social linkage.</p>
+          <p>Our blockchain investigation pipeline uses five core data sources. Each adds a layer of depth, from on-chain state and token metadata to wallet attribution, flow mapping, and social linkage.</p>
 
           <h3 id="arkham">Arkham</h3>
           <p><strong>What it is:</strong> Address intelligence and entity labeling across chains.</p>
-          <p><strong>Value:</strong> We use the Arkham Intel API to attach labels and entities to wallet addresses—exchange deposits, known protocols, high-value wallets, and risk tags. That turns raw addresses into named actors (e.g. “Binance 1”, “Raydium LP”) and supports attribution and risk scoring.</p>
+          <p><strong>Value:</strong> We use the Arkham Intel API to attach labels and entities to wallet addresses, exchange deposits, known protocols, high-value wallets, and risk tags. That turns raw addresses into named actors (e.g. “Binance 1”, “Raydium LP”) and supports attribution and risk scoring.</p>
           <p><strong>What it lets us do deeper:</strong> Identify whether a wallet is tied to a CEX, protocol, or known entity; cross-reference target wallets against Arkham’s entity graph; improve report narratives with human-readable labels; flag high-risk or sanctioned entities when present in Arkham’s dataset. Request access at <a href="https://intel.arkm.com/api" target="_blank" rel="noopener">Arkham Intel API</a>. Set <code>ARKHAM_API_KEY</code> in your environment.</p>
 
           <h3 id="solscan">Solscan</h3>
           <p><strong>What it is:</strong> Solana block explorer and data API for tokens and holders.</p>
-          <p><strong>Value:</strong> We use Solscan’s API for token holder counts, token metadata (name, symbol, supply), and explorer links. It gives us a quick view of who holds a token and how concentrated ownership is—essential for assessing distribution and potential manipulation.</p>
+          <p><strong>Value:</strong> We use Solscan’s API for token holder counts, token metadata (name, symbol, supply), and explorer links. It gives us a quick view of who holds a token and how concentrated ownership is, essential for assessing distribution and potential manipulation.</p>
           <p><strong>What it lets us do deeper:</strong> See total holder count and top holders for any SPL token; pull metadata (name, symbol, decimals) for the token of interest; generate direct Solscan links in reports for manual verification; support “who holds this token” and “how concentrated” questions in investigations. Uses the public Solscan API.</p>
 
           <h3 id="helius">Helius</h3>
           <p><strong>What it is:</strong> Solana RPC and data platform offering Wallet API, DAS (Digital Asset Standard), and Enhanced Transactions.</p>
           <p><strong>Value:</strong> We use Helius for wallet identity, funded-by (who first funded a wallet), balances (tokens + USD for top assets), parsed history and transfers, Enhanced Transactions (human-readable type/source: SWAP, TRANSFER, NFT_SALE, etc.), and DAS (portfolio and single-asset metadata). One provider gives us both “who is this wallet” and “what did it do.”</p>
-          <p><strong>What it lets us do deeper:</strong> Resolve wallets to known entities (exchange, protocol, KOL, scammer) via the Wallet API; trace funding source (first SOL in)—critical for sybil detection and attribution; build a full portfolio view (tokens + NFTs) and parsed tx history without raw RPC parsing; filter and analyze by transaction type and source. Get keys at <a href="https://dashboard.helius.dev" target="_blank" rel="noopener">Helius Dashboard</a>. Set <code>HELIUS_API_KEY</code>.</p>
+          <p><strong>What it lets us do deeper:</strong> Resolve wallets to known entities (exchange, protocol, KOL, scammer) via the Wallet API; trace funding source (first SOL in), critical for sybil detection and attribution; build a full portfolio view (tokens + NFTs) and parsed tx history without raw RPC parsing; filter and analyze by transaction type and source. Get keys at <a href="https://dashboard.helius.dev" target="_blank" rel="noopener">Helius Dashboard</a>. Set <code>HELIUS_API_KEY</code>.</p>
 
           <h3 id="frontrunpro">FrontrunPro</h3>
           <p><strong>What it is:</strong> Solana-focused intelligence and “smart money” platform, with a public Address Finder and an optional paid API.</p>
           <p><strong>Value:</strong> We integrate Address Finder (no API key) to go from a Twitter @handle or wallet fragment to a full Solana address. Optionally, with the paid API we can pull linked wallets, KOL follow lists, and CA history for deeper network mapping.</p>
-          <p><strong>What it lets us do deeper:</strong> Social → chain: take a Twitter handle (or partial address) and resolve it to a Solana wallet for cross-referencing with our wallet list and reports; attribution—link public identities (e.g. promoters, team) to on-chain addresses; with the paid API: map wallet clusters and KOL/smart-money connections. No-cost: use <a href="https://www.frontrun.pro/address-finder" target="_blank" rel="noopener">Address Finder</a>. Paid API: set <code>FRONTRUNPRO_API_KEY</code> and <code>FRONTRUNPRO_BASE_URL</code>.</p>
+          <p><strong>What it lets us do deeper:</strong> Social → chain: take a Twitter handle (or partial address) and resolve it to a Solana wallet for cross-referencing with our wallet list and reports; attribution, link public identities (e.g. promoters, team) to on-chain addresses; with the paid API: map wallet clusters and KOL/smart-money connections. No-cost: use <a href="https://www.frontrun.pro/address-finder" target="_blank" rel="noopener">Address Finder</a>. Paid API: set <code>FRONTRUNPRO_API_KEY</code> and <code>FRONTRUNPRO_BASE_URL</code>.</p>
 
           <h3 id="bubblemaps">Bubblemaps</h3>
-          <p><strong>What it is:</strong> Visual token flow and cluster analysis on Solana—who holds what, how tokens moved, and how wallets cluster.</p>
+          <p><strong>What it is:</strong> Visual token flow and cluster analysis on Solana, who holds what, how tokens moved, and how wallets cluster.</p>
           <p><strong>Value:</strong> We use Bubblemaps via links in our reports (no API in-pipeline) to visualize flows and clusters around a token or set of wallets. It answers “how did this token move?” and “do these wallets cluster?” in a way that’s hard to get from raw tables.</p>
-          <p><strong>What it lets us do deeper:</strong> Flow visualization—see token movement and concentration over time; cluster detection—identify wallet clusters (e.g. same funder, same behavior); narrative support—give reviewers a clear visual to back written findings; top holders and distribution—complement Solscan/Helius holder data with a spatial/cluster view. Used as a linked resource from investigation reports.</p>
+          <p><strong>What it lets us do deeper:</strong> Flow visualization, see token movement and concentration over time; cluster detection, identify wallet clusters (e.g. same funder, same behavior); narrative support, give reviewers a clear visual to back written findings; top holders and distribution, complement Solscan/Helius holder data with a spatial/cluster view. Used as a linked resource from investigation reports.</p>
 
-          <p><strong>Summary:</strong> Together, Arkham (labels, entities), Solscan (holders, metadata), Helius (identity, funded-by, DAS, enhanced tx), FrontrunPro (social → wallet, clusters), and Bubblemaps (flow and cluster visuals) let us move from raw addresses and tx lists to attribution, funding trails, social linkage, and visual flow analysis—so we can go deeper on any Solana-focused investigation.</p>
+          <p><strong>Summary:</strong> Together, Arkham (labels, entities), Solscan (holders, metadata), Helius (identity, funded-by, DAS, enhanced tx), FrontrunPro (social → wallet, clusters), and Bubblemaps (flow and cluster visuals) let us move from raw addresses and tx lists to attribution, funding trails, social linkage, and visual flow analysis, so we can go deeper on any Solana-focused investigation.</p>
 
           <h2 id="enterprise">Enterprise</h2>
           <p>On-premise and enterprise customers can add custom integrations: SSO (SAML/OIDC), threat-intel feeds, and internal tools. To discuss: <a href="mailto:company@divergsec.com?subject=Booking%3A%20Investigation%20or%20security%20assessment">company@divergsec.com</a>.</p>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solutions — Diverg</title>
+  <title>Solutions | Diverg</title>
   <link rel="canonical" href="https://divergsec.com/solutions/">
   <meta name="description" content="Purpose-built for crypto security, incident response, due diligence, and continuous monitoring.">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png">
@@ -40,7 +40,7 @@
       <h1 class="inner-title">Built for every<br>security workflow.</h1>
       <p class="inner-sub">
         Whether you're chasing an attacker across chains, assessing a target before a deal,
-        or blocking risky deploys in CI — Diverg has a workflow for it.
+        or blocking risky deploys in CI, Diverg has a workflow for it.
       </p>
     </div>
   </section>
@@ -72,7 +72,7 @@
             <span class="sol-card-title">Token Investigation</span>
           </div>
           <div class="sol-metrics">
-            <div class="sol-metric"><span>Deployer wallet</span><span class="t-red">Flagged — mixer funded</span></div>
+            <div class="sol-metric"><span>Deployer wallet</span><span class="t-red">Flagged, mixer funded</span></div>
             <div class="sol-metric"><span>Top 10 holders</span><span class="t-yellow">68% concentration</span></div>
             <div class="sol-metric"><span>Contract age</span><span class="t-muted">3 days</span></div>
             <div class="sol-metric"><span>Risk score</span><span class="t-red">91/100</span></div>
@@ -107,7 +107,7 @@
         <div class="sol-card">
           <div class="sol-card-header">
             <span class="path-badge" class="path-badge path-badge-blue">INCIDENT</span>
-            <span class="sol-card-title">Fund Trace — Active</span>
+            <span class="sol-card-title">Fund Trace, Active</span>
           </div>
           <div class="sol-metrics">
             <div class="sol-metric"><span>Stolen amount</span><span class="t-red">$2.4M USDC</span></div>
@@ -128,8 +128,7 @@
         <p class="eyebrow">DUE DILIGENCE</p>
         <h2 class="sol-title">Know the security posture<br>before you sign.</h2>
         <p class="sol-body">
-          Pre-investment and pre-acquisition assessments that cover the full attack surface —
-          web infrastructure, API exposure, and on-chain history — delivered in a structured
+          Pre-investment and pre-acquisition assessments that cover the full attack surface, web infrastructure, API exposure, and on-chain history, delivered in a structured
           report your legal team can use.
         </p>
         <ul class="sol-list">
@@ -168,10 +167,10 @@
         <p class="sol-body">
           Drop a single step into your GitHub Actions or GitLab CI workflow.
           Set a minimum severity threshold, and Diverg fails the build automatically
-          when new vulnerabilities appear — with machine-readable JSON for any dashboard.
+          when new vulnerabilities appear, with machine-readable JSON for any dashboard.
         </p>
         <ul class="sol-list">
-          <li>Single YAML step — no infrastructure required</li>
+          <li>Single YAML step, no infrastructure required</li>
           <li>Configurable <code>--fail-on critical|high|medium</code></li>
           <li>JSON output for SIEM and dashboard ingestion</li>
           <li>Markdown reports committed to PR comments</li>
@@ -186,7 +185,7 @@
             <span class="term-dot yellow"></span>
             <span class="term-dot green"></span>
           </div>
-          <pre class="terminal-body"><span class="t-dim"># .github/workflows/security.yml — Diverg Auto CLI</span>
+          <pre class="terminal-body"><span class="t-dim"># .github/workflows/security.yml, Diverg Auto CLI</span>
 - name: Diverg Auto security scan
   run: |
     pip install git+https://github.com/fennq/diverg-auto.git
@@ -197,7 +196,7 @@
       --output report.json
 
 <span class="t-red">Error: Found 2 critical, 3 high findings</span>
-<span class="t-red">Build failed — threshold: high</span></pre>
+<span class="t-red">Build failed, threshold: high</span></pre>
         </div>
       </div>
     </div>

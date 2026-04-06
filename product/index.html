@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product — Diverg</title>
+  <title>Product | Diverg</title>
   <link rel="canonical" href="https://divergsec.com/product/">
   <meta name="description" content="Active vulnerability probing, attack-path reasoning, and blockchain forensics. The complete security stack for autonomous agents and CI.">
-  <meta property="og:title" content="Product — Diverg">
+  <meta property="og:title" content="Product | Diverg">
   <meta property="og:description" content="Active vulnerability probing, attack-path reasoning, and blockchain forensics.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png">
@@ -44,7 +44,7 @@
       <h1 class="inner-title">Security from surface<br>to chain.</h1>
       <p class="inner-sub">
         Passive analysis, active vulnerability probing, attack-path reasoning,
-        and blockchain forensics — unified in a single platform built for agents and CI.
+        and blockchain forensics, unified in a single platform built for agents and CI.
       </p>
       <div class="hero-actions" class="mt-xl">
         <a href="../resources/docs/quickstart.html" class="btn-fill">Get started</a>
@@ -84,14 +84,14 @@
         <p class="eyebrow">DIVERG AUTO</p>
         <h2 class="product-title">Active vulnerability probing<br>that finds real bugs.</h2>
         <p class="product-body">
-          Most scanners stop at headers. Diverg Auto goes further — passively analysing
+          Most scanners stop at headers. Diverg Auto goes further, passively analysing
           your security posture then actively injecting non-destructive test payloads to
           confirm exploitable vulnerabilities with evidence, not guesses.
         </p>
         <ul class="product-list">
-          <li>Reflected XSS — HTML, attribute, script, and comment context detection</li>
-          <li>SQL injection — error-based and boolean-blind with payload evidence</li>
-          <li>SSRF — cloud metadata endpoints and internal network ranges</li>
+          <li>Reflected XSS, HTML, attribute, script, and comment context detection</li>
+          <li>SQL injection, error-based and boolean-blind with payload evidence</li>
+          <li>SSRF, cloud metadata endpoints and internal network ranges</li>
           <li>Path traversal, open redirects, and authentication bypass</li>
           <li>Passive: headers, SSL/TLS, CSP, cookies, content analysis</li>
         </ul>
@@ -114,14 +114,14 @@
 <span class="t-muted">Running 6 probes .............</span>
 
 <span class="t-red">[CRITICAL]</span> Reflected XSS
-  <span class="t-dim">→ /search?q= — HTML body context</span>
+  <span class="t-dim">→ /search?q=, HTML body context</span>
   <span class="t-dim">→ canary confirmed in response</span>
 
 <span class="t-red">[HIGH]   </span> SQL Injection (boolean-blind)
-  <span class="t-dim">→ /api/users?id= — 42% length delta</span>
+  <span class="t-dim">→ /api/users?id=, 42% length delta</span>
 
 <span class="t-yellow">[MEDIUM] </span> Open Redirect
-  <span class="t-dim">→ /login?next= — Location header</span>
+  <span class="t-dim">→ /login?next=, Location header</span>
 
 <span class="t-muted">──────────────────────────────────</span>
 Score  <span class="t-red">23/100</span>   Grade  <span class="t-red">F</span>
@@ -140,7 +140,7 @@ Probes  6/6     Findings  11</pre>
         <p class="product-body">
           Twelve disconnected findings mean nothing to a developer. Attack-path reasoning
           chains vulnerabilities together, shows how each one enables the next, and gives
-          your team a clear picture of what an attacker can actually do — and in what order
+          your team a clear picture of what an attacker can actually do, and in what order
           to fix it.
         </p>
         <ul class="product-list">
@@ -166,7 +166,7 @@ Probes  6/6     Findings  11</pre>
               <div class="chain-dot red"></div>
               <div class="chain-text">
                 <div class="chain-label">Reflected XSS</div>
-                <div class="chain-desc">/search?q= — HTML body, canary confirmed</div>
+                <div class="chain-desc">/search?q=, HTML body, canary confirmed</div>
               </div>
             </div>
             <div class="chain-line"></div>
@@ -174,7 +174,7 @@ Probes  6/6     Findings  11</pre>
               <div class="chain-dot yellow"></div>
               <div class="chain-text">
                 <div class="chain-label">Weak Session Cookie</div>
-                <div class="chain-desc">HttpOnly not set — accessible via JS</div>
+                <div class="chain-desc">HttpOnly not set, accessible via JS</div>
               </div>
             </div>
             <div class="chain-line"></div>
@@ -204,10 +204,10 @@ Probes  6/6     Findings  11</pre>
         <p class="product-body">
           Multi-modal blockchain investigation across Ethereum, Bitcoin, and Solana.
           Trace funds across bridges, identify mixer usage, cluster entities, and score
-          wallets for risk — all from the same platform as your web security data.
+          wallets for risk, all from the same platform as your web security data.
         </p>
         <ul class="product-list">
-          <li>Transaction graph traversal — trace hops across wallets</li>
+          <li>Transaction graph traversal, trace hops across wallets</li>
           <li>Entity clustering and exchange identification</li>
           <li>Risk scoring with sanctions and mixer detection</li>
           <li>Fund flow across bridges and wrapped assets</li>
@@ -274,19 +274,19 @@ Probes  6/6     Findings  11</pre>
         <div class="cap-col">
           <p class="cap-col-title">Active Probing</p>
           <ul class="cap-list">
-            <li>Reflected XSS — 4 injection contexts</li>
-            <li>SQL injection — error-based + boolean-blind</li>
-            <li>SSRF — cloud metadata + internal ranges</li>
-            <li>Path traversal — LFI sequence detection</li>
-            <li>Open redirect — parameter and header</li>
-            <li>Auth bypass — forced browse, verb tamper, IDOR</li>
+            <li>Reflected XSS, 4 injection contexts</li>
+            <li>SQL injection, error-based + boolean-blind</li>
+            <li>SSRF, cloud metadata + internal ranges</li>
+            <li>Path traversal, LFI sequence detection</li>
+            <li>Open redirect, parameter and header</li>
+            <li>Auth bypass, forced browse, verb tamper, IDOR</li>
           </ul>
         </div>
         <div class="cap-col">
           <p class="cap-col-title">Integrations</p>
           <ul class="cap-list">
-            <li><strong>Open-source CLI</strong> — install from <a href="https://github.com/fennq/diverg-auto" target="_blank" rel="noopener">diverg-auto</a> (GitHub or PyPI; see <a href="../resources/docs/installation.html">Installation</a>)</li>
-            <li>CLI — <code>diverg-scan</code></li>
+            <li><strong>Open-source CLI</strong>, install from <a href="https://github.com/fennq/diverg-auto" target="_blank" rel="noopener">diverg-auto</a> (GitHub or PyPI; see <a href="../resources/docs/installation.html">Installation</a>)</li>
+            <li>CLI, <code>diverg-scan</code></li>
             <li>GitHub Actions + GitLab CI</li>
             <li>JSON and Markdown output</li>
             <li>OpenClaw agent integration</li>

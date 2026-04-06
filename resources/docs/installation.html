@@ -99,10 +99,10 @@
             <li>Configure API keys (Solscan, Arkham, Etherscan, etc.) for full blockchain and OSINT coverage</li>
             <li>Schedule recurring scans and set up alerts (e.g. Telegram)</li>
           </ul>
-          <p>No local installation required—use the dashboard from any browser.</p>
+          <p>No local installation required, use the dashboard from any browser.</p>
 
           <h2 id="cli">Open-source CLI (Diverg Auto scanner)</h2>
-          <p>The <strong>diverg-auto</strong> project ships a standalone scanner for authorized targets—passive checks plus active, non-destructive probes and attack-path output. Typical use cases:</p>
+          <p>The <strong>diverg-auto</strong> project ships a standalone scanner for authorized targets, passive checks plus active, non-destructive probes and attack-path output. Typical use cases:</p>
           <ul>
             <li>Developers and researchers who want a local or CI-native workflow</li>
             <li>GitHub Actions / GitLab CI gates on deploy</li>
@@ -114,13 +114,13 @@
           <pre><code>pip install diverg-lite</code></pre>
           <p>CLI entry point: <code>diverg-scan</code>. Full options: see the <a href="https://github.com/fennq/diverg-auto#readme" target="_blank" rel="noopener">diverg-auto README</a> and <a href="quickstart.html">Quick Start</a>.</p>
           <h3 id="hosted-cli">Hosted API / platform CLI</h3>
-          <p>For investigations that run against Diverg’s hosted platform, API keys and usage are provided through the <strong>Diverg Auto</strong> dashboard after you sign in—not the same as the open-source <code>diverg-scan</code> binary unless you wire them together in your own integration.</p>
+          <p>For investigations that run against Diverg’s hosted platform, API keys and usage are provided through the <strong>Diverg Auto</strong> dashboard after you sign in, not the same as the open-source <code>diverg-scan</code> binary unless you wire them together in your own integration.</p>
 
           <h2 id="api-keys">API keys &amp; integrations</h2>
           <p>To get the most from Diverg, you can configure third-party API keys. These are optional but enable richer data:</p>
           <ul>
-            <li><strong>Blockchain:</strong> Solscan Pro, Arkham, Etherscan — for wallet labels, token metadata, and flow data</li>
-            <li><strong>Web/OSINT:</strong> Wappalyzer, Shodan, Censys — for technology detection and infrastructure lookup</li>
+            <li><strong>Blockchain:</strong> Solscan Pro, Arkham, Etherscan, for wallet labels, token metadata, and flow data</li>
+            <li><strong>Web/OSINT:</strong> Wappalyzer, Shodan, Censys, for technology detection and infrastructure lookup</li>
           </ul>
           <p>Without these keys, Diverg still runs all skills but will mark certain checks as "skipped" in the report and will not substitute fake data. See <a href="integrations.html">Integrations</a> and <a href="fact-only.html">Fact-Only Reporting</a> for details.</p>
 

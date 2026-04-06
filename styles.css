@@ -1,4 +1,4 @@
-/* Diverg — Helius-style design system */
+/* Diverg: Helius-style design system */
 
 :root {
   --black: #000000;
@@ -150,7 +150,7 @@ body {
   overflow: hidden;
 }
 
-/* Abstract ambient art — right side */
+/* Abstract ambient art, right side */
 .hero-art {
   position: absolute;
   inset: 0;
@@ -826,7 +826,7 @@ body {
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   INNER PAGES — styles for product, company, careers, solutions,
+   INNER PAGES: styles for product, company, careers, solutions,
    resources, request-demo and other subpages
    ═══════════════════════════════════════════════════════════════════════ */
 
@@ -849,7 +849,7 @@ a.nav-link {
   font-size: 0.875rem;
   font-weight: 500;
   transition: color 0.15s;
-  display: none; /* hidden — redundant with btn-primary */
+  display: none; /* hidden; redundant with btn-primary */
 }
 
 /* Old .btn system */
@@ -1366,7 +1366,7 @@ a.nav-link {
 
 
 /* ═══════════════════════════════════════════════════════════════════════
-   REDESIGNED INNER PAGES — product, company, solutions, careers, demo
+   REDESIGNED INNER PAGES: product, company, solutions, careers, demo
    ═══════════════════════════════════════════════════════════════════════ */
 
 /* ── Inner page hero ─────────────────────────────────────────────────── */
@@ -1999,7 +1999,7 @@ a.nav-link {
 .path-badge-blue { background: rgba(59,111,245,0.12); color: #60a5fa; }
 .path-badge-yel  { background: rgba(251,191,36,0.12); color: #fbbf24; }
 
-/* Honeypot field — hidden without inline style */
+/* Honeypot field: hidden without inline style */
 .form-honeypot {
   position: absolute;
   left: -9999px;
