@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diverg — Autonomous Security & Blockchain Investigation</title>
   <link rel="canonical" href="https://divergsec.com/">
-  <meta name="description" content="Diverg runs continuous security scans and flags exploitable paths, so you fix what actually matters.">
+  <meta name="description" content="Passive analysis, active vulnerability probing, and attack-path reasoning. Built for agents and CI.">
   <meta property="og:title" content="Diverg — Autonomous Security & Blockchain Investigation">
-  <meta property="og:description" content="Diverg runs continuous security scans and flags exploitable paths, so you fix what actually matters.">
+  <meta property="og:description" content="Passive analysis, active vulnerability probing, and attack-path reasoning. Built for agents and CI.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 
@@ -32,15 +32,16 @@
         <a href="careers/">Careers</a>
       </div>
       <div class="nav-actions">
-        <a href="resources/docs/" class="nav-link-docs">Docs &rarr;</a>
-        <a href="request-demo.html" class="nav-btn-demo">Book a Demo</a>
-        <a href="https://dash.divergsec.com/login" class="nav-btn-free">Get Started Free</a>
+        <a href="resources/docs/" class="nav-btn-ghost">Docs</a>
+        <a href="mailto:company@divergsec.com?subject=Booking%3A%20Investigation%20or%20security%20assessment" class="nav-btn-ghost">Request booking</a>
+        <a href="https://dash.divergsec.com/login" class="nav-btn-fill">Diverg Auto</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero — layout & copy from Diverg Landing Page Concept (PDF) -->
+  <!-- Hero -->
   <section class="hero">
+    <!-- CSS ambient art — right side glow -->
     <div class="hero-art" aria-hidden="true">
       <div class="art-orb art-orb-1"></div>
       <div class="art-orb art-orb-2"></div>
@@ -48,50 +49,18 @@
       <div class="art-lines"></div>
     </div>
 
-    <div class="hero-content hero-grid">
-      <div class="hero-copy">
-        <button type="button" class="hero-pip-pill" id="hero-copy-pip" data-copy="pip install diverg-lite" aria-label="Copy pip install command" title="Copy to clipboard">
-          <svg class="hero-pip-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span class="hero-pip-text">pip install diverg-lite</span>
-        </button>
-        <h1 class="hero-title">Catch exploits before<br>they&rsquo;re exploited</h1>
-        <p class="hero-sub">Diverg runs continuous security scans and flags exploitable paths, so you fix what actually matters.</p>
-        <div class="hero-actions">
-          <a href="request-demo.html" class="btn-demo btn-demo-lg">Book a Demo</a>
-          <a href="https://dash.divergsec.com/login" class="btn-free btn-free-lg">Get Started Free</a>
-        </div>
-        <p class="hero-micro">No credit card required</p>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hero-illustration">
-          <div class="hero-glow"></div>
-          <svg class="hero-shield-svg" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="heroStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#4d6fff"/>
-                <stop offset="100%" stop-color="#2b48c5"/>
-              </linearGradient>
-              <filter id="heroGlow" x="-40%" y="-40%" width="180%" height="180%">
-                <feGaussianBlur stdDeviation="8" result="b"/>
-                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-            <g class="hero-lock hero-lock--sm" transform="translate(48 200)">
-              <rect x="0" y="18" width="44" height="38" rx="6" fill="#0a0a12" stroke="url(#heroStroke)" stroke-width="1.2"/>
-              <path d="M10 18V12a12 12 0 0 1 24 0v6" fill="none" stroke="url(#heroStroke)" stroke-width="1.5"/>
-              <circle cx="22" cy="36" r="5" fill="#1a2240" stroke="url(#heroStroke)" stroke-width="1"/>
-            </g>
-            <path class="hero-shield-path" d="M210 32 L338 88 V196 C338 268 280 328 210 348 C140 328 82 268 82 196 V88 Z" fill="#06060c" stroke="url(#heroStroke)" stroke-width="2" filter="url(#heroGlow)"/>
-            <ellipse cx="210" cy="168" rx="36" ry="48" fill="#0c1020" stroke="url(#heroStroke)" stroke-width="1.5" opacity="0.95"/>
-            <ellipse cx="210" cy="168" rx="14" ry="22" fill="#3e5fff" opacity="0.35"/>
-            <circle cx="210" cy="158" r="8" fill="#6b8cff"/>
-            <g class="hero-lock hero-lock--lg" transform="translate(300 240)">
-              <rect x="0" y="14" width="36" height="32" rx="5" fill="#0a0a12" stroke="url(#heroStroke)" stroke-width="1"/>
-              <path d="M8 14V9a10 10 0 0 1 20 0v5" fill="none" stroke="url(#heroStroke)" stroke-width="1.2"/>
-              <circle cx="18" cy="28" r="4" fill="#1a2240" stroke="url(#heroStroke)"/>
-            </g>
-          </svg>
-        </div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        The autonomous<br>
+        security operator.
+      </h1>
+      <p class="hero-sub">
+        Passive analysis, active vulnerability probing,<br>
+        and attack-path reasoning. Built for agents and CI.
+      </p>
+      <div class="hero-actions">
+        <a href="resources/docs/quickstart.html" class="btn-fill">Get started</a>
+        <a href="resources/docs/" class="btn-ghost">Documentation &rarr;</a>
       </div>
     </div>
   </section>
@@ -101,23 +70,40 @@
     <div class="ticker-track">
       <!-- duplicated for seamless loop -->
       <span>Python</span><span class="dot">&middot;</span>
-      <span>pip install diverg-lite</span><span class="dot">&middot;</span>
+      <span>Diverg Auto CLI</span><span class="dot">&middot;</span>
+      <span>diverg-auto</span><span class="dot">&middot;</span>
       <span>GitHub Actions</span><span class="dot">&middot;</span>
       <span>GitLab CI</span><span class="dot">&middot;</span>
       <span>REST API</span><span class="dot">&middot;</span>
       <span>CLI</span><span class="dot">&middot;</span>
+      <span>OpenClaw</span><span class="dot">&middot;</span>
+      <span>JSON Output</span><span class="dot">&middot;</span>
+      <span>Markdown Reports</span><span class="dot">&middot;</span>
+      <span>Batch Scanning</span><span class="dot">&middot;</span>
       <span>XSS Detection</span><span class="dot">&middot;</span>
       <span>SQL Injection</span><span class="dot">&middot;</span>
       <span>SSRF</span><span class="dot">&middot;</span>
+      <span>Path Traversal</span><span class="dot">&middot;</span>
+      <span>Auth Bypass</span><span class="dot">&middot;</span>
+      <span>Attack Paths</span><span class="dot">&middot;</span>
+      <!-- duplicate -->
       <span>Python</span><span class="dot">&middot;</span>
-      <span>pip install diverg-lite</span><span class="dot">&middot;</span>
+      <span>Diverg Auto CLI</span><span class="dot">&middot;</span>
+      <span>diverg-auto</span><span class="dot">&middot;</span>
       <span>GitHub Actions</span><span class="dot">&middot;</span>
       <span>GitLab CI</span><span class="dot">&middot;</span>
       <span>REST API</span><span class="dot">&middot;</span>
       <span>CLI</span><span class="dot">&middot;</span>
+      <span>OpenClaw</span><span class="dot">&middot;</span>
+      <span>JSON Output</span><span class="dot">&middot;</span>
+      <span>Markdown Reports</span><span class="dot">&middot;</span>
+      <span>Batch Scanning</span><span class="dot">&middot;</span>
       <span>XSS Detection</span><span class="dot">&middot;</span>
       <span>SQL Injection</span><span class="dot">&middot;</span>
       <span>SSRF</span><span class="dot">&middot;</span>
+      <span>Path Traversal</span><span class="dot">&middot;</span>
+      <span>Auth Bypass</span><span class="dot">&middot;</span>
+      <span>Attack Paths</span><span class="dot">&middot;</span>
     </div>
   </div>
 
@@ -337,12 +323,11 @@
     <div class="container cta-inner">
       <p class="eyebrow">GET STARTED</p>
       <h2 class="cta-title">Ready to build?</h2>
-      <p class="cta-sub">One command. No credit card required.</p>
-      <div class="cta-code">pip install diverg-lite</div>
-      <p class="cta-sub cta-sub-links"><a href="resources/docs/">Docs &rarr;</a><span class="cta-sub-sep">&middot;</span><a href="mailto:company@divergsec.com">company@divergsec.com</a></p>
+      <p class="cta-sub">Install the open-source scanner from GitHub or PyPI. PyPI details: <a href="resources/docs/installation.html">Installation</a>.</p>
+      <div class="cta-code">pip install git+https://github.com/fennq/diverg-auto.git</div>
       <div class="cta-actions">
-        <a href="request-demo.html" class="btn-demo btn-demo-lg">Book a Demo</a>
-        <a href="https://dash.divergsec.com/login" class="btn-free btn-free-lg">Get Started Free</a>
+        <a href="resources/docs/quickstart.html" class="btn-fill btn-fill-lg">Quick start guide</a>
+        <a href="https://dash.divergsec.com/login" class="btn-ghost btn-ghost-lg">Sign in to Diverg Auto &rarr;</a>
       </div>
     </div>
   </section>
