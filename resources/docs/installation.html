@@ -33,7 +33,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
       <div class="nav-actions">
-        <a href="mailto:company@divergsec.com?subject=Booking%3A%20Investigation%20%26%20security%20analysis" class="btn btn-outline btn-book-nav">Request booking</a>
+        <a href="mailto:company@divergsec.com?subject=Booking%3A%20Investigation%20or%20security%20assessment" class="btn btn-outline btn-book-nav">Request booking</a>
         <a href="https://dash.divergsec.com/login" class="btn btn-primary">Diverg Auto</a>
       </div>
     </div>
@@ -88,7 +88,8 @@
           </header>
 
           <h2 id="overview">Overview</h2>
-          <p>Diverg can be used in several ways depending on your role and requirements: managed cloud (SaaS), local CLI, API for automation, browser extension (coming soon), or self-hosted enterprise. For <strong>Diverg Auto</strong> (self-serve), sign in at <a href="https://dash.divergsec.com/login">dash.divergsec.com</a>. For <strong>private</strong> enterprise or on-premise, <a href="mailto:company@divergsec.com?subject=Booking%3A%20Investigation%20%26%20security%20analysis">request a booking</a> at <a href="mailto:company@divergsec.com">company@divergsec.com</a>.</p>
+          <p><strong>Diverg Auto</strong> is our self-serve surface: web console, API where offered, <a href="https://github.com/fennq/diverg-extension" target="_blank" rel="noopener">Chrome extension</a> (source), and the open-source <a href="https://github.com/fennq/diverg-auto" target="_blank" rel="noopener">diverg-auto</a> CLI. Sign in at <a href="https://dash.divergsec.com/login">dash.divergsec.com</a> for the hosted console.</p>
+          <p><strong>Private</strong> investigations and security assessments use our internal pipeline and are not the same depth as Auto. To schedule: <a href="mailto:company@divergsec.com?subject=Booking%3A%20Investigation%20or%20security%20assessment">email company@divergsec.com</a>.</p>
 
           <h2 id="cloud-dashboard">Cloud &amp; dashboard</h2>
           <p>When you sign in to <strong>Diverg Auto</strong> (cloud account), you get access to the web dashboard. From there you can:</p>
@@ -100,14 +101,20 @@
           </ul>
           <p>No local installation required—use the dashboard from any browser.</p>
 
-          <h2 id="cli">CLI</h2>
-          <p>The Diverg CLI runs investigations locally. It is available to customers with API access. Typical use cases:</p>
+          <h2 id="cli">Open-source CLI (Diverg Auto scanner)</h2>
+          <p>The <strong>diverg-auto</strong> project ships a standalone scanner for authorized targets—passive checks plus active, non-destructive probes and attack-path output. Typical use cases:</p>
           <ul>
-            <li>Developers and researchers who prefer the command line</li>
-            <li>CI/CD or scripted pipelines (e.g. run a scan on every deploy)</li>
-            <li>Air-gapped or restricted environments where cloud is not allowed</li>
+            <li>Developers and researchers who want a local or CI-native workflow</li>
+            <li>GitHub Actions / GitLab CI gates on deploy</li>
+            <li>Air-gapped environments where you install from source or an internal mirror</li>
           </ul>
-          <p>After access is granted, you receive installation instructions and an API key. The CLI authenticates with Diverg's API and streams results to your terminal or to files (JSON/HTML).</p>
+          <p><strong>Install from GitHub (recommended in examples on this site):</strong></p>
+          <pre><code>pip install git+https://github.com/fennq/diverg-auto.git</code></pre>
+          <p><strong>PyPI:</strong> the same codebase is published under the PyPI package name <code>diverg-lite</code> (historical name; the product/repo branding is <em>diverg-auto</em>):</p>
+          <pre><code>pip install diverg-lite</code></pre>
+          <p>CLI entry point: <code>diverg-scan</code>. Full options: see the <a href="https://github.com/fennq/diverg-auto#readme" target="_blank" rel="noopener">diverg-auto README</a> and <a href="quickstart.html">Quick Start</a>.</p>
+          <h3 id="hosted-cli">Hosted API / platform CLI</h3>
+          <p>For investigations that run against Diverg’s hosted platform, API keys and usage are provided through the <strong>Diverg Auto</strong> dashboard after you sign in—not the same as the open-source <code>diverg-scan</code> binary unless you wire them together in your own integration.</p>
 
           <h2 id="api-keys">API keys &amp; integrations</h2>
           <p>To get the most from Diverg, you can configure third-party API keys. These are optional but enable richer data:</p>
@@ -118,7 +125,7 @@
           <p>Without these keys, Diverg still runs all skills but will mark certain checks as "skipped" in the report and will not substitute fake data. See <a href="integrations.html">Integrations</a> and <a href="fact-only.html">Fact-Only Reporting</a> for details.</p>
 
           <h2 id="enterprise">Enterprise &amp; on-premise</h2>
-          <p>For self-hosted deployment, custom integrations, or strict compliance requirements, we offer enterprise installations. <a href="mailto:company@divergsec.com?subject=Booking%3A%20Investigation%20%26%20security%20analysis">Request a booking</a> at <a href="mailto:company@divergsec.com">company@divergsec.com</a> to discuss architecture, SSO, RBAC, and threat-intel feeds.</p>
+          <p>For self-hosted deployment, custom integrations, or strict compliance requirements, we offer enterprise installations. <a href="mailto:company@divergsec.com?subject=Booking%3A%20Investigation%20or%20security%20assessment">Email company@divergsec.com</a> to book a conversation about architecture, SSO, RBAC, and threat-intel feeds.</p>
         </article>
       </main>
     </div>
