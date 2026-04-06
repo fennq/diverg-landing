@@ -621,6 +621,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Docs nav: booking + Diverg Auto */
+.docs-page .nav-inner > .nav-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.docs-page .nav-actions .btn-book-nav {
+  border: 1px solid var(--docs-accent);
+  color: var(--docs-accent);
+  background: transparent;
+}
+
+.docs-page .nav-actions .btn-book-nav:hover {
+  opacity: 0.88;
+  background: var(--docs-nav-active);
+}
+
 /* Print styles */
 @media print {
   .docs-sidebar-left,
