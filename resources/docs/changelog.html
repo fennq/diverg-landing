@@ -100,10 +100,35 @@
 
           <section class="changelog-day">
             <div class="changelog-day-head">
+              <h3>2026-04-07</h3>
+              <span class="changelog-badge">Daily update</span>
+            </div>
+            <div class="changelog-entry">
+              <p class="changelog-date">Solana ecosystem security integration shipped across product surfaces</p>
+              <ul>
+                <li><strong>Security model:</strong> released a shared <code>solana_security_profile</code> structure to keep Solana framework interpretation consistent across dashboard and scanner outputs.</li>
+                <li><strong>Investigation flow:</strong> token bundle investigation now presents Solana Security Program context including tiering, pillar status, incident readiness, and recommended actions.</li>
+                <li><strong>Scanner analytics:</strong> added a Solana Security Program card for crypto-relevant scans with eligibility context and triage-oriented next steps.</li>
+                <li><strong>Docs rollout:</strong> published public-facing Solana program documentation in Blockchain and Integrations docs, plus a direct Resources entry point.</li>
+                <li><strong>Validation:</strong> backend test checks and frontend syntax/lint validation completed before release notes publication.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="changelog-day">
+            <div class="changelog-day-head">
               <h3>2026-04-06</h3>
               <span class="changelog-badge">Daily update</span>
             </div>
             <div class="changelog-entry">
+              <p class="changelog-date">Solana security system integration (framework + product surfaces)</p>
+              <ul>
+                <li><strong>API model:</strong> introduced a structured <code>solana_security_profile</code> schema with framework references, tiering, pillars, incident workflow checklist, tooling coverage, and prioritized actions.</li>
+                <li><strong>Investigation flow:</strong> Solana bundle investigation now returns security-program guidance and supports optional <code>tvl_usd</code> context for eligibility interpretation.</li>
+                <li><strong>Scanner surface:</strong> shipped a Solana Security Program card in scan analytics for crypto-relevant scans, showing tier label, monitoring/formal-verification eligibility, incident priority, and action lists.</li>
+                <li><strong>Consistency:</strong> scanner and investigation now consume the same profile model to keep interpretation aligned across workflows.</li>
+                <li><strong>Resources docs:</strong> published Solana program documentation updates in Blockchain and Integrations docs, plus a direct card entry in Resources.</li>
+              </ul>
               <p class="changelog-date">Scanner quality, diff tracking, and docs operations updates</p>
               <ul>
                 <li><strong>Scanner UX:</strong> completed guided onboarding, richer finding trust details, and false-positive feedback flow.</li>
