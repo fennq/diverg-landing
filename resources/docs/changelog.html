@@ -100,32 +100,20 @@
 
           <section class="changelog-day">
             <div class="changelog-day-head">
-              <h3>2026-04-09</h3>
-              <span class="changelog-badge">Daily update</span>
-            </div>
-            <div class="changelog-entry">
-              <p class="changelog-date">Mint watchlist accuracy and clarity</p>
-              <ul>
-                <li><strong>Tier context:</strong> bundle scans now reuse saved watchlist TVL automatically when you scan a mint that is on your list, so security-profile tiering stays aligned with what you stored.</li>
-                <li><strong>Transparency:</strong> scan results call out when self-reported watchlist TVL was applied; watchlist rows show last scan time and clearer methodology notes.</li>
-                <li><strong>Validation:</strong> stricter Solana mint format checks on both console and API reduce bad-input noise.</li>
-              </ul>
-            </div>
-          </section>
-
-          <section class="changelog-day">
-            <div class="changelog-day-head">
               <h3>2026-04-08</h3>
               <span class="changelog-badge">Daily update</span>
             </div>
             <div class="changelog-entry">
               <p class="changelog-date">Solana mint watchlist</p>
               <ul>
-                <li><strong>Persistence:</strong> added per-account SPL mint watchlist storage with optional TVL (USD) on add for tier-aware bundle context.</li>
-                <li><strong>Dashboard:</strong> new Mint watchlist panel on the Tokens page with load, re-scan, and remove actions.</li>
-                <li><strong>Snapshot refresh:</strong> re-running a bundle scan on a watched mint updates stored verdict and risk score automatically.</li>
-                <li><strong>API:</strong> added authenticated watchlist list, upsert, snapshot patch, and delete endpoints for console clients.</li>
-                <li><strong>Docs:</strong> integrations page updated to describe live watchlist behavior.</li>
+                <li><strong>Persistence:</strong> added per-account SPL mint watchlist storage with optional self-reported TVL (USD) on add for tier-aware bundle context.</li>
+                <li><strong>Dashboard:</strong> new Mint watchlist panel on the Tokens page with load, re-scan, remove, and add-from-scan actions.</li>
+                <li><strong>Snapshot refresh:</strong> re-running a bundle scan on a watched mint updates stored verdict, risk score, and last-scan time.</li>
+                <li><strong>Tier context:</strong> bundle scans reuse saved watchlist TVL automatically when you scan a mint on your list; results note when that TVL was applied.</li>
+                <li><strong>Transparency:</strong> watchlist rows show last scan time and clearer methodology notes (bundle heuristics, not a full protocol audit).</li>
+                <li><strong>Validation:</strong> stricter Solana mint format checks on console and API; mint format tests added in the product repo.</li>
+                <li><strong>API:</strong> authenticated watchlist list, upsert, snapshot patch, and delete endpoints for console clients.</li>
+                <li><strong>Docs:</strong> integrations page updated for live watchlist behavior and automatic TVL on re-scan.</li>
               </ul>
             </div>
           </section>
