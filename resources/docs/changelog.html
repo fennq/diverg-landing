@@ -100,6 +100,23 @@
 
           <section class="changelog-day">
             <div class="changelog-day-head">
+              <h3>2026-04-08</h3>
+              <span class="changelog-badge">Daily update</span>
+            </div>
+            <div class="changelog-entry">
+              <p class="changelog-date">Solana mint watchlist</p>
+              <ul>
+                <li><strong>Persistence:</strong> added per-account SPL mint watchlist storage with optional TVL (USD) on add for tier-aware bundle context.</li>
+                <li><strong>Dashboard:</strong> new Mint watchlist panel on the Tokens page with load, re-scan, and remove actions.</li>
+                <li><strong>Snapshot refresh:</strong> re-running a bundle scan on a watched mint updates stored verdict and risk score automatically.</li>
+                <li><strong>API:</strong> added authenticated watchlist list, upsert, snapshot patch, and delete endpoints for console clients.</li>
+                <li><strong>Docs:</strong> integrations page updated to describe live watchlist behavior.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="changelog-day">
+            <div class="changelog-day-head">
               <h3>2026-04-07</h3>
               <span class="changelog-badge">Daily update</span>
             </div>
@@ -112,6 +129,13 @@
                 <li><strong>Dashboard-first messaging:</strong> CTA and role-mode guidance were prioritized in-product so users take action before reading supporting docs.</li>
                 <li><strong>Docs rollout:</strong> published public-facing Solana program documentation in Blockchain and Integrations docs, plus a direct Resources entry point.</li>
                 <li><strong>Validation:</strong> backend test checks and frontend syntax/lint validation completed before release notes publication.</li>
+              </ul>
+              <p class="changelog-date">Scanner focus pass shipped (same-day update)</p>
+              <ul>
+                <li><strong>Focused scan flow:</strong> added a streamlined scanner presentation pass so core findings and scan-diff interpretation stay primary in the results experience.</li>
+                <li><strong>Focused token flow:</strong> added a simplified token investigation presentation layer to keep holder and funding-risk analysis direct and readable.</li>
+                <li><strong>Analytics alignment:</strong> added dashboard analytics cleanup so product telemetry surfaces stay aligned with core scan workflow signals.</li>
+                <li><strong>Validation:</strong> syntax and lint checks were re-run after the focus pass and completed cleanly on edited dashboard files.</li>
               </ul>
             </div>
           </section>
