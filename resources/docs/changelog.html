@@ -100,6 +100,27 @@
 
           <section class="changelog-day">
             <div class="changelog-day-head">
+              <h3>2026-04-09</h3>
+              <span class="changelog-badge">Daily update</span>
+            </div>
+            <div class="changelog-entry">
+              <p class="changelog-date">Privy wallet authentication and daily credit system</p>
+              <ul>
+                <li><strong>Wallet sign-in:</strong> added Privy SIWS (Sign-In With Solana) as a primary authentication path via Phantom wallet, with hybrid email/password fallback.</li>
+                <li><strong>Username setup:</strong> new Privy wallet users are prompted to choose a display name on first sign-in before entering the dashboard.</li>
+                <li><strong>Credit system:</strong> daily scan credits are now live — 5 free credits per day for all users, plus 20 bonus credits per 100,000 DIVERG tokens held (reset every 24 hours UTC).</li>
+                <li><strong>Wallet auto-link:</strong> users who sign up with a wallet have it automatically connected to their credit account; DIVERG token balance is fetched on signup when Helius API key is available.</li>
+                <li><strong>Credits page:</strong> redesigned with connected/disconnected wallet state, live token balance, scan cost table, grant rules, and a live HH:MM:SS countdown timer until the next daily credit reset.</li>
+                <li><strong>Wallet connect (email users):</strong> email/password users can connect a Phantom wallet from the Credits page via signed nonce challenge to unlock token-holder bonus credits.</li>
+                <li><strong>Signature hardening:</strong> wallet signature verification now has a cryptography-based Ed25519 fallback and pure-Python base58 decoder, ensuring verification works across all server environments.</li>
+                <li><strong>Token verification:</strong> Privy access token verification uses a two-path strategy — SDK first, then PyJWT + JWKS fallback — with structured error codes for faster debugging.</li>
+                <li><strong>Cluster accuracy:</strong> Solana bundle holder clustering now groups by direct first funder instead of multi-hop terminal address for more accurate results.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="changelog-day">
+            <div class="changelog-day-head">
               <h3>2026-04-08</h3>
               <span class="changelog-badge">Daily update</span>
             </div>
