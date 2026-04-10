@@ -100,6 +100,25 @@
 
           <section class="changelog-day">
             <div class="changelog-day-head">
+              <h3>2026-04-10</h3>
+              <span class="changelog-badge">Daily update</span>
+            </div>
+            <div class="changelog-entry">
+              <p class="changelog-date">Solana protocol-depth security shipped</p>
+              <ul>
+                <li><strong>Token-2022 depth:</strong> token bundle investigations now detect Token Program vs Token-2022 and parse extension-linked risk indicators, including transfer-fee, permanent delegate, default account state, close authority, and metadata pointer controls.</li>
+                <li><strong>Authority misuse signals:</strong> added conservative authority-risk heuristics for mutable mint/freeze/delegate/close states with explicit review-oriented rationale, confidence labels, and remediation guidance.</li>
+                <li><strong>Correlated drainer model:</strong> wallet-abuse detection now uses multi-signal correlation (approvals, signing RPC, provider hijack, obfuscation, origin context) to improve precision over single-pattern triggers.</li>
+                <li><strong>Blind-spot transparency:</strong> allowlisted third-party wallet hosts still suppress direct drainer alerts by design, but now emit explicit blind-spot diagnostics for analyst awareness.</li>
+                <li><strong>Strict evidence gating:</strong> Solana depth and wallet-abuse categories are now aligned with stricter proof contracts so low-evidence heuristics do not surface as strong findings.</li>
+                <li><strong>UI coverage:</strong> dashboard and extension now render concise Solana depth output (token program context, extension risk hints, authority misuse summary) alongside existing coordination and holder analysis.</li>
+                <li><strong>Validation:</strong> targeted Solana-depth tests passed, followed by full regression run in product repo (<code>166 passed</code>, <code>6 skipped</code>).</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="changelog-day">
+            <div class="changelog-day-head">
               <h3>2026-04-09</h3>
               <span class="changelog-badge">Daily update</span>
             </div>
