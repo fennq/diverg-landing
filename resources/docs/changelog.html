@@ -100,6 +100,24 @@
 
           <section class="changelog-day">
             <div class="changelog-day-head">
+              <h3>2026-04-13</h3>
+              <span class="changelog-badge">Daily update</span>
+            </div>
+            <div class="changelog-entry">
+              <p class="changelog-date">Console security hardening, scan verification UX, and site watchlist</p>
+              <ul>
+                <li><strong>Security posture:</strong> HTTPS-aware HSTS, tighter Content-Security-Policy on the console (base URI, form targets, object embeds, upgrade-insecure-requests in production), expanded Permissions-Policy, and optional proxy-trust handling for correct TLS and client IP behind reverse proxies.</li>
+                <li><strong>Session hygiene:</strong> expired or invalid JWTs now clear cached profile state and return operators to sign-in with a clear “session expired” message instead of failing mid-flow (including Phantom wallet link on the Credits page).</li>
+                <li><strong>Scan diff &amp; verification:</strong> baselines prefer the same target URL and scan profile; scan results expose a short verification summary for strict findings and recheck guidance.</li>
+                <li><strong>Site watchlist:</strong> save web URLs on the Scanner page; after each completed scan, Diverg updates last score, verdict, and critical/high counts. Optional “alert stub” records an audit event when delivery channels are not yet wired.</li>
+                <li><strong>Console discovery:</strong> login and main console pages use <code>noindex</code> and an explicit referrer policy to reduce accidental indexing and referrer leakage.</li>
+                <li><strong>Validation:</strong> full automated test suite green in the product repository before release notes publication.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="changelog-day">
+            <div class="changelog-day-head">
               <h3>2026-04-10</h3>
               <span class="changelog-badge">Daily update</span>
             </div>
