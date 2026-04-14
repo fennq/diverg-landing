@@ -459,6 +459,27 @@
   margin-bottom: 0;
 }
 
+.docs-quote {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.25rem 1.25rem 1.35rem;
+  border-left: 3px solid var(--docs-accent);
+  background: var(--docs-card-bg);
+  border-radius: 0 8px 8px 0;
+  border: 1px solid var(--docs-border);
+  border-left-width: 3px;
+}
+
+.docs-quote p {
+  margin: 0;
+  color: var(--docs-text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.docs-quote p + p {
+  margin-top: 0.75rem;
+}
+
 /* Cards grid */
 .docs-sections {
   display: grid;
