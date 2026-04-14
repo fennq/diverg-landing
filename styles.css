@@ -923,6 +923,23 @@ body {
   color: var(--text-3);
 }
 
+.footer-copy {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-3);
+}
+
+.footer-copy a {
+  color: var(--text-2);
+  margin-left: 0.5rem;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-copy a:first-of-type {
+  margin-left: 0.75rem;
+}
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -2121,6 +2138,58 @@ a.nav-link {
   .positions-section, .why-section, .sol-row, .company-row { padding: 4rem 0; }
 }
 
+
+/* ── Legal pages (Terms, Privacy) ───────────────────────────────────── */
+.legal-page-main {
+  padding: 7.5rem 0 4rem;
+  background: var(--black);
+}
+
+.legal-prose {
+  max-width: 42rem;
+  margin: 0 auto 3rem;
+}
+
+.legal-title {
+  margin-bottom: 0.5rem;
+}
+
+.legal-updated {
+  font-size: 0.8125rem;
+  color: var(--text-3);
+  margin-bottom: 2rem;
+}
+
+.legal-prose h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 2rem 0 0.75rem;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.legal-prose p,
+.legal-prose li {
+  font-size: 0.9375rem;
+  color: var(--text-2);
+  margin-bottom: 0.875rem;
+  line-height: 1.65;
+}
+
+.legal-prose ul {
+  margin: 0 0 1rem 1.25rem;
+  color: var(--text-2);
+  font-size: 0.9375rem;
+}
+
+.legal-prose a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.legal-prose a:hover {
+  text-decoration: underline;
+}
 
 /* ── CSP-safe utility classes (replaces inline styles) ──────────────── */
 .mt-sm   { margin-top: 0.5rem; }
